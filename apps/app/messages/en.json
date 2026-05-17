@@ -6,5 +6,75 @@
     "mission": "Earthropy is a forever-free, corporation-agnostic platform for coordinating work on the 17 UN Sustainable Development Goals. Built for NGOs, researchers, and local communities — the people the work depends on, in the languages they actually speak.",
     "missionAttribution": "— The Earthropy mission",
     "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "Auth": {
+    "fields": {
+      "email": "Email",
+      "password": "Password",
+      "handle": "Handle"
+    },
+    "signup": {
+      "heading": "Create an account",
+      "subheading": "Join the platform coordinating global action on the SDGs.",
+      "submit": "Create account",
+      "submitting": "Creating account…",
+      "alreadyHaveAccount": "Already have an account?",
+      "signInLink": "Sign in"
+    },
+    "signin": {
+      "heading": "Sign in",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "forgotPassword": "Forgot your password?",
+      "noAccount": "Don’t have an account?",
+      "signUpLink": "Create one",
+      "tabs": {
+        "password": "Password",
+        "magic": "Magic link"
+      },
+      "magic": {
+        "submit": "Send sign-in link",
+        "submitting": "Sending…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "Confirm your email",
+      "description": "Click the button below to verify your email address and activate your account.",
+      "submit": "Confirm email",
+      "submitting": "Confirming…"
+    },
+    "magicLink": {
+      "heading": "Sign in",
+      "description": "Click the button below to sign in to your account.",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "requestNew": "Request a new sign-in link"
+    },
+    "forgotPassword": {
+      "heading": "Reset your password",
+      "description": "Enter your email and we'll send you a reset link if an account exists.",
+      "submit": "Send reset link",
+      "submitting": "Sending…",
+      "backToSignIn": "Back to sign in"
+    },
+    "resetPassword": {
+      "heading": "Set new password",
+      "description": "Enter a new password for your account.",
+      "newPassword": "New password",
+      "submit": "Set password",
+      "submitting": "Setting password…"
+    },
+    "checkYourEmail": {
+      "heading": "Check your email",
+      "description": "We've sent you an email. Follow the link inside to continue.",
+      "wrongEmail": "Wrong email?",
+      "tryAgain": "Try again"
+    },
+    "dashboard": {
+      "welcome": "Welcome, {name}",
+      "defaultName": "there",
+      "signOut": "Sign out",
+      "placeholder": "Your dashboard is being built. Check back soon."
+    }
   }
 }

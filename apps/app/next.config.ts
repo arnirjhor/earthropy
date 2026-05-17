@@ -15,6 +15,7 @@ const config: NextConfig = {
     '@repo/notifications',
     '@repo/observability',
     '@repo/sdg',
+    '@repo/ratelimit',
     '@repo/trust',
   ],
   experimental: {

@@ -31,3 +31,4 @@ export {
   SheetTrigger,
 } from './sheet.tsx';
 export { Toaster } from './sonner.tsx';
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs.tsx';
