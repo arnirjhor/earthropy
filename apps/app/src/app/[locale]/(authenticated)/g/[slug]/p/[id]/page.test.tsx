@@ -112,6 +112,12 @@ vi.mock('@/app/[locale]/(authenticated)/p/_actions.ts', () => ({
   withdrawPostAction: vi.fn(),
 }));
 
+// ── Mock _thread (CommentThread server component) ──────────────────────────
+
+vi.mock('@/app/[locale]/(authenticated)/g/[slug]/p/[id]/_thread.tsx', () => ({
+  CommentThread: () => <section data-testid="comment-thread" />,
+}));
+
 import PostDetailPage from './page.tsx';
 
 // ── Helpers ────────────────────────────────────────────────────────────────

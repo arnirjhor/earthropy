@@ -1,4 +1,25 @@
 {
+  "CommentThread": {
+    "heading": "Comments",
+    "sectionLabel": "Comment thread",
+    "listLabel": "Comments",
+    "empty": "No comments yet. Be the first to reply.",
+    "reply": "Reply",
+    "cancel": "Cancel",
+    "submitComment": "Comment",
+    "submitReply": "Reply",
+    "submitting": "Submitting…",
+    "commentPlaceholder": "Write a comment…",
+    "replyPlaceholder": "Write a reply…",
+    "withdrawComment": "Withdraw",
+    "withdrawingComment": "Withdrawing…",
+    "commentStatus": {
+      "pending_ai": "Under AI review",
+      "pending_review": "Pending review",
+      "rejected": "Rejected",
+      "withdrawn": "Withdrawn"
+    }
+  },
   "Home": {
     "title": "The 17 Goals",
     "caption": "EARTHROPY · v0.0.2",

@@ -9,6 +9,7 @@ import { getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { CommentThread } from './_thread.tsx';
 import { WithdrawButton } from './_withdraw-button.tsx';
 
 // ── Session helper ─────────────────────────────────────────────────────────────
@@ -169,6 +170,9 @@ export default async function PostDetailPage({
 
       {/* ── Body ──────────────────────────────────────────────────────────── */}
       <MarkdownBody md={post.body} className="mb-[var(--spacing-8)]" />
+
+      {/* ── Comment thread ────────────────────────────────────────────────── */}
+      <CommentThread postId={post.id} groupId={post.groupId} locale={locale} />
 
       {/* ── Withdraw action ────────────────────────────────────────────────── */}
       {showWithdraw && (
