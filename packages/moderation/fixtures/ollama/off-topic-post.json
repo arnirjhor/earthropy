@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "scenario": "off-topic-post",
+    "recorded_at": "2026-05-18T10:04:00Z",
+    "recorded_model": "llama-guard3:8b",
+    "prompt_sha": "ollama-llama-guard3-v1",
+    "note": "Fixture synthesized. Guard says safe; aux model detects high off_topic score."
+  },
+  "input": {
+    "text": "Just watched an amazing football match last night! My team finally won the championship. What a game, can't stop talking about it!",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["7", "13"],
+      "authorReputation": 50,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "guard_response": "safe",
+    "aux_response": {
+      "spam": 0.05,
+      "misinfo": 0.02,
+      "off_topic": 0.92
+    }
+  },
+  "expected_result": {
+    "scores": {
+      "spam": 0.05,
+      "off_topic": 0.92
+    },
+    "verdict": "auto_reject",
+    "provider": "ollama",
+    "model": "llama-guard3:8b"
+  }
+}

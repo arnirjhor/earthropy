@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "scenario": "aux-disabled",
+    "recorded_at": "2026-05-18T10:06:00Z",
+    "recorded_model": "llama-guard3:8b",
+    "prompt_sha": "ollama-llama-guard3-v1",
+    "note": "Fixture synthesized. OLLAMA_AUX_MODEL=none scenario: guard says safe, no aux pass runs. spam/misinfo/off_topic absent from scores."
+  },
+  "input": {
+    "text": "MAKE MONEY FAST!!! Buy my climate course now at https://bit.ly/scam1, https://bit.ly/scam2, https://bit.ly/scam3. Act now!",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["13"],
+      "authorReputation": 0,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "guard_response": "safe",
+    "aux_response": null
+  },
+  "expected_result": {
+    "scores": {},
+    "verdict": "auto_publish",
+    "provider": "ollama",
+    "model": "llama-guard3:8b"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "scenario": "benign-post",
+    "recorded_at": "2026-05-18T10:00:00Z",
+    "recorded_model": "llama-guard3:8b",
+    "prompt_sha": "ollama-llama-guard3-v1",
+    "note": "Fixture synthesized; re-record against live Ollama when server available."
+  },
+  "input": {
+    "text": "Great progress on the renewable energy initiative! Our community solar panel project hit 500 kW capacity this month. Really aligns with SDG 7 targets for affordable clean energy access.",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["7", "13"],
+      "authorReputation": 320,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "guard_response": "safe",
+    "aux_response": {
+      "spam": 0.02,
+      "misinfo": 0.01,
+      "off_topic": 0.03
+    }
+  },
+  "expected_result": {
+    "scores": {},
+    "verdict": "auto_publish",
+    "provider": "ollama",
+    "model": "llama-guard3:8b"
+  }
+}

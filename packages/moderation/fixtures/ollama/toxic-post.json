@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "scenario": "toxic-post",
+    "recorded_at": "2026-05-18T10:01:00Z",
+    "recorded_model": "llama-guard3:8b",
+    "prompt_sha": "ollama-llama-guard3-v1",
+    "note": "Fixture synthesized. S1 = violent crimes → violence axis. Aux scores are low."
+  },
+  "input": {
+    "text": "You are all absolute idiots and your SDG work is worthless garbage. Anyone who believes in this climate nonsense deserves to be beaten. I will hurt you.",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["13"],
+      "authorReputation": 5,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "guard_response": "unsafe\nS1",
+    "aux_response": {
+      "spam": 0.02,
+      "misinfo": 0.1,
+      "off_topic": 0.05
+    }
+  },
+  "expected_result": {
+    "scores": {
+      "violence": 0.9,
+      "misinfo": 0.1
+    },
+    "verdict": "auto_reject",
+    "provider": "ollama",
+    "model": "llama-guard3:8b"
+  }
+}

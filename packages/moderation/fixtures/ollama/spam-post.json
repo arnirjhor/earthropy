@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "scenario": "spam-post",
+    "recorded_at": "2026-05-18T10:03:00Z",
+    "recorded_model": "llama-guard3:8b",
+    "prompt_sha": "ollama-llama-guard3-v1",
+    "note": "Fixture synthesized. Guard says safe; aux model detects spam via second pass."
+  },
+  "input": {
+    "text": "MAKE MONEY FAST!!! Buy my climate course now at https://bit.ly/scam1, https://bit.ly/scam2, https://bit.ly/scam3, https://bit.ly/scam4, https://bit.ly/scam5. Limited time offer! Act now!",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["13"],
+      "authorReputation": 0,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "guard_response": "safe",
+    "aux_response": {
+      "spam": 0.95,
+      "misinfo": 0.15,
+      "off_topic": 0.6
+    }
+  },
+  "expected_result": {
+    "scores": {
+      "spam": 0.95,
+      "misinfo": 0.15,
+      "off_topic": 0.6
+    },
+    "verdict": "auto_reject",
+    "provider": "ollama",
+    "model": "llama-guard3:8b"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "scenario": "refusal",
+    "recorded_at": "2026-05-18T10:05:00Z",
+    "recorded_model": "llama-guard3:8b",
+    "prompt_sha": "ollama-llama-guard3-v1",
+    "note": "Fixture synthesized. Guard returns malformed/empty response; adapter treats as malformed parse → hold_for_review."
+  },
+  "input": {
+    "text": "CSAM and extremely graphic violent content combined with explicit calls to harm children.",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["16"],
+      "authorReputation": 0,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "guard_response": "",
+    "aux_response": null
+  },
+  "expected_result": {
+    "scores": {},
+    "verdict": "hold_for_review",
+    "provider": "ollama",
+    "model": "llama-guard3:8b"
+  }
+}
