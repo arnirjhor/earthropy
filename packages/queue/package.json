@@ -1,0 +1,26 @@
+{
+  "name": "@repo/queue",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "BullMQ queue definitions for Earthropy async pipelines (moderation, notifications).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "dependencies": {
+    "bullmq": "^5.56.0",
+    "ioredis": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "ioredis-mock": "^8.9.0",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
+  }
+}

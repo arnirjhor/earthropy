@@ -10,16 +10,21 @@
     "build": "next build",
     "start": "next start --port 3002",
     "worker": "tsx src/workers/index.ts",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .next .turbo *.tsbuildinfo"
   },
   "dependencies": {
     "@repo/auth": "workspace:*",
+    "@repo/comments": "workspace:*",
     "@repo/database": "workspace:*",
     "@repo/moderation": "workspace:*",
     "@repo/notifications": "workspace:*",
     "@repo/observability": "workspace:*",
+    "@repo/posts": "workspace:*",
+    "@repo/queue": "workspace:*",
     "@repo/sdg": "workspace:*",
+    "bullmq": "^5.56.0",
     "@repo/trust": "workspace:*",
     "next": "^16.0.0",
     "react": "^19.0.0",
@@ -29,7 +34,9 @@
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "ioredis-mock": "^8.9.0",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
   }
 }
