@@ -8,9 +8,15 @@
   "exports": { ".": "./src/index.ts" },
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "clean": "rm -rf .turbo *.tsbuildinfo dist"
   },
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "drizzle-orm": "^0.36.4"
+  },
   "devDependencies": {
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
   }
 }

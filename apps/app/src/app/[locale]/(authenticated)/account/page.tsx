@@ -6,6 +6,7 @@
 import { getSession } from '@repo/auth';
 import { db } from '@repo/database/client';
 import { sessions } from '@repo/database/schema';
+import { tierOf } from '@repo/trust';
 import { and, eq, gt } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
@@ -60,6 +61,7 @@ export default async function AccountPage({
   }));
 
   const ta = t as unknown as (key: string, opts?: Record<string, unknown>) => string;
+  const tier = tierOf(user.reputation);
 
   return (
     <main className="mx-auto max-w-[720px] px-[var(--spacing-6)] py-[var(--spacing-12)]">
@@ -91,6 +93,31 @@ export default async function AccountPage({
         >
           {ta('account.sections.profile')}
         </h2>
+
+        {/* Reputation + tier row */}
+        <div className="flex flex-wrap items-center gap-[var(--spacing-4)] mb-[var(--spacing-6)]">
+          <span className="font-mono text-[length:var(--text-mono)] text-[var(--color-text-muted)]">
+            <span className="text-[length:var(--text-h3)] leading-[var(--text-h3--line-height)] font-medium text-[var(--color-text)]">
+              {user.reputation}
+            </span>{' '}
+            rep
+          </span>
+          <span
+            data-testid="account-tier-badge"
+            className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] border border-[var(--color-border)] px-[var(--spacing-3)] py-[var(--spacing-1)]"
+            style={{ fontVariant: 'small-caps' }}
+            aria-label={`Reputation tier: ${tier}`}
+          >
+            {tier}
+          </span>
+          <Link
+            href={`/${locale}/u/${user.handle}/reputation`}
+            className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors border-b border-[var(--color-border)]"
+          >
+            View history
+          </Link>
+        </div>
+
         <ProfileForm displayName={user.displayName} handle={user.handle} locale={user.locale} />
       </section>
 

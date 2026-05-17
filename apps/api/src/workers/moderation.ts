@@ -45,6 +45,7 @@ import {
   RETRY_DELAYS_MS,
   createModerationQueue,
 } from '@repo/queue';
+import { recordEvent } from '@repo/trust';
 import { type ConnectionOptions, Queue, Worker } from 'bullmq';
 
 // ---------------------------------------------------------------------------
@@ -200,6 +201,52 @@ export async function processModerationJob(
     await updatePostStatus(targetId, { newStatus });
   } else {
     await updateCommentStatus(targetId, { newStatus });
+  }
+
+  // Accrue reputation for published / rejected transitions
+  if (newStatus === 'published' || newStatus === 'rejected') {
+    try {
+      const reputationKind =
+        targetType === 'post'
+          ? newStatus === 'published'
+            ? 'post_accepted'
+            : 'post_rejected'
+          : newStatus === 'published'
+            ? 'comment_accepted'
+            : 'comment_rejected';
+
+      // Resolve authorId: we need the content row for the user id
+      let authorId: string | null = null;
+      if (targetType === 'post') {
+        const post = await getPostById(targetId);
+        authorId = post?.authorId ?? null;
+      } else {
+        const comment = await getCommentById(targetId);
+        authorId = comment?.authorId ?? null;
+      }
+
+      if (authorId) {
+        await recordEvent({
+          userId: authorId,
+          kind: reputationKind,
+          sourceId: targetId,
+          reason: finalVerdict,
+        });
+      } else {
+        log.warn('worker.moderation.reputationSkipped', {
+          targetType,
+          targetId,
+          reason: 'authorId not found',
+        });
+      }
+    } catch (repErr) {
+      // Non-fatal: log but don't fail the job
+      log.warn('worker.moderation.reputationFailed', {
+        targetType,
+        targetId,
+        err: repErr instanceof Error ? repErr.message : String(repErr),
+      });
+    }
   }
 
   // Fan out in-app notifications

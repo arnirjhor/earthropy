@@ -56,6 +56,7 @@ vi.mock('@repo/posts', () => ({
     fakeStatusStore[id] = newStatus;
     return { id, status: newStatus };
   },
+  getPostById: async (id: string) => ({ id, authorId: 'author-uuid-post', status: 'published' }),
 }));
 
 vi.mock('@repo/comments', () => ({
@@ -63,6 +64,28 @@ vi.mock('@repo/comments', () => ({
     fakeStatusStore[id] = newStatus;
     return { id, status: newStatus };
   },
+  getCommentById: async (id: string) => ({
+    id,
+    authorId: 'author-uuid-comment',
+    postId: 'post-parent-uuid',
+    status: 'published',
+  }),
+}));
+
+vi.mock('@repo/trust', () => ({
+  recordEvent: vi.fn().mockResolvedValue({
+    id: 'event-uuid',
+    userId: 'author-uuid-post',
+    kind: 'post_accepted',
+    delta: 5,
+    reason: null,
+    sourceId: null,
+    createdAt: new Date(),
+  }),
+}));
+
+vi.mock('@repo/notifications', () => ({
+  notify: vi.fn().mockResolvedValue(undefined),
 }));
 
 // ── Import worker functions after mocks ────────────────────────────────────

@@ -55,3 +55,6 @@ export const DELTAS = {
   moderator_grant: 25,
   appeal_resolved_for_user: 2,
 } as const;
+
+export { recordEvent } from './recordEvent.ts';
+export type { RecordEventInput, RecordedEvent, ReputationEventKind } from './recordEvent.ts';

@@ -592,10 +592,20 @@ importers:
         version: 5.9.3
 
   packages/trust:
+    dependencies:
+      '@repo/database':
+        specifier: workspace:*
+        version: link:../database
+      drizzle-orm:
+        specifier: ^0.36.4
+        version: 0.36.4(@types/react@19.2.14)(postgres@3.4.9)(react@19.2.6)
     devDependencies:
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      vitest:
+        specifier: ^3.2.2
+        version: 3.2.4(@types/node@22.19.19)(jiti@2.7.0)(jsdom@29.1.1)(lightningcss@1.32.0)(tsx@4.22.1)
 
 packages:
 
