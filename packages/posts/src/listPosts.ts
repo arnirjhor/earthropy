@@ -1,6 +1,6 @@
 import { db } from '@repo/database/client';
 import { groupMembers, postSdgs, posts } from '@repo/database/schema';
-import { and, eq, inArray } from 'drizzle-orm';
+import { and, desc, eq, inArray, or } from 'drizzle-orm';
 
 export interface ListPostsInGroupInput {
   groupId: string;
@@ -57,55 +57,68 @@ export async function listPostsInGroup(input: ListPostsInGroupInput): Promise<Po
 
 export interface ListPostsForFeedInput {
   userId: string;
+  /**
+   * When provided, posts tagged with ANY of these SDG ids are included in
+   * the feed alongside posts from the user's groups (OR union — deduped by
+   * Postgres). Matches the `user_followed_sdgs` pattern.
+   */
   sdgIds?: number[];
   limit?: number;
   offset?: number;
 }
 
 /**
- * List published posts for a user's feed.
+ * List published posts for a user's personalised feed.
  *
- * Joins through `group_members` to only return posts from groups the user
- * belongs to. Optionally narrows by SDG ids via `post_sdgs`.
+ * Returns the union of:
+ *   A) posts from groups the user is a member of
+ *   B) posts tagged with any of the user's followed SDGs (when sdgIds provided)
+ *
+ * Results are ordered by published_at desc (most recent first), capped at
+ * `limit` (default 25).
  */
 export async function listPostsForFeed(input: ListPostsForFeedInput): Promise<PostRow[]> {
-  const { userId, sdgIds, limit = 20, offset = 0 } = input;
+  const { userId, sdgIds, limit = 25, offset = 0 } = input;
 
-  // Build the subquery: post ids where author is in the user's groups
+  // Subquery A: group ids the user belongs to
   const memberGroupIds = db
     .select({ groupId: groupMembers.groupId })
     .from(groupMembers)
     .where(eq(groupMembers.userId, userId));
 
-  const conditions = [
-    eq(posts.status, 'published'),
-    inArray(posts.groupId, memberGroupIds),
-  ] as const;
+  const fromGroupsCondition = inArray(posts.groupId, memberGroupIds);
+
+  const postColumns = {
+    id: posts.id,
+    groupId: posts.groupId,
+    authorId: posts.authorId,
+    title: posts.title,
+    body: posts.body,
+    locale: posts.locale,
+    status: posts.status,
+    statusReason: posts.statusReason,
+    publishedAt: posts.publishedAt,
+    createdAt: posts.createdAt,
+    updatedAt: posts.updatedAt,
+  } as const;
 
   if (sdgIds && sdgIds.length > 0) {
-    // Filter posts that have at least one of the requested SDG ids
+    // Subquery B: post ids tagged with any followed SDG
     const postIdsWithSdg = db
       .select({ postId: postSdgs.postId })
       .from(postSdgs)
       .where(inArray(postSdgs.sdgId, sdgIds));
 
     const rows = await db
-      .select({
-        id: posts.id,
-        groupId: posts.groupId,
-        authorId: posts.authorId,
-        title: posts.title,
-        body: posts.body,
-        locale: posts.locale,
-        status: posts.status,
-        statusReason: posts.statusReason,
-        publishedAt: posts.publishedAt,
-        createdAt: posts.createdAt,
-        updatedAt: posts.updatedAt,
-      })
+      .select(postColumns)
       .from(posts)
-      .where(and(...conditions, inArray(posts.id, postIdsWithSdg)))
-      .orderBy(posts.createdAt)
+      .where(
+        and(
+          eq(posts.status, 'published'),
+          or(fromGroupsCondition, inArray(posts.id, postIdsWithSdg)),
+        ),
+      )
+      .orderBy(desc(posts.publishedAt))
       .limit(limit)
       .offset(offset);
 
@@ -113,22 +126,10 @@ export async function listPostsForFeed(input: ListPostsForFeedInput): Promise<Po
   }
 
   const rows = await db
-    .select({
-      id: posts.id,
-      groupId: posts.groupId,
-      authorId: posts.authorId,
-      title: posts.title,
-      body: posts.body,
-      locale: posts.locale,
-      status: posts.status,
-      statusReason: posts.statusReason,
-      publishedAt: posts.publishedAt,
-      createdAt: posts.createdAt,
-      updatedAt: posts.updatedAt,
-    })
+    .select(postColumns)
     .from(posts)
-    .where(and(...conditions))
-    .orderBy(posts.createdAt)
+    .where(and(eq(posts.status, 'published'), fromGroupsCondition))
+    .orderBy(desc(posts.publishedAt))
     .limit(limit)
     .offset(offset);
 

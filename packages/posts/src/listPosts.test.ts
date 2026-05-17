@@ -203,17 +203,29 @@ describe('listPostsForFeed', () => {
     }
   });
 
-  it('filters by sdgIds when provided', async () => {
-    const p1 = await insertPost(testGroupId, testUserId, 'published', [13]);
-    const p2 = await insertPost(testOtherGroupId, testUserId, 'published', [7]);
+  it('sdgIds adds posts from non-member groups tagged with those SDGs (OR-union semantic)', async () => {
+    // B-DASH-1 redefined listPostsForFeed: feed = posts from joined groups
+    // UNION posts tagged with followed SDGs (regardless of membership). This
+    // tests the union behavior, not strict filtering.
+    const nonMemberGroup = await insertTestGroup(testUserId, 13);
+    await db.delete(groupMembers).where(eq(groupMembers.groupId, nonMemberGroup));
+    const memberPost = await insertPost(testGroupId, testUserId, 'published', [7]);
+    const outsidePostTaggedFollowed = await insertPost(nonMemberGroup, testUserId, 'published', [13]);
+    const outsidePostNotTagged = await insertPost(nonMemberGroup, testUserId, 'published', [14]);
     try {
       const result = await listPostsForFeed({ userId: testUserId, sdgIds: [13] });
       const ids = result.map((r) => r.id);
-      expect(ids).toContain(p1);
-      expect(ids).not.toContain(p2);
+      // Member-group post is always included (the "joined groups" leg)
+      expect(ids).toContain(memberPost);
+      // Non-member post tagged with a followed SDG is included (the union leg)
+      expect(ids).toContain(outsidePostTaggedFollowed);
+      // Non-member post NOT tagged with a followed SDG is excluded
+      expect(ids).not.toContain(outsidePostNotTagged);
     } finally {
-      await cleanupPost(p1);
-      await cleanupPost(p2);
+      await cleanupPost(memberPost);
+      await cleanupPost(outsidePostTaggedFollowed);
+      await cleanupPost(outsidePostNotTagged);
+      await cleanupGroup(nonMemberGroup);
     }
   });
 });
