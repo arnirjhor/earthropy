@@ -1,6 +1,17 @@
 {
   "Landing": {
-    "hero": "Earthropy",
-    "subhero": "Earth + Entropy. A neutral, forever-free platform for coordinating action on the 17 UN Sustainable Development Goals."
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "Language",
+    "hero": "Action against the planet's growing disorder.",
+    "subhero": "Earthropy coordinates global work on the 17 UN Sustainable Development Goals. Forever free. Corporation-agnostic. Built for everyone, everywhere.",
+    "cta": "Begin →",
+    "whatItIsHeading": "What it is",
+    "whatItIsP1": "A neutral, public-good platform for coordinating work on the 17 UN Sustainable Development Goals. Not a marketplace. Not a fundraising portal. A place to organize, discuss, and document the work itself — the groups, the posts, the moderation, the trust signals — without a corporate gatekeeper.",
+    "whatItIsP2": "Free forever, in every locale we ship. Self-hostable. Source-available under AGPL-3.0-or-later. Built for NGOs, researchers, local communities, and anyone who would rather coordinate the work than coordinate the brand around it.",
+    "goalsHeading": "The 17 Goals",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "Docs",
+    "footerGovernance": "Governance",
+    "footerSource": "Source ↗"
   }
 }

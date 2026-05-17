@@ -1,13 +1,5 @@
 import { relations, sql } from 'drizzle-orm';
-import {
-  index,
-  integer,
-  pgTable,
-  text,
-  timestamp,
-  uniqueIndex,
-  uuid,
-} from 'drizzle-orm/pg-core';
+import { index, integer, pgTable, text, timestamp, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { tokenPurpose } from './enums.ts';
 
 export const users = pgTable(
@@ -26,12 +18,8 @@ export const users = pgTable(
     reputation: integer('reputation').notNull().default(0),
     /** Soft-disabled accounts cannot sign in or post; not deleted (audit retention). */
     disabledAt: timestamp('disabled_at', { withTimezone: true }),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
-    updatedAt: timestamp('updated_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     emailUq: uniqueIndex('users_email_lower_uq').on(sql`lower(${t.email})`),
@@ -52,9 +40,7 @@ export const sessions = pgTable(
     userAgent: text('user_agent'),
     /** Last seen IP, hashed/redacted at write time. Never store raw IP. */
     ipHash: text('ip_hash'),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     userIdx: index('sessions_user_idx').on(t.userId),
@@ -75,9 +61,7 @@ export const tokens = pgTable(
     payload: text('payload'),
     expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
     consumedAt: timestamp('consumed_at', { withTimezone: true }),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     userPurposeIdx: index('tokens_user_purpose_idx').on(t.userId, t.purpose),
@@ -91,9 +75,7 @@ export const followedSdgs = pgTable(
       .notNull()
       .references(() => users.id, { onDelete: 'cascade' }),
     sdgId: integer('sdg_id').notNull(),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     pk: uniqueIndex('user_followed_sdgs_pk').on(t.userId, t.sdgId),

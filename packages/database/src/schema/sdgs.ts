@@ -7,7 +7,5 @@ export const sdgs = pgTable('sdgs', {
   id: integer('id').primaryKey(), // 1..17
   code: text('code').notNull().unique(), // slug, matches @repo/sdg
   color: text('color').notNull(), // hex
-  createdAt: timestamp('created_at', { withTimezone: true })
-    .notNull()
-    .default(sql`now()`),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
 });

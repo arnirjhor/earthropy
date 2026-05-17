@@ -28,12 +28,8 @@ export const groups = pgTable(
     createdBy: uuid('created_by')
       .notNull()
       .references(() => users.id, { onDelete: 'restrict' }),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
-    updatedAt: timestamp('updated_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     slugUq: uniqueIndex('groups_slug_lower_uq').on(sql`lower(${t.slug})`),
@@ -68,9 +64,7 @@ export const groupMembers = pgTable(
       .notNull()
       .references(() => users.id, { onDelete: 'cascade' }),
     role: memberRole('role').notNull().default('member'),
-    joinedAt: timestamp('joined_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    joinedAt: timestamp('joined_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     pk: primaryKey({ columns: [t.groupId, t.userId] }),

@@ -10,7 +10,7 @@
       "**/node_modules/**",
       "**/coverage/**",
       "**/drizzle/**/snapshots/**",
-      "**/messages/**.json"
+      "**/messages/*.json"
     ]
   },
   "formatter": {

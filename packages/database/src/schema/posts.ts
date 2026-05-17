@@ -1,13 +1,5 @@
 import { relations, sql } from 'drizzle-orm';
-import {
-  index,
-  integer,
-  pgTable,
-  primaryKey,
-  text,
-  timestamp,
-  uuid,
-} from 'drizzle-orm/pg-core';
+import { index, integer, pgTable, primaryKey, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { contentStatus } from './enums.ts';
 import { groups } from './groups.ts';
 import { sdgs } from './sdgs.ts';
@@ -31,12 +23,8 @@ export const posts = pgTable(
     /** Author-visible reason when status is rejected or pending_review. */
     statusReason: text('status_reason'),
     publishedAt: timestamp('published_at', { withTimezone: true }),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
-    updatedAt: timestamp('updated_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     groupStatusCreatedIdx: index('posts_group_status_created_idx').on(

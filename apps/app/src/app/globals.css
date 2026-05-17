@@ -1,12 +1,6 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@import "@repo/design-system/theme.css";
 
-/* SDG color tokens are injected at runtime via design-system/tokens.
-   Visual design system (typography, color scales, motion) lands after a
-   Plan-mode design pass — see docs/design-patterns.md. */
-:root {
-  color-scheme: light dark;
-}
-
-html[dir='rtl'] {
+html[dir="rtl"] {
   text-align: right;
 }

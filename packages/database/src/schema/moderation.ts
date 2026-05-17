@@ -23,9 +23,7 @@ export const moderationDecisions = pgTable(
     reasoning: text('reasoning'),
     /** Set when verdict came from a human (human_publish / human_reject). */
     reviewerId: uuid('reviewer_id').references(() => users.id),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     targetIdx: index('mod_decisions_target_idx').on(t.targetType, t.targetId),
@@ -46,9 +44,7 @@ export const appeals = pgTable(
     resolution: text('resolution'),
     resolvedBy: uuid('resolved_by').references(() => users.id),
     resolvedAt: timestamp('resolved_at', { withTimezone: true }),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     targetIdx: index('appeals_target_idx').on(t.targetType, t.targetId),

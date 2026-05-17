@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@import "@repo/design-system/theme.css";
 
-:root { color-scheme: light dark; }
-html[dir='rtl'] { text-align: right; }
+html[dir="rtl"] {
+  text-align: right;
+}

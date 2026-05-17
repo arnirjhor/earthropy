@@ -13,9 +13,7 @@ export const notifications = pgTable(
     kind: notificationKind('kind').notNull(),
     payload: jsonb('payload').$type<Record<string, unknown>>().notNull().default({}),
     readAt: timestamp('read_at', { withTimezone: true }),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     userUnreadIdx: index('notifications_user_unread_idx')

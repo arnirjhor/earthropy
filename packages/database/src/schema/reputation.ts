@@ -16,9 +16,7 @@ export const reputationEvents = pgTable(
     reason: text('reason'),
     /** Loose pointer (post id, comment id, appeal id) — type implied by kind. */
     sourceId: uuid('source_id'),
-    createdAt: timestamp('created_at', { withTimezone: true })
-      .notNull()
-      .default(sql`now()`),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().default(sql`now()`),
   },
   (t) => ({
     userIdx: index('rep_events_user_idx').on(t.userId, t.createdAt),

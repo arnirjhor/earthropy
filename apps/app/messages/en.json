@@ -1,7 +1,10 @@
 {
   "Home": {
-    "title": "Earthropy",
-    "subtitle": "Coordinating global action on the 17 UN Sustainable Development Goals.",
-    "sdgListLabel": "The 17 Sustainable Development Goals"
+    "title": "The 17 Goals",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "The 17 Sustainable Development Goals",
+    "mission": "Earthropy is a forever-free, corporation-agnostic platform for coordinating work on the 17 UN Sustainable Development Goals. Built for NGOs, researchers, and local communities — the people the work depends on, in the languages they actually speak.",
+    "missionAttribution": "— The Earthropy mission",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
   }
 }

@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-import * as schema from './schema/index.ts';
 import { env } from './env.ts';
+import * as schema from './schema/index.ts';
 
 const queryClient = postgres(env.DATABASE_URL, {
   max: env.NODE_ENV === 'production' ? 20 : 5,

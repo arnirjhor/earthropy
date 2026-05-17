@@ -238,7 +238,13 @@ importers:
       '@repo/sdg':
         specifier: workspace:*
         version: link:../sdg
+      react:
+        specifier: ^19.0.0
+        version: 19.2.6
     devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
       typescript:
         specifier: ^5.7.2
         version: 5.9.3

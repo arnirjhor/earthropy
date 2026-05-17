@@ -3,11 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "license": "AGPL-3.0-or-later",
-  "description": "Earthropy design system — Tailwind tokens, shadcn primitives, SDG iconography. UI lands after a design pass.",
+  "description": "Earthropy design system — Field Record visual identity, Tailwind tokens, SDG components.",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./tokens": "./src/tokens.ts"
+    "./tokens": "./src/tokens.ts",
+    "./theme.css": "./src/theme.css",
+    "./components/SdgChip": "./src/components/SdgChip.tsx",
+    "./components/SdgColorBar": "./src/components/SdgColorBar.tsx",
+    "./components/AtlasCard": "./src/components/AtlasCard.tsx"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
@@ -16,7 +20,11 @@
   "dependencies": {
     "@repo/sdg": "workspace:*"
   },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
   "devDependencies": {
+    "@types/react": "^19.0.0",
     "typescript": "^5.7.2"
   }
 }

@@ -38,3 +38,21 @@ Each entry:
 **Surface**: shared
 **Rationale**: Same as above — these are 2020-era AI-demo aesthetics. They will not feel right with the gravity of the mission.
 **Decided by**: founding decision
+
+### 2026-05-18 — Visual identity: Field Record synthesis
+**Status**: accepted
+**Surface**: shared (`@repo/design-system`, `apps/app`, `apps/web`)
+**Direction:** A — Field Record (institutional / terminal mood; Bloomberg, NYPL, NASA, Hacker News as references) is the **spine** of the design system. Two pieces of identity are grafted in:
+  - From B — Civic Atlas: the **mono-font color chip** pattern for SDG tagging, and the **atlas-card** layout (6px primary-SDG-colored top stripe) for group landings.
+  - From C — Press Sheet: a **slim 4px persistent 17-cell color bar** at the top of the authenticated app shell as a global SDG navigator. NOT the full-bleed display flag from C; just the slim navigator.
+**Typography (locked):**
+  - Sans / display + UI: **IBM Plex Sans** (OFL, IBM)
+  - Mono (chips, metadata, version strings, SDG numbers): **IBM Plex Mono** (OFL, IBM)
+  - Arabic: **IBM Plex Sans Arabic** (OFL) for RTL surfaces
+  - Optional editorial accent (landing hero only): **Source Serif 4** (OFL, Adobe) — to be used sparingly if at all; default to Plex Sans display
+**Color system:**
+  - Light: warm paper neutrals (off-white background, slightly warmer surface, grey-700 text)
+  - Dark: near-black with cream text; SDG colors hold luminance — verified at AAA where text sits on neutral
+  - SDG colors from `packages/sdg/src/sdgs.ts` are canonical; used as edge rules, chip fills, atlas-card stripes, color bar cells. Never as large fills with text on top (contrast risk).
+**Rationale**: A's gravity matches the mission; bolting on B's chip pattern + atlas-card and C's 4px bar gives Earthropy one piece of ownable identity (the slim navigator) without sacrificing legibility or sober institutional feel. Full proposal at [`design-proposals/v0.1-initial.md`](design-proposals/v0.1-initial.md).
+**Decided by**: orchestrator decision after agent recommendation; maintainer-approved by user "go ahead"

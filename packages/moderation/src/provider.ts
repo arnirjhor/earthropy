@@ -54,7 +54,7 @@ export interface ModerationProvider {
 // suggest a verdict; the policy decides the final verdict using these knobs.
 export interface ModerationPolicy {
   readonly autoPublishMax: number; // verdict=auto_publish if every score < this
-  readonly autoRejectMin: number;  // verdict=auto_reject if any score >= this
+  readonly autoRejectMin: number; // verdict=auto_reject if any score >= this
   readonly trustedReputation: number; // trusted authors skip pending_review for borderline content
 }
 
