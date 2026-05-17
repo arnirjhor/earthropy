@@ -1,0 +1,21 @@
+{
+  "name": "@repo/moderation",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Provider-agnostic AI moderation pipeline. Default provider: Anthropic Claude. Self-hosters can swap in Ollama / Llama Guard.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./provider": "./src/provider.ts",
+    "./providers/anthropic": "./src/providers/anthropic.ts",
+    "./providers/ollama": "./src/providers/ollama.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

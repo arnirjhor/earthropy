@@ -1,0 +1,63 @@
+# Earthropy — local dev infrastructure.
+# v0.1 ships infra here; the app/api containers land in apps/*/Dockerfile (Phase E).
+# Bring up with: pnpm db:up   (or: docker compose up -d)
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: earthropy-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: earthropy
+      POSTGRES_PASSWORD: earthropy
+      POSTGRES_DB: earthropy
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U earthropy"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: earthropy-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    container_name: earthropy-mailhog
+    restart: unless-stopped
+    ports:
+      - "1025:1025" # SMTP
+      - "8025:8025" # Web UI — http://localhost:8025
+
+  minio:
+    image: minio/minio:latest
+    container_name: earthropy-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: earthropy
+      MINIO_ROOT_PASSWORD: earthropy-dev-secret
+    ports:
+      - "9000:9000" # S3 API
+      - "9001:9001" # Web console — http://localhost:9001
+    volumes:
+      - minio-data:/data
+
+volumes:
+  postgres-data:
+  redis-data:
+  minio-data:

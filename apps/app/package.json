@@ -1,0 +1,39 @@
+{
+  "name": "@earthropy/app",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Earthropy main application — authenticated experience for groups, posts, moderation.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000 --turbopack",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@repo/auth": "workspace:*",
+    "@repo/database": "workspace:*",
+    "@repo/design-system": "workspace:*",
+    "@repo/i18n": "workspace:*",
+    "@repo/moderation": "workspace:*",
+    "@repo/notifications": "workspace:*",
+    "@repo/observability": "workspace:*",
+    "@repo/sdg": "workspace:*",
+    "@repo/trust": "workspace:*",
+    "next": "^16.0.0",
+    "next-intl": "^3.26.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "postcss": "^8.4.49",
+    "typescript": "^5.7.2"
+  }
+}

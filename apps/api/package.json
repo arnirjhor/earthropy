@@ -1,0 +1,35 @@
+{
+  "name": "@earthropy/api",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Earthropy API — REST endpoints, webhooks, and BullMQ workers for moderation + notifications.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3002 --turbopack",
+    "build": "next build",
+    "start": "next start --port 3002",
+    "worker": "tsx src/workers/index.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@repo/auth": "workspace:*",
+    "@repo/database": "workspace:*",
+    "@repo/moderation": "workspace:*",
+    "@repo/notifications": "workspace:*",
+    "@repo/observability": "workspace:*",
+    "@repo/sdg": "workspace:*",
+    "@repo/trust": "workspace:*",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

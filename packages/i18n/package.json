@@ -1,0 +1,23 @@
+{
+  "name": "@repo/i18n",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Shared next-intl configuration — locale list, default locale, route prefix strategy.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./routing": "./src/routing.ts",
+    "./locales": "./src/locales.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "dependencies": {
+    "next-intl": "^3.26.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

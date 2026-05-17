@@ -1,0 +1,16 @@
+{
+  "name": "@repo/notifications",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "In-app + email notifications. SMTP-first transport; pluggable adapters.",
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

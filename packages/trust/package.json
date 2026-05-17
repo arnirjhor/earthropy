@@ -1,0 +1,16 @@
+{
+  "name": "@repo/trust",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Reputation accrual + role gating. Light by design: most decisions live in code paths that check tiers from here.",
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

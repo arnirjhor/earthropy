@@ -1,0 +1,20 @@
+{
+  "name": "@repo/sdg",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "The 17 UN Sustainable Development Goals — canonical metadata, colors, i18n keys, and official indicator links.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types.ts",
+    "./data": "./src/sdgs.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo *.tsbuildinfo"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
