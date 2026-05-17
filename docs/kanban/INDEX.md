@@ -25,9 +25,9 @@ Last regenerated: 2026-05-18 (manual; Orchestrator regenerates after each batch)
 | `A-SHAD-1` | Init shadcn/ui in @repo/design-system + base components | ✅ | S | — |
 | `A-AUTH-DESIGN` | Architect: @repo/auth design doc | ✅ | O | — |
 | `A-AUTH-1` | @repo/auth core: sessions, Argon2id, tokens, CSRF helpers | ✅ | S | `A-AUTH-DESIGN, X-VITEST-1` |
-| `A-AUTH-2` | SMTP via Nodemailer + React Email templates | 🟨 | S | `A-AUTH-1` |
-| `A-AUTH-3` | Sign-up / sign-in / verify pages in apps/app | ⬜ | S | `A-AUTH-1, A-AUTH-2, A-SHAD-1` |
-| `A-AUTH-4` | Profile + settings pages (locale, notifications) | ⬜ | S | `A-AUTH-3` |
+| `A-AUTH-2` | SMTP via Nodemailer + React Email templates | ✅ | S | `A-AUTH-1` |
+| `A-AUTH-3` | Sign-up / sign-in / verify pages in apps/app | ✅ | S | `A-AUTH-1, A-AUTH-2, A-SHAD-1` |
+| `A-AUTH-4` | Profile + settings pages (locale, notifications) | 🟦 | S | `A-AUTH-3` |
 | `A-RATE-1` | Redis-backed rate limiting middleware | ✅ | S | `A-AUTH-1` |
 
 ## Phase B — Community
@@ -36,12 +36,12 @@ Stubs land as Phase A nears completion. Backlog from the plan:
 
 | ID | Title | Status | Model | Deps |
 |---|---|---|---|---|
-| `B-GROUP-1` | Groups CRUD: Server Actions + DB layer + tests | ⬜ | S | `A-AUTH-1` |
-| `B-GROUP-2` | Group create form + slug-gen + SDG multi-select | ⬜ | S | `B-GROUP-1, A-SHAD-1` |
-| `B-GROUP-3` | Group browse with SDG facet filter | ⬜ | S | `B-GROUP-1` |
-| `B-GROUP-4` | Group detail page using AtlasCard patterns | ⬜ | S | `B-GROUP-1` |
-| `B-GROUP-5` | Membership: join / leave / invite + role transitions | ⬜ | S | `B-GROUP-1` |
-| `B-POST-1` | Posts CRUD + status state machine | ⬜ | S | `B-GROUP-1` |
+| `B-GROUP-1` | Groups CRUD: Server Actions + DB layer + tests | ✅ | S | `A-AUTH-1` |
+| `B-GROUP-2` | Group create form + slug-gen + SDG multi-select | 🟦 | S | `B-GROUP-1, A-SHAD-1` |
+| `B-GROUP-3` | Group browse with SDG facet filter | 🟦 | S | `B-GROUP-1` |
+| `B-GROUP-4` | Group detail page using AtlasCard patterns | 🟦 | S | `B-GROUP-1` |
+| `B-GROUP-5` | Membership: join / leave / invite + role transitions | 🟦 | S | `B-GROUP-1` |
+| `B-POST-1` | Posts CRUD + status state machine | 🟦 | S | `B-GROUP-1` |
 | `B-POST-2` | Post create form + markdown editor | ⬜ | S | `B-POST-1, A-SHAD-1` |
 | `B-POST-3` | Post detail page + moderation-status indicator | ⬜ | S | `B-POST-1` |
 | `B-COMMENT-1` | Comments CRUD + threaded model | ⬜ | S | `B-POST-1` |
@@ -55,9 +55,9 @@ Stubs land as Phase A nears completion. Backlog from the plan:
 
 | ID | Title | Status | Model | Deps |
 |---|---|---|---|---|
-| `C-MOD-DESIGN` | Architect: Anthropic prompt + scoring; Ollama prompt | ⬜ | O | — |
-| `C-MOD-1` | `AnthropicModerationProvider` real impl + fixtures | ⬜ | S | `C-MOD-DESIGN` |
-| `C-MOD-2` | `OllamaModerationProvider` real impl + tests | ⬜ | S | `C-MOD-DESIGN` |
+| `C-MOD-DESIGN` | Architect: Anthropic prompt + scoring; Ollama prompt | ✅ | O | — |
+| `C-MOD-1` | `AnthropicModerationProvider` real impl + fixtures | 🟦 | S | `C-MOD-DESIGN` |
+| `C-MOD-2` | `OllamaModerationProvider` real impl + tests | 🟦 | S | `C-MOD-DESIGN` |
 | `C-WORKER-1` | BullMQ worker entry + queue + DLQ | ⬜ | S | `C-MOD-1` |
 | `C-PIPE-1` | `pending_ai` → verdict pipeline wired through posts + comments | ⬜ | S | `C-WORKER-1, B-POST-1, B-COMMENT-1` |
 | `C-QUEUE-UI-1` | Moderator queue UI | ⬜ | S | `C-PIPE-1` |
@@ -103,14 +103,14 @@ Stubs land as Phase A nears completion. Backlog from the plan:
 ## Tallies
 
 - Total: 50 tasks
-- Ready now: 4 (`X-VITEST-1`, `X-PLAYWRIGHT-1`, `A-SHAD-1`, `A-AUTH-DESIGN`)
-- Blocked: 1 (`X-GH-1` — user action) + `X-CI-1` (chains on X-GH-1)
-- Backlog (waiting on deps): 45
+- Done: **10** (X-VITEST-1, X-PLAYWRIGHT-1, A-SHAD-1, A-AUTH-DESIGN, A-AUTH-1, A-AUTH-2, A-AUTH-3, A-RATE-1, B-GROUP-1, C-MOD-DESIGN)
+- Ready now: **9** (A-AUTH-4, B-GROUP-2, B-GROUP-3, B-GROUP-4, B-GROUP-5, B-POST-1, C-MOD-1, C-MOD-2 — plus more unblock as Phase B fills in)
+- Blocked: 2 (`X-GH-1` user action + `X-CI-1` chains on it)
+- Backlog (waiting on deps): 29
 - In progress: 0
-- Done: 0
 
 ## Active dispatch
 
 (Updated by the Orchestrator per wake cycle.)
 
-- (none — wave 1 dispatch imminent)
+- Wave 4 imminent: A-AUTH-4, B-GROUP-2, B-POST-1 (chosen for critical-path progress)
