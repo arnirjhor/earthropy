@@ -75,6 +75,52 @@
       "defaultName": "there",
       "signOut": "Sign out",
       "placeholder": "Your dashboard is being built. Check back soon."
+    },
+    "account": {
+      "heading": "Account",
+      "sections": {
+        "profile": "Profile",
+        "sessions": "Active sessions",
+        "notifications": "Notification preferences",
+        "danger": "Danger zone"
+      },
+      "profile": {
+        "displayName": "Display name",
+        "handle": "Handle",
+        "locale": "Language",
+        "save": "Save changes",
+        "saving": "Saving…",
+        "saved": "Saved."
+      },
+      "sessions": {
+        "currentDevice": "Current device",
+        "otherDevices": "Other devices",
+        "noOtherSessions": "No other active sessions.",
+        "createdAgo": "created {days} days ago",
+        "createdToday": "created today",
+        "revoke": "Revoke",
+        "revokeAll": "Revoke all other sessions",
+        "revoking": "Revoking…"
+      },
+      "notifications": {
+        "description": "Notification preferences are saved locally for now (v0.1). Server-side persistence is a v0.2 follow-up.",
+        "inApp": "In-app notifications",
+        "email": "Email notifications",
+        "kinds": {
+          "newPost": "New posts in groups you follow",
+          "mention": "Mentions",
+          "groupInvite": "Group invitations",
+          "moderation": "Moderation decisions on your content"
+        }
+      },
+      "danger": {
+        "heading": "Delete account",
+        "description": "Deleting your account is permanent. Your posts and comments are retained for moderation audit purposes but your account will be disabled immediately and you will be signed out.",
+        "confirm": "To confirm, enter your email address:",
+        "email": "Your email",
+        "submit": "Disable my account",
+        "submitting": "Disabling account…"
+      }
     }
   }
 }
