@@ -66,10 +66,7 @@ vi.mock('@repo/comments', () => ({
 }));
 
 // ── Import worker functions after mocks ────────────────────────────────────
-import {
-  handleFailedModerationJob,
-  processModerationJob,
-} from './moderation.ts';
+import { handleFailedModerationJob, processModerationJob } from './moderation.ts';
 
 // ── Test data ──────────────────────────────────────────────────────────────
 const POST_ID = '11111111-2222-3333-4444-555555555555';
@@ -147,9 +144,9 @@ function makeFailingProvider(): ModerationProvider {
 
 beforeEach(() => {
   fakeDecisionStore.length = 0;
-  Object.keys(fakeStatusStore).forEach((k) => {
+  for (const k of Object.keys(fakeStatusStore)) {
     delete fakeStatusStore[k];
-  });
+  }
 });
 
 afterEach(() => {
@@ -305,8 +302,83 @@ describe('handleFailedModerationJob', () => {
   });
 
   it('provider failure during processModerationJob throws (caller handles retry)', async () => {
-    await expect(
-      processModerationJob(BENIGN_POST_DATA, makeFailingProvider()),
-    ).rejects.toThrow('provider network failure');
+    await expect(processModerationJob(BENIGN_POST_DATA, makeFailingProvider())).rejects.toThrow(
+      'provider network failure',
+    );
+  });
+});
+
+// ── Round-trip: createPost payload → worker → published ────────────────────
+//
+// Since both createPost (real DB) and the worker (fake DB) tests live in
+// separate packages, we simulate the round-trip here by constructing the exact
+// ModerationJobData that createPost would produce and confirming the full
+// pipeline: job data → processModerationJob → published status.
+//
+// This validates the payload contract between the producer (createPost) and the
+// consumer (processModerationJob) without needing a live DB or Redis.
+
+describe('round-trip: createPost payload → processModerationJob → published', () => {
+  const ROUND_TRIP_POST_ID = 'cccccccc-dddd-eeee-ffff-000000000001';
+
+  // Simulate the exact payload shape that createPost would enqueue after
+  // inserting a post in group with SDG 13, authored by a user with reputation 0.
+  const roundTripJobData: ModerationJobData = {
+    targetType: 'post',
+    targetId: ROUND_TRIP_POST_ID,
+    text: 'Exciting climate action update.\n\nWe planted 100 trees today.',
+    locale: 'en',
+    context: {
+      groupSdgCodes: ['13'],
+      authorReputation: 0,
+      targetType: 'post',
+    },
+  };
+
+  it('processes the job produced by createPost and transitions post to published', async () => {
+    await processModerationJob(roundTripJobData, makeBenignProvider());
+
+    // Worker must have written an auto_publish decision row.
+    expect(fakeDecisionStore).toHaveLength(1);
+    const row = fakeDecisionStore[0];
+    expect(row?.verdict).toBe('auto_publish');
+    expect(row?.targetId).toBe(ROUND_TRIP_POST_ID);
+
+    // Status store must reflect the published transition.
+    expect(fakeStatusStore[ROUND_TRIP_POST_ID]).toBe('published');
+  });
+
+  it('round-trip with hold_for_review verdict transitions to pending_review', async () => {
+    await processModerationJob(roundTripJobData, makeHeldProvider());
+
+    expect(fakeDecisionStore).toHaveLength(1);
+    expect(fakeDecisionStore[0]?.verdict).toBe('hold_for_review');
+    expect(fakeStatusStore[ROUND_TRIP_POST_ID]).toBe('pending_review');
+  });
+
+  it('round-trip payload carries groupSdgCodes and authorReputation through to provider', async () => {
+    let capturedCtx: ModerationJobData['context'] | undefined;
+    const spyProvider: ModerationProvider = {
+      classify: async (input: ModerationInput): Promise<ModerationResult> => {
+        capturedCtx = {
+          groupSdgCodes: input.context.groupSdgCodes,
+          authorReputation: input.context.authorReputation,
+          targetType: input.context.targetType,
+        };
+        return {
+          scores: { toxicity: 0.01 },
+          verdict: 'auto_publish',
+          reasoning: 'ok',
+          provider: 'spy',
+          model: 'spy-1.0',
+        };
+      },
+    };
+
+    await processModerationJob(roundTripJobData, spyProvider);
+
+    expect(capturedCtx?.groupSdgCodes).toStrictEqual(['13']);
+    expect(capturedCtx?.authorReputation).toBe(0);
+    expect(capturedCtx?.targetType).toBe('post');
   });
 });

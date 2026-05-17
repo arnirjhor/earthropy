@@ -106,9 +106,7 @@ async function createGroup(
 }
 
 test.describe('Group detail page', () => {
-  test('owner lands on detail page with header, empty state, and Manage link', async ({
-    page,
-  }) => {
+  test('owner lands on detail page with header, empty state, and Manage link', async ({ page }) => {
     await signUpAndVerify(page);
     const { name } = await createGroup(page);
 

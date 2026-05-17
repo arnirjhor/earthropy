@@ -47,13 +47,16 @@ beforeEach(() => {
   _resetModerationQueue();
   process.env.REDIS_URL = 'redis://localhost:6379'; // prevent "required" throw
 
-  vi.spyOn(Queue.prototype, 'add').mockImplementation(
-    async function (this: Queue, name: string, data: unknown, opts?: unknown) {
-      capturedAdds.push({ name, data: data as ModerationJobData, opts });
-      // Return a minimal job-like object
-      return { id: 'fake-id', name, data, opts } as unknown as ReturnType<Queue['add']>;
-    },
-  );
+  vi.spyOn(Queue.prototype, 'add').mockImplementation(async function (
+    this: Queue,
+    name: string,
+    data: unknown,
+    opts?: unknown,
+  ) {
+    capturedAdds.push({ name, data: data as ModerationJobData, opts });
+    // Return a minimal job-like object
+    return { id: 'fake-id', name, data, opts } as unknown as ReturnType<Queue['add']>;
+  });
 });
 
 afterEach(() => {

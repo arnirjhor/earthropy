@@ -24,27 +24,27 @@
  * `createModerationWorker` is for production use and the supervisor entry.
  */
 
-import { Queue, Worker, type ConnectionOptions, type Job } from 'bullmq';
+import { updateCommentStatus } from '@repo/comments';
 import { db } from '@repo/database/client';
 import { moderationDecisions } from '@repo/database/schema';
+import type { ModerationScores } from '@repo/database/schema';
 import {
   AnthropicModerationProvider,
   DEFAULT_POLICY,
-  decide,
   type ModerationProvider,
+  decide,
 } from '@repo/moderation';
 import { log } from '@repo/observability';
 import { updatePostStatus } from '@repo/posts';
-import { updateCommentStatus } from '@repo/comments';
 import {
   MODERATION_DLQ_NAME,
   MODERATION_JOB_OPTS,
   MODERATION_QUEUE_NAME,
+  type ModerationJobData,
   RETRY_DELAYS_MS,
   createModerationQueue,
-  type ModerationJobData,
 } from '@repo/queue';
-import type { ModerationScores } from '@repo/database/schema';
+import { type ConnectionOptions, Queue, Worker } from 'bullmq';
 
 // ---------------------------------------------------------------------------
 // Provider resolution
@@ -56,9 +56,7 @@ function resolveProvider(): ModerationProvider {
   if (providerEnv === 'anthropic') {
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
-      throw new Error(
-        'ANTHROPIC_API_KEY is required when MODERATION_PROVIDER=anthropic',
-      );
+      throw new Error('ANTHROPIC_API_KEY is required when MODERATION_PROVIDER=anthropic');
     }
     const model = process.env.MODERATION_MODEL ?? 'claude-sonnet-4-5';
     const timeoutMs = process.env.ANTHROPIC_TIMEOUT_MS
@@ -91,7 +89,6 @@ function verdictToStatus(verdict: string): ContentStatus {
       return 'published';
     case 'auto_reject':
       return 'rejected';
-    case 'hold_for_review':
     default:
       return 'pending_review';
   }
@@ -290,16 +287,11 @@ export function createModerationWorker(
   // 'failed' event fires after ALL attempts are exhausted.
   // Write DLQ entry only on final failure — not on each retry attempt.
   worker.on('failed', (job, err) => {
-    const maxAttempts = job?.opts.attempts ?? MODERATION_JOB_OPTS.attempts;
-    const attemptsMade = job?.attemptsMade ?? 0;
+    if (!job) return;
+    const maxAttempts = job.opts.attempts ?? MODERATION_JOB_OPTS.attempts;
+    const attemptsMade = job.attemptsMade ?? 0;
     if (attemptsMade >= maxAttempts) {
-      void handleFailedModerationJob(
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        job!.data,
-        err,
-        deadLetterQueue,
-        job?.id,
-      );
+      void handleFailedModerationJob(job.data, err, deadLetterQueue, job.id);
     }
   });
 

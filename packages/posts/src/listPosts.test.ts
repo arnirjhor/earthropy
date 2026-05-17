@@ -210,7 +210,12 @@ describe('listPostsForFeed', () => {
     const nonMemberGroup = await insertTestGroup(testUserId, 13);
     await db.delete(groupMembers).where(eq(groupMembers.groupId, nonMemberGroup));
     const memberPost = await insertPost(testGroupId, testUserId, 'published', [7]);
-    const outsidePostTaggedFollowed = await insertPost(nonMemberGroup, testUserId, 'published', [13]);
+    const outsidePostTaggedFollowed = await insertPost(
+      nonMemberGroup,
+      testUserId,
+      'published',
+      [13],
+    );
     const outsidePostNotTagged = await insertPost(nonMemberGroup, testUserId, 'published', [14]);
     try {
       const result = await listPostsForFeed({ userId: testUserId, sdgIds: [13] });

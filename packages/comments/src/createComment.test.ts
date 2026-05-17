@@ -13,8 +13,23 @@ import {
   users,
 } from '@repo/database/schema';
 import { eq } from 'drizzle-orm';
-import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createComment } from './createComment.ts';
+
+// ── Queue mock ──────────────────────────────────────────────────────────────
+// vi.hoisted ensures the mock function is available when the factory runs,
+// which is hoisted before any import in the module (required for ESM).
+const { enqueueMock } = vi.hoisted(() => ({
+  enqueueMock: vi.fn().mockResolvedValue({ id: 'fake-job-id' }),
+}));
+
+vi.mock('@repo/queue', () => ({
+  enqueueModeration: (...args: unknown[]) => enqueueMock(...args),
+  moderationQueue: () => ({ add: vi.fn() }),
+  createModerationQueue: () => ({ add: vi.fn() }),
+  MODERATION_QUEUE_NAME: 'moderation',
+  MODERATION_JOB_OPTS: {},
+}));
 
 beforeAll(() => {
   process.env.DATABASE_URL ??= 'postgres://earthropy:earthropy@localhost:5434/earthropy';
@@ -92,6 +107,8 @@ beforeEach(async () => {
   testUserId = await insertTestUser();
   testGroupId = await insertTestGroup(testUserId);
   testPostId = await insertTestPost(testGroupId, testUserId);
+  enqueueMock.mockClear();
+  process.env.MODERATION_DISABLED = undefined;
 });
 
 afterEach(async () => {
@@ -101,6 +118,7 @@ afterEach(async () => {
   testUserId = '';
   testGroupId = '';
   testPostId = '';
+  process.env.MODERATION_DISABLED = undefined;
 });
 
 describe('createComment — happy path', () => {
@@ -182,6 +200,114 @@ describe('createComment — parent on different post rejection', () => {
     } finally {
       if (parentId) await cleanupComment(parentId);
       await cleanupPost(otherPostId);
+    }
+  });
+});
+
+describe('createComment — moderation enqueue', () => {
+  it('calls enqueueModeration once after successful insert', async () => {
+    let commentId = '';
+    try {
+      const result = await createComment({
+        postId: testPostId,
+        authorId: testUserId,
+        body: 'Enqueue test comment.',
+        locale: 'en',
+      });
+      commentId = result.id;
+
+      expect(enqueueMock).toHaveBeenCalledOnce();
+    } finally {
+      if (commentId) await cleanupComment(commentId);
+    }
+  });
+
+  it('enqueues with correct targetType, targetId, locale, text, and context shape', async () => {
+    let commentId = '';
+    try {
+      const result = await createComment({
+        postId: testPostId,
+        authorId: testUserId,
+        body: 'Context shape verification.',
+        locale: 'en',
+      });
+      commentId = result.id;
+
+      expect(enqueueMock).toHaveBeenCalledOnce();
+      const [payload] = enqueueMock.mock.calls[0] as [Record<string, unknown>];
+      expect(payload.targetType).toBe('comment');
+      expect(payload.targetId).toBe(result.id);
+      expect(payload.locale).toBe('en');
+      expect(typeof payload.text).toBe('string');
+      expect((payload.text as string).length).toBeGreaterThan(0);
+      const ctx = payload.context as Record<string, unknown>;
+      expect(ctx.targetType).toBe('comment');
+      expect(Array.isArray(ctx.groupSdgCodes)).toBe(true);
+      expect(typeof ctx.authorReputation).toBe('number');
+    } finally {
+      if (commentId) await cleanupComment(commentId);
+    }
+  });
+
+  it('does not call enqueueModeration when MODERATION_DISABLED=1', async () => {
+    process.env.MODERATION_DISABLED = '1';
+    let commentId = '';
+    try {
+      const result = await createComment({
+        postId: testPostId,
+        authorId: testUserId,
+        body: 'Disabled enqueue test.',
+        locale: 'en',
+      });
+      commentId = result.id;
+
+      expect(enqueueMock).not.toHaveBeenCalled();
+    } finally {
+      if (commentId) await cleanupComment(commentId);
+      process.env.MODERATION_DISABLED = undefined;
+    }
+  });
+
+  it('immediately sets status=published when MODERATION_DISABLED=1', async () => {
+    process.env.MODERATION_DISABLED = '1';
+    let commentId = '';
+    try {
+      const result = await createComment({
+        postId: testPostId,
+        authorId: testUserId,
+        body: 'Should be published immediately.',
+        locale: 'en',
+      });
+      commentId = result.id;
+
+      expect(result.status).toBe('published');
+
+      const rows = await db
+        .select({ status: comments.status })
+        .from(comments)
+        .where(eq(comments.id, result.id));
+      expect(rows[0]?.status).toBe('published');
+    } finally {
+      if (commentId) await cleanupComment(commentId);
+      process.env.MODERATION_DISABLED = undefined;
+    }
+  });
+
+  it('still returns the comment even if enqueueModeration rejects (fire-and-forget)', async () => {
+    enqueueMock.mockRejectedValueOnce(new Error('redis unavailable'));
+    let commentId = '';
+    try {
+      const result = await createComment({
+        postId: testPostId,
+        authorId: testUserId,
+        body: 'Redis down should not fail comment create.',
+        locale: 'en',
+      });
+      commentId = result.id;
+      expect(result.id).toBeTruthy();
+      expect(result.status).toBe('pending_ai');
+    } finally {
+      if (commentId) await cleanupComment(commentId);
     }
   });
 });

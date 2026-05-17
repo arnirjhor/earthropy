@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@repo/database": "workspace:*",
+    "@repo/queue": "workspace:*",
     "@repo/sdg": "workspace:*",
     "drizzle-orm": "^0.36.4",
     "zod": "^3.24.0"

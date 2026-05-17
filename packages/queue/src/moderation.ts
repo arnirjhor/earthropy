@@ -15,7 +15,7 @@
  * Three retries = four total attempts.
  */
 
-import { Queue, type ConnectionOptions } from 'bullmq';
+import { type ConnectionOptions, Queue } from 'bullmq';
 
 export const MODERATION_QUEUE_NAME = 'moderation' as const;
 export const MODERATION_DLQ_NAME = 'moderation-dead' as const;
@@ -83,9 +83,7 @@ export function moderationQueue(): Queue<ModerationJobData> {
  * Create a named queue with an explicit connection — used by tests and the
  * worker process (which passes its own IORedis instance).
  */
-export function createModerationQueue(
-  connection: ConnectionOptions,
-): Queue<ModerationJobData> {
+export function createModerationQueue(connection: ConnectionOptions): Queue<ModerationJobData> {
   return new Queue<ModerationJobData>(MODERATION_QUEUE_NAME, {
     connection,
     defaultJobOptions: { ...MODERATION_JOB_OPTS },

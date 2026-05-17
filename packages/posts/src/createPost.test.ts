@@ -5,8 +5,23 @@
 import { db } from '@repo/database/client';
 import { groupMembers, groupSdgs, groups, postSdgs, posts, users } from '@repo/database/schema';
 import { eq } from 'drizzle-orm';
-import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createPost } from './createPost.ts';
+
+// ── Queue mock ──────────────────────────────────────────────────────────────
+// vi.hoisted ensures the mock function is available when the factory runs,
+// which is hoisted before any import in the module (required for ESM).
+const { enqueueMock } = vi.hoisted(() => ({
+  enqueueMock: vi.fn().mockResolvedValue({ id: 'fake-job-id' }),
+}));
+
+vi.mock('@repo/queue', () => ({
+  enqueueModeration: (...args: unknown[]) => enqueueMock(...args),
+  moderationQueue: () => ({ add: vi.fn() }),
+  createModerationQueue: () => ({ add: vi.fn() }),
+  MODERATION_QUEUE_NAME: 'moderation',
+  MODERATION_JOB_OPTS: {},
+}));
 
 beforeAll(() => {
   process.env.DATABASE_URL ??= 'postgres://earthropy:earthropy@localhost:5434/earthropy';
@@ -64,6 +79,8 @@ async function cleanupUser(id: string): Promise<void> {
 beforeEach(async () => {
   testUserId = await insertTestUser();
   testGroupId = await insertTestGroup(testUserId);
+  enqueueMock.mockClear();
+  process.env.MODERATION_DISABLED = undefined;
 });
 
 afterEach(async () => {
@@ -71,6 +88,7 @@ afterEach(async () => {
   if (testUserId) await cleanupUser(testUserId);
   testUserId = '';
   testGroupId = '';
+  process.env.MODERATION_DISABLED = undefined;
 });
 
 describe('createPost — happy path', () => {
@@ -184,5 +202,144 @@ describe('createPost — transaction rollback', () => {
     // No orphaned post row should exist
     const rows = await db.select({ id: posts.id }).from(posts).where(eq(posts.title, title));
     expect(rows.length).toBe(0);
+  });
+});
+
+describe('createPost — moderation enqueue', () => {
+  it('calls enqueueModeration once after successful insert', async () => {
+    let postId = '';
+    try {
+      const result = await createPost({
+        groupId: testGroupId,
+        authorId: testUserId,
+        title: 'Enqueue Test',
+        body: 'This post should be enqueued.',
+        locale: 'en',
+        sdgIds: [13],
+      });
+      postId = result.id;
+
+      expect(enqueueMock).toHaveBeenCalledOnce();
+    } finally {
+      if (postId) await cleanupPost(postId);
+    }
+  });
+
+  it('enqueues with correct targetType, targetId, locale, text, and context shape', async () => {
+    let postId = '';
+    try {
+      const result = await createPost({
+        groupId: testGroupId,
+        authorId: testUserId,
+        title: 'Context Shape Test',
+        body: 'Checking job payload.',
+        locale: 'en',
+        sdgIds: [13],
+      });
+      postId = result.id;
+
+      expect(enqueueMock).toHaveBeenCalledOnce();
+      const [payload] = enqueueMock.mock.calls[0] as [Record<string, unknown>];
+      expect(payload.targetType).toBe('post');
+      expect(payload.targetId).toBe(result.id);
+      expect(payload.locale).toBe('en');
+      expect(typeof payload.text).toBe('string');
+      expect((payload.text as string).length).toBeGreaterThan(0);
+      const ctx = payload.context as Record<string, unknown>;
+      expect(ctx.targetType).toBe('post');
+      expect(Array.isArray(ctx.groupSdgCodes)).toBe(true);
+      expect(typeof ctx.authorReputation).toBe('number');
+    } finally {
+      if (postId) await cleanupPost(postId);
+    }
+  });
+
+  it('enqueues group SDG codes resolved from the group row', async () => {
+    let postId = '';
+    try {
+      const result = await createPost({
+        groupId: testGroupId,
+        authorId: testUserId,
+        title: 'SDG Codes Test',
+        body: 'Group has SDG 13.',
+        locale: 'en',
+        sdgIds: [13],
+      });
+      postId = result.id;
+
+      const [payload] = enqueueMock.mock.calls[0] as [Record<string, unknown>];
+      const ctx = payload.context as Record<string, unknown>;
+      expect(ctx.groupSdgCodes).toContain('13');
+    } finally {
+      if (postId) await cleanupPost(postId);
+    }
+  });
+
+  it('does not call enqueueModeration when MODERATION_DISABLED=1', async () => {
+    process.env.MODERATION_DISABLED = '1';
+    let postId = '';
+    try {
+      const result = await createPost({
+        groupId: testGroupId,
+        authorId: testUserId,
+        title: 'Disabled Test',
+        body: 'No moderation.',
+        locale: 'en',
+        sdgIds: [13],
+      });
+      postId = result.id;
+
+      expect(enqueueMock).not.toHaveBeenCalled();
+    } finally {
+      if (postId) await cleanupPost(postId);
+      process.env.MODERATION_DISABLED = undefined;
+    }
+  });
+
+  it('immediately sets status=published when MODERATION_DISABLED=1', async () => {
+    process.env.MODERATION_DISABLED = '1';
+    let postId = '';
+    try {
+      const result = await createPost({
+        groupId: testGroupId,
+        authorId: testUserId,
+        title: 'Published Disabled',
+        body: 'Should be published right away.',
+        locale: 'en',
+        sdgIds: [13],
+      });
+      postId = result.id;
+
+      expect(result.status).toBe('published');
+
+      const rows = await db
+        .select({ status: posts.status })
+        .from(posts)
+        .where(eq(posts.id, result.id));
+      expect(rows[0]?.status).toBe('published');
+    } finally {
+      if (postId) await cleanupPost(postId);
+      process.env.MODERATION_DISABLED = undefined;
+    }
+  });
+
+  it('still returns the post even if enqueueModeration rejects (fire-and-forget)', async () => {
+    enqueueMock.mockRejectedValueOnce(new Error('redis unavailable'));
+    let postId = '';
+    try {
+      const result = await createPost({
+        groupId: testGroupId,
+        authorId: testUserId,
+        title: 'Enqueue Error Safety',
+        body: 'Redis down should not fail create.',
+        locale: 'en',
+        sdgIds: [13],
+      });
+      postId = result.id;
+      expect(result.id).toBeTruthy();
+      expect(result.status).toBe('pending_ai');
+    } finally {
+      if (postId) await cleanupPost(postId);
+    }
   });
 });
