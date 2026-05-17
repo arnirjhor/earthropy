@@ -97,6 +97,27 @@
       "pageOf": "Page {page} of {total}"
     }
   },
+  "Notifications": {
+    "bell": {
+      "label": "Notifications",
+      "unreadCount": "{count} unread notifications"
+    },
+    "dropdown": {
+      "label": "Notifications panel",
+      "title": "Notifications",
+      "markAll": "Mark all read",
+      "markRead": "Mark {kind} as read",
+      "read": "Read",
+      "empty": "No notifications yet.",
+      "listLabel": "Recent notifications",
+      "viewAll": "View all"
+    },
+    "page": {
+      "heading": "Notifications",
+      "empty": "No notifications.",
+      "markAll": "Mark all as read"
+    }
+  },
   "Auth": {
     "fields": {
       "email": "Email",

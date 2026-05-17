@@ -469,6 +469,9 @@ importers:
       '@react-email/components':
         specifier: ^0.0.35
         version: 0.0.35(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@repo/database':
+        specifier: workspace:*
+        version: link:../database
       '@repo/i18n':
         specifier: workspace:*
         version: link:../i18n

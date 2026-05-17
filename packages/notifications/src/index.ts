@@ -22,9 +22,9 @@ export interface NotifyInput {
   readonly payload: Record<string, unknown>;
 }
 
-export async function notify(_input: NotifyInput): Promise<void> {
-  throw new Error('@repo/notifications not yet implemented (Phase B).');
-}
+export { notify } from './notify.ts';
+export { notificationEmitter } from './emitter.ts';
+export type { NotificationEvent } from './emitter.ts';
 
 // ---------------------------------------------------------------------------
 // Transactional email (A-AUTH-2)

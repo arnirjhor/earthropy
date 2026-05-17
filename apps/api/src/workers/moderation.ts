@@ -24,7 +24,7 @@
  * `createModerationWorker` is for production use and the supervisor entry.
  */
 
-import { updateCommentStatus } from '@repo/comments';
+import { getCommentById, updateCommentStatus } from '@repo/comments';
 import { db } from '@repo/database/client';
 import { moderationDecisions } from '@repo/database/schema';
 import type { ModerationScores } from '@repo/database/schema';
@@ -34,8 +34,9 @@ import {
   type ModerationProvider,
   decide,
 } from '@repo/moderation';
+import { notify } from '@repo/notifications';
 import { log } from '@repo/observability';
-import { updatePostStatus } from '@repo/posts';
+import { getPostById, updatePostStatus } from '@repo/posts';
 import {
   MODERATION_DLQ_NAME,
   MODERATION_JOB_OPTS,
@@ -91,6 +92,39 @@ function verdictToStatus(verdict: string): ContentStatus {
       return 'rejected';
     default:
       return 'pending_review';
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Notification fan-out helpers
+// ---------------------------------------------------------------------------
+
+async function fanOutNotifications(
+  targetType: 'post' | 'comment',
+  targetId: string,
+  newStatus: 'published' | 'rejected',
+): Promise<void> {
+  if (targetType === 'post') {
+    const post = await getPostById(targetId);
+    if (!post) return;
+
+    const kind = newStatus === 'published' ? 'post_published' : 'post_rejected';
+    await notify({ userId: post.authorId, kind, payload: { postId: targetId } });
+  } else {
+    // comment: notify the post author when a comment is published (comment_reply)
+    if (newStatus !== 'published') return;
+
+    const comment = await getCommentById(targetId);
+    if (!comment) return;
+
+    const post = await getPostById(comment.postId);
+    if (!post) return;
+
+    await notify({
+      userId: post.authorId,
+      kind: 'comment_reply',
+      payload: { commentId: targetId, postId: comment.postId },
+    });
   }
 }
 
@@ -166,6 +200,20 @@ export async function processModerationJob(
     await updatePostStatus(targetId, { newStatus });
   } else {
     await updateCommentStatus(targetId, { newStatus });
+  }
+
+  // Fan out in-app notifications
+  if (newStatus === 'published' || newStatus === 'rejected') {
+    try {
+      await fanOutNotifications(targetType, targetId, newStatus);
+    } catch (notifyErr) {
+      // Non-fatal: log but don't fail the job
+      log.warn('worker.moderation.notifyFailed', {
+        targetType,
+        targetId,
+        err: notifyErr instanceof Error ? notifyErr.message : String(notifyErr),
+      });
+    }
   }
 
   log.info('worker.moderation.done', { targetType, targetId, verdict: finalVerdict });
