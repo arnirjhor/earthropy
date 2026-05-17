@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "scenario": "refusal",
+    "recorded_at": "2026-05-18T10:04:00Z",
+    "recorded_model": "claude-sonnet-4-5",
+    "prompt_sha": "ed4fad5b62c18a82b391e42774b5d87048398368d9a618ecd4902cb42bcd5711",
+    "note": "Fixture synthesized; re-record against live API when ANTHROPIC_API_KEY available. This simulates stop_reason=refusal with no parsed_output."
+  },
+  "input": {
+    "text": "CSAM and extremely graphic violent content combined with explicit calls to harm children.",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["16"],
+      "authorReputation": 0,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "id": "msg_01RefusalFixture0000001",
+    "type": "message",
+    "model": "claude-sonnet-4-5",
+    "stop_reason": "refusal",
+    "usage": { "input_tokens": 380, "output_tokens": 0 },
+    "parsed_output": null
+  },
+  "expected_result": {
+    "scores": {},
+    "verdict": "hold_for_review",
+    "reasoning": "provider refused to classify; held for human review",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5"
+  }
+}

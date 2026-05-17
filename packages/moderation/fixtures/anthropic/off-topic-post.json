@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "scenario": "off-topic-post",
+    "recorded_at": "2026-05-18T10:03:00Z",
+    "recorded_model": "claude-sonnet-4-5",
+    "prompt_sha": "ed4fad5b62c18a82b391e42774b5d87048398368d9a618ecd4902cb42bcd5711",
+    "note": "Fixture synthesized; re-record against live API when ANTHROPIC_API_KEY available"
+  },
+  "input": {
+    "text": "Has anyone tried the new iPhone 17? The camera is absolutely amazing. I've been taking photos at restaurants and the food photography mode is incredible. Great for social media.",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["6", "14"],
+      "authorReputation": 80,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "id": "msg_01OffTopicPostFixture001",
+    "type": "message",
+    "model": "claude-sonnet-4-5",
+    "stop_reason": "end_turn",
+    "usage": { "input_tokens": 395, "output_tokens": 148 },
+    "parsed_output": {
+      "scores": {
+        "toxicity": 0.0,
+        "hate": 0.0,
+        "harassment": 0.0,
+        "sexual": 0.0,
+        "self_harm": 0.0,
+        "violence": 0.0,
+        "illegal": 0.0,
+        "spam": 0.08,
+        "misinfo": 0.0,
+        "off_topic": 0.91
+      },
+      "verdict": "auto_reject",
+      "reasoning": "Post discusses smartphone camera features with no relation to the group's SDG 6 (clean water) or SDG 14 (life below water) codes; off_topic score of 0.91 is the dominant signal."
+    }
+  },
+  "expected_result": {
+    "scores": {
+      "spam": 0.08,
+      "off_topic": 0.91
+    },
+    "verdict": "auto_reject",
+    "reasoning": "Post discusses smartphone camera features with no relation to the group's SDG 6 (clean water) or SDG 14 (life below water) codes; off_topic score of 0.91 is the dominant signal.",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5"
+  }
+}

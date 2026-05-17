@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "scenario": "spam-post",
+    "recorded_at": "2026-05-18T10:02:00Z",
+    "recorded_model": "claude-sonnet-4-5",
+    "prompt_sha": "ed4fad5b62c18a82b391e42774b5d87048398368d9a618ecd4902cb42bcd5711",
+    "note": "Fixture synthesized; re-record against live API when ANTHROPIC_API_KEY available"
+  },
+  "input": {
+    "text": "MAKE MONEY FAST!!! Buy my climate course now at https://bit.ly/scam1, https://bit.ly/scam2, https://bit.ly/scam3, https://bit.ly/scam4, https://bit.ly/scam5. Limited time offer! Act now! Don't miss out! Click here for guaranteed results!",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["13"],
+      "authorReputation": 0,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "id": "msg_01SpamPostFixture0000001",
+    "type": "message",
+    "model": "claude-sonnet-4-5",
+    "stop_reason": "end_turn",
+    "usage": { "input_tokens": 401, "output_tokens": 155 },
+    "parsed_output": {
+      "scores": {
+        "toxicity": 0.05,
+        "hate": 0.0,
+        "harassment": 0.0,
+        "sexual": 0.0,
+        "self_harm": 0.0,
+        "violence": 0.0,
+        "illegal": 0.1,
+        "spam": 0.97,
+        "misinfo": 0.15,
+        "off_topic": 0.6
+      },
+      "verdict": "auto_reject",
+      "reasoning": "Post contains five commercial affiliate links, aggressive call-to-action language, and no substantive SDG content; spam score of 0.97 drives the auto-reject verdict."
+    }
+  },
+  "expected_result": {
+    "scores": {
+      "illegal": 0.1,
+      "spam": 0.97,
+      "misinfo": 0.15,
+      "off_topic": 0.6
+    },
+    "verdict": "auto_reject",
+    "reasoning": "Post contains five commercial affiliate links, aggressive call-to-action language, and no substantive SDG content; spam score of 0.97 drives the auto-reject verdict.",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5"
+  }
+}

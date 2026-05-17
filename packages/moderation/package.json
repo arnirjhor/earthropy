@@ -13,9 +13,17 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "record-fixtures": "tsx scripts/record-fixture.ts",
     "clean": "rm -rf .turbo *.tsbuildinfo dist"
   },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.96.0"
+  },
   "devDependencies": {
-    "typescript": "^5.7.2"
+    "tsx": "^4.19.4",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
   }
 }

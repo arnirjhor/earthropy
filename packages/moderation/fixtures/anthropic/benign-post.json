@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "scenario": "benign-post",
+    "recorded_at": "2026-05-18T10:00:00Z",
+    "recorded_model": "claude-sonnet-4-5",
+    "prompt_sha": "ed4fad5b62c18a82b391e42774b5d87048398368d9a618ecd4902cb42bcd5711",
+    "note": "Fixture synthesized; re-record against live API when ANTHROPIC_API_KEY available"
+  },
+  "input": {
+    "text": "Great progress on the renewable energy initiative! Our community solar panel project hit 500 kW capacity this month. Really aligns with SDG 7 targets for affordable clean energy access.",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["7", "13"],
+      "authorReputation": 320,
+      "targetType": "post"
+    }
+  },
+  "raw_response": {
+    "id": "msg_01BenignPostFixture00001",
+    "type": "message",
+    "model": "claude-sonnet-4-5",
+    "stop_reason": "end_turn",
+    "usage": { "input_tokens": 412, "output_tokens": 145 },
+    "parsed_output": {
+      "scores": {
+        "toxicity": 0.0,
+        "hate": 0.0,
+        "harassment": 0.0,
+        "sexual": 0.0,
+        "self_harm": 0.0,
+        "violence": 0.0,
+        "illegal": 0.0,
+        "spam": 0.0,
+        "misinfo": 0.0,
+        "off_topic": 0.02
+      },
+      "verdict": "auto_publish",
+      "reasoning": "Content is a positive update about a renewable energy project directly aligned with SDG 7; all scores are well within the safe range."
+    }
+  },
+  "expected_result": {
+    "scores": {},
+    "verdict": "auto_publish",
+    "reasoning": "Content is a positive update about a renewable energy project directly aligned with SDG 7; all scores are well within the safe range.",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5"
+  }
+}

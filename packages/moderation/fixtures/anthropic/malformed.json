@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "scenario": "malformed",
+    "recorded_at": "2026-05-18T10:05:00Z",
+    "recorded_model": "claude-sonnet-4-5",
+    "prompt_sha": "ed4fad5b62c18a82b391e42774b5d87048398368d9a618ecd4902cb42bcd5711",
+    "note": "Fixture synthesized; not a real API response. Malformed means parsed_output has missing required fields — used to test ProviderMalformed error path."
+  },
+  "input": {
+    "text": "Some reasonable content about sustainability.",
+    "locale": "en",
+    "context": {
+      "groupSdgCodes": ["12"],
+      "authorReputation": 100,
+      "targetType": "comment"
+    }
+  },
+  "raw_response": {
+    "id": "msg_01MalformedFixture00001",
+    "type": "message",
+    "model": "claude-sonnet-4-5",
+    "stop_reason": "end_turn",
+    "usage": { "input_tokens": 390, "output_tokens": 20 },
+    "parsed_output": {
+      "verdict": "auto_publish"
+    }
+  },
+  "expected_result": null
+}
