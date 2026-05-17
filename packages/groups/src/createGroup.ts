@@ -7,6 +7,8 @@ import { toSlug, withCollisionSuffix } from './slug.ts';
 
 export interface CreateGroupInput {
   name: string;
+  /** Optional slug override; if omitted the slug is derived from `name` via `toSlug`. */
+  slug?: string;
   description: string;
   primarySdgId: SdgId;
   additionalSdgIds: SdgId[];
@@ -42,6 +44,7 @@ export interface CreatedGroup {
 export async function createGroup(input: CreateGroupInput): Promise<CreatedGroup> {
   const {
     name,
+    slug: slugOverride,
     description,
     primarySdgId,
     additionalSdgIds,
@@ -68,8 +71,9 @@ export async function createGroup(input: CreateGroupInput): Promise<CreatedGroup
     );
   }
 
-  // Generate collision-free slug
-  const baseSlug = toSlug(name);
+  // Generate collision-free slug: use the override if provided, otherwise derive from name.
+  const baseSlug =
+    slugOverride && slugOverride.trim().length > 0 ? toSlug(slugOverride) : toSlug(name);
   const slug = await withCollisionSuffix(baseSlug, async (candidate) => {
     const rows = await db
       .select({ id: groups.id })

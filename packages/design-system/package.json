@@ -13,6 +13,7 @@
     "./components/SdgChip": "./src/components/SdgChip.tsx",
     "./components/SdgColorBar": "./src/components/SdgColorBar.tsx",
     "./components/AtlasCard": "./src/components/AtlasCard.tsx",
+    "./components/SdgMultiSelect": "./src/components/SdgMultiSelect.tsx",
     "./components/ui": "./src/components/ui/index.ts"
   },
   "scripts": {

@@ -12,6 +12,12 @@ const SdgIdSchema = z.number().int().min(1).max(17);
 
 const CreateGroupSchema = z.object({
   name: z.string().min(2).max(100).trim(),
+  slug: z
+    .string()
+    .max(80)
+    .trim()
+    .optional()
+    .transform((v) => (v === '' ? undefined : v)),
   description: z.string().max(2000).trim().default(''),
   primarySdgId: SdgIdSchema,
   additionalSdgIds: z.array(SdgIdSchema).default([]),
@@ -63,6 +69,7 @@ export async function createGroupAction(
 
   const raw = {
     name: formData.get('name'),
+    slug: formData.get('slug') ?? undefined,
     description: formData.get('description') ?? '',
     primarySdgId: Number(formData.get('primarySdgId')),
     additionalSdgIds: (() => {
@@ -90,6 +97,7 @@ export async function createGroupAction(
   try {
     const group = await createGroup({
       name: data.name,
+      slug: data.slug,
       description: data.description,
       primarySdgId: data.primarySdgId as Parameters<typeof createGroup>[0]['primarySdgId'],
       additionalSdgIds: data.additionalSdgIds as Parameters<

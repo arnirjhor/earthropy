@@ -7,6 +7,32 @@
     "missionAttribution": "— The Earthropy mission",
     "footer": "AGPL-3.0-or-later · earthropy.org"
   },
+  "GroupCreate": {
+    "heading": "Create a group",
+    "subheading": "Groups bring people together around specific SDGs.",
+    "fields": {
+      "name": "Name",
+      "slug": "Slug",
+      "slugHint": "Auto-derived from name. Can be customised.",
+      "description": "Description",
+      "visibility": "Visibility",
+      "visibilityPublic": "Public",
+      "visibilityPublicHint": "Anyone can find and join",
+      "visibilityListed": "Listed",
+      "visibilityListedHint": "Visible in search; invite to join",
+      "visibilityPrivate": "Private",
+      "visibilityPrivateHint": "Invite-only, not listed",
+      "preferredLocale": "Primary language",
+      "locationText": "Location (optional)",
+      "locationTextPlaceholder": "e.g. Nairobi, Kenya",
+      "sdgs": "Sustainable Development Goals",
+      "sdgsHint": "Select the SDGs this group works on. Mark one as primary.",
+      "sdgPrimary": "Primary SDG"
+    },
+    "submit": "Create group",
+    "submitting": "Creating…",
+    "cancel": "Cancel"
+  },
   "Auth": {
     "fields": {
       "email": "Email",

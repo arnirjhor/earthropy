@@ -63,3 +63,10 @@ Each entry:
 **Direction**: Button, Input, Label, Form, Card, Badge, Avatar, Dialog, Sheet, Toaster (Sonner). All components consume `theme.css` CSS custom properties exclusively — no raw hex values, no shadcn default `hsl(var(...))` theming. Button labels use `font-mono` + `[font-variant-caps:all-small-caps]` per Field Record spec. Destructive variant uses `--sdg-1` (SDG 1 red). Dark mode via `prefers-color-scheme` (not `.dark` class).
 **Rationale**: Keeps the token vocabulary from theme.css as the single source of truth. shadcn primitives provide accessibility (Radix) and composability without dictating aesthetics.
 **Decided by**: A-SHAD-1 implementation (Claude Sonnet 4.6)
+
+### 2026-05-18 — SdgMultiSelect: chip-toggle + radio-primary pattern
+**Status**: accepted
+**Surface**: `@repo/design-system` (`SdgMultiSelect`), `apps/app` (`/g/new`)
+**Direction**: Each SDG rendered as a togglable chip (checkbox semantics) with a secondary radio handle that appears only when the chip is selected. The radio handle sets that SDG as the primary. One primary is enforced: first selection auto-becomes primary; deselecting the primary promotes the next selected. No SDG fill as large background — only a 4px inset-inline-start stripe in the official SDG color (consistent with `SdgChip` pattern). Selected state: border and subtle 8% SDG-color tint on surface. Form-data shape: `primarySdgId` (string) + `additionalSdgIds` (JSON array). Progressive-enhancement: hidden inputs always carry state; JS adds toggle interactivity.
+**Rationale**: Matches the atlas-card / SdgChip established chip identity. The radio-within-chip UX avoids a separate "set primary" control while remaining keyboard-accessible and RTL-safe (uses `start` logical properties). AAA contrast maintained because SDG color only appears on borders/stripe, not as text background.
+**Decided by**: B-GROUP-2 implementation (Claude Sonnet 4.6)
