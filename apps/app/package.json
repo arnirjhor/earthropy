@@ -27,7 +27,9 @@
     "@repo/ratelimit": "workspace:*",
     "@repo/sdg": "workspace:*",
     "@repo/trust": "workspace:*",
+    "dompurify": "^3.2.6",
     "drizzle-orm": "^0.36.4",
+    "marked": "^15.0.12",
     "next": "^16.0.0",
     "next-intl": "^4.3.0",
     "react": "^19.0.0",
@@ -36,11 +38,18 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/dompurify": "^3.0.5",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jsdom": "^29.1.1",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
   }
 }
