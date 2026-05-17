@@ -33,6 +33,26 @@
     "submitting": "Creating…",
     "cancel": "Cancel"
   },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "Under AI review",
+      "pendingReview": "Held for human review",
+      "rejected": "Rejected — reason: {reason}; appeal available",
+      "rejectedNoReason": "Rejected",
+      "withdrawn": "Withdrawn by author"
+    },
+    "withdraw": "Withdraw",
+    "withdrawing": "Withdrawing…",
+    "by": "by",
+    "publishedLabel": "Published",
+    "statusLabel": {
+      "pending_ai": "Under AI review",
+      "pending_review": "Pending human review",
+      "published": "Published",
+      "rejected": "Rejected",
+      "withdrawn": "Withdrawn"
+    }
+  },
   "Auth": {
     "fields": {
       "email": "Email",
