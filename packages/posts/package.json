@@ -1,0 +1,27 @@
+{
+  "name": "@repo/posts",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Posts CRUD, status state machine, and Server Action helpers for Earthropy.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
+  },
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "@repo/sdg": "workspace:*",
+    "drizzle-orm": "^0.36.4",
+    "zod": "^3.24.0"
+  }
+}

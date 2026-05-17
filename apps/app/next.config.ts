@@ -10,6 +10,7 @@ const config: NextConfig = {
     '@repo/database',
     '@repo/design-system',
     '@repo/groups',
+    '@repo/posts',
     '@repo/i18n',
     '@repo/moderation',
     '@repo/notifications',
