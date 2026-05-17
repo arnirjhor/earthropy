@@ -8,9 +8,22 @@
   "exports": { ".": "./src/index.ts" },
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "clean": "rm -rf .turbo *.tsbuildinfo dist"
   },
+  "dependencies": {
+    "@react-email/components": "^0.0.35",
+    "@repo/i18n": "workspace:*",
+    "nodemailer": "^6.10.1",
+    "react": "^19.0.0",
+    "react-email": "^4.0.10"
+  },
   "devDependencies": {
-    "typescript": "^5.7.2"
+    "@types/node": "^22.10.0",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19.0.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
   }
 }

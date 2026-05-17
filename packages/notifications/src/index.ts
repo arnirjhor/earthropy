@@ -1,7 +1,10 @@
 // Scaffold for notifications. Phase B fills in:
 //   - notify(userId, kind, payload) → writes to notifications table + fans out
-//   - SMTP transport via Nodemailer (Resend optional adapter)
 //   - In-app delivery via server-sent events (or websocket in v0.2)
+
+// ---------------------------------------------------------------------------
+// In-app fan-out (B-NOTIF-1, not yet implemented)
+// ---------------------------------------------------------------------------
 
 export type NotificationKind =
   | 'post_published'
@@ -19,7 +22,28 @@ export interface NotifyInput {
   readonly payload: Record<string, unknown>;
 }
 
-// biome-ignore lint/correctness/noUnusedVariables: stub
 export async function notify(_input: NotifyInput): Promise<void> {
   throw new Error('@repo/notifications not yet implemented (Phase B).');
 }
+
+// ---------------------------------------------------------------------------
+// Transactional email (A-AUTH-2)
+// ---------------------------------------------------------------------------
+
+export { sendTransactional } from './sendTransactional.ts';
+export type {
+  SendTransactionalInput,
+  TemplateName,
+  VerifyEmailProps,
+  MagicLinkProps,
+  PasswordResetProps,
+} from './sendTransactional.ts';
+
+// Template components (for preview tooling + testing)
+export { VerifyEmail } from './emails/verify-email.tsx';
+export { MagicLink } from './emails/magic-link.tsx';
+export { PasswordReset } from './emails/password-reset.tsx';
+
+// Transport interface (for custom adapters)
+export type { MailTransport, MailMessage } from './transport.ts';
+export { SmtpTransport, createTransport } from './transport.ts';
