@@ -1,6 +1,8 @@
 import { db } from '@repo/database/client';
-import { groupSdgs, groups } from '@repo/database/schema';
-import { and, countDistinct, eq, inArray } from 'drizzle-orm';
+import { groupMembers, groupSdgs, groups } from '@repo/database/schema';
+import type { SdgId } from '@repo/sdg';
+import { isSdgId } from '@repo/sdg';
+import { and, count, countDistinct, eq, inArray } from 'drizzle-orm';
 import type { CreatedGroup } from './createGroup.ts';
 
 export interface ListGroupsInput {
@@ -10,10 +12,25 @@ export interface ListGroupsInput {
   offset: number;
 }
 
+export interface GroupRow extends CreatedGroup {
+  memberCount: number;
+  primarySdgId: SdgId;
+}
+
 export interface ListGroupsResult {
-  rows: CreatedGroup[];
+  rows: GroupRow[];
   total: number;
 }
+
+// Alias for the primary groupSdgs join
+const primarySdgs = db
+  .$with('primary_sdgs')
+  .as(
+    db
+      .select({ groupId: groupSdgs.groupId, sdgId: groupSdgs.sdgId })
+      .from(groupSdgs)
+      .where(eq(groupSdgs.primary, true)),
+  );
 
 /**
  * Paginated, faceted browse of groups.
@@ -24,6 +41,9 @@ export interface ListGroupsResult {
  *
  * Returns { rows, total } where total is the unfiltered count for the same
  * WHERE conditions (for use in pagination UI).
+ *
+ * Each row includes memberCount (LEFT JOIN on group_members) and
+ * primarySdgId (LEFT JOIN on group_sdgs where primary=true).
  */
 export async function listGroups(input: ListGroupsInput): Promise<ListGroupsResult> {
   const { sdgIds, visibility, limit, offset } = input;
@@ -53,9 +73,32 @@ export async function listGroups(input: ListGroupsInput): Promise<ListGroupsResu
 
   const where = conditions.length > 0 ? and(...conditions) : undefined;
 
-  // Parallel fetch: rows + total count
+  // Parallel fetch: rows (with member count + primary SDG) + total count
   const [rows, countRows] = await Promise.all([
-    db.select().from(groups).where(where).orderBy(groups.createdAt).limit(limit).offset(offset),
+    db
+      .with(primarySdgs)
+      .select({
+        id: groups.id,
+        slug: groups.slug,
+        name: groups.name,
+        description: groups.description,
+        visibility: groups.visibility,
+        preferredLocale: groups.preferredLocale,
+        locationText: groups.locationText,
+        createdBy: groups.createdBy,
+        createdAt: groups.createdAt,
+        updatedAt: groups.updatedAt,
+        memberCount: count(groupMembers.userId),
+        primarySdgId: primarySdgs.sdgId,
+      })
+      .from(groups)
+      .leftJoin(groupMembers, eq(groupMembers.groupId, groups.id))
+      .leftJoin(primarySdgs, eq(primarySdgs.groupId, groups.id))
+      .where(where)
+      .groupBy(groups.id, primarySdgs.sdgId)
+      .orderBy(groups.createdAt)
+      .limit(limit)
+      .offset(offset),
     db
       .select({ count: countDistinct(groups.id) })
       .from(groups)
@@ -64,5 +107,11 @@ export async function listGroups(input: ListGroupsInput): Promise<ListGroupsResu
 
   const total = countRows[0]?.count ?? 0;
 
-  return { rows: rows as CreatedGroup[], total };
+  // Normalise: primarySdgId may be null if the group_sdgs row is missing; fall back to 1.
+  const normalisedRows: GroupRow[] = rows.map((r) => ({
+    ...(r as Omit<typeof r, 'primarySdgId'>),
+    primarySdgId: (isSdgId(r.primarySdgId) ? r.primarySdgId : 1) as SdgId,
+  }));
+
+  return { rows: normalisedRows, total };
 }

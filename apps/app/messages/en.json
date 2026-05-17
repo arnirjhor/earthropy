@@ -53,6 +53,29 @@
       "withdrawn": "Withdrawn"
     }
   },
+  "GroupBrowse": {
+    "heading": "Groups",
+    "caption": "BROWSE ALL GROUPS",
+    "filterLabel": "Filter by SDG",
+    "visibilityLabel": "Visibility",
+    "visibilityPublic": "Public",
+    "visibilityListed": "Listed",
+    "visibilityBoth": "Public + Listed",
+    "members": "{count} MEMBERS",
+    "member": "1 MEMBER",
+    "empty": {
+      "heading": "No groups found",
+      "descriptionFiltered": "No groups match the selected SDGs. Try widening your filter.",
+      "descriptionAll": "No groups have been created yet.",
+      "clearFilter": "Clear SDG filter",
+      "createGroup": "Create a group"
+    },
+    "pagination": {
+      "prev": "Previous page",
+      "next": "Next page",
+      "pageOf": "Page {page} of {total}"
+    }
+  },
   "Auth": {
     "fields": {
       "email": "Email",
