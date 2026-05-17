@@ -14,7 +14,7 @@ Last regenerated: 2026-05-18 (manual; Orchestrator regenerates after each batch)
 | ID | Title | Status | Model | Deps |
 |---|---|---|---|---|
 | `X-VITEST-1` | Vitest config + first cross-package smoke test | ✅ | S | — |
-| `X-PLAYWRIGHT-1` | Playwright config + first e2e on apps/web landing | 🟦 | S | — |
+| `X-PLAYWRIGHT-1` | Playwright config + first e2e on apps/web landing | ✅ | S | — |
 | `X-GH-1` | Create GitHub remote + push (**user action required**) | ⛔ | — | — |
 | `X-CI-1` | `.github/workflows/ci.yml` (typecheck, lint, test, e2e) | ⛔ | H | `X-GH-1, X-VITEST-1, X-PLAYWRIGHT-1` |
 

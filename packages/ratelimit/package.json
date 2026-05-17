@@ -1,0 +1,33 @@
+{
+  "name": "@repo/ratelimit",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Redis-backed rate limiter + Next.js middleware helpers. No vendor lock-in; pure ioredis.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "peerDependencies": {
+    "next": ">=15.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "ioredis": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "ioredis-mock": "^8.9.0",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
+  }
+}
