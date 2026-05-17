@@ -56,3 +56,10 @@ Each entry:
   - SDG colors from `packages/sdg/src/sdgs.ts` are canonical; used as edge rules, chip fills, atlas-card stripes, color bar cells. Never as large fills with text on top (contrast risk).
 **Rationale**: A's gravity matches the mission; bolting on B's chip pattern + atlas-card and C's 4px bar gives Earthropy one piece of ownable identity (the slim navigator) without sacrificing legibility or sober institutional feel. Full proposal at [`design-proposals/v0.1-initial.md`](design-proposals/v0.1-initial.md).
 **Decided by**: orchestrator decision after agent recommendation; maintainer-approved by user "go ahead"
+
+### 2026-05-18 — shadcn/ui base components wired to Field Record tokens
+**Status**: accepted
+**Surface**: `@repo/design-system` (`packages/design-system/src/components/ui/`)
+**Direction**: Button, Input, Label, Form, Card, Badge, Avatar, Dialog, Sheet, Toaster (Sonner). All components consume `theme.css` CSS custom properties exclusively — no raw hex values, no shadcn default `hsl(var(...))` theming. Button labels use `font-mono` + `[font-variant-caps:all-small-caps]` per Field Record spec. Destructive variant uses `--sdg-1` (SDG 1 red). Dark mode via `prefers-color-scheme` (not `.dark` class).
+**Rationale**: Keeps the token vocabulary from theme.css as the single source of truth. shadcn primitives provide accessibility (Radix) and composability without dictating aesthetics.
+**Decided by**: A-SHAD-1 implementation (Claude Sonnet 4.6)

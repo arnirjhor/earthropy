@@ -9,22 +9,40 @@
     ".": "./src/index.ts",
     "./tokens": "./src/tokens.ts",
     "./theme.css": "./src/theme.css",
+    "./lib/utils": "./src/lib/utils.ts",
     "./components/SdgChip": "./src/components/SdgChip.tsx",
     "./components/SdgColorBar": "./src/components/SdgColorBar.tsx",
-    "./components/AtlasCard": "./src/components/AtlasCard.tsx"
+    "./components/AtlasCard": "./src/components/AtlasCard.tsx",
+    "./components/ui": "./src/components/ui/index.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "clean": "rm -rf .turbo *.tsbuildinfo dist"
   },
   "dependencies": {
-    "@repo/sdg": "workspace:*"
+    "@radix-ui/react-avatar": "^1.1.11",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@repo/sdg": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0"
   },
   "peerDependencies": {
     "react": "^19.0.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.0.0",
-    "typescript": "^5.7.2"
+    "@vitejs/plugin-react": "^4.7.0",
+    "jsdom": "^29.1.1",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.2"
   }
 }
