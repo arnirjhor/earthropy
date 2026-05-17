@@ -103,14 +103,15 @@ Stubs land as Phase A nears completion. Backlog from the plan:
 ## Tallies
 
 - Total: 50 tasks
-- Done: **10** (X-VITEST-1, X-PLAYWRIGHT-1, A-SHAD-1, A-AUTH-DESIGN, A-AUTH-1, A-AUTH-2, A-AUTH-3, A-RATE-1, B-GROUP-1, C-MOD-DESIGN)
-- Ready now: **9** (A-AUTH-4, B-GROUP-2, B-GROUP-3, B-GROUP-4, B-GROUP-5, B-POST-1, C-MOD-1, C-MOD-2 — plus more unblock as Phase B fills in)
+- Done: **13** (X-VITEST-1, X-PLAYWRIGHT-1, A-SHAD-1, A-AUTH-DESIGN, A-AUTH-1, A-AUTH-2, A-AUTH-3, A-AUTH-4, A-RATE-1, B-GROUP-1, B-GROUP-2, B-POST-1, C-MOD-DESIGN)
+- Ready now: **9** (B-GROUP-3, B-GROUP-4, B-GROUP-5, B-POST-2, B-POST-3, B-COMMENT-1, B-SDG-1, B-DASH-1, B-NOTIF-1, C-MOD-1, C-MOD-2)
 - Blocked: 2 (`X-GH-1` user action + `X-CI-1` chains on it)
-- Backlog (waiting on deps): 29
-- In progress: 0
+- Backlog (waiting on deps): 26
+
+**Phase A: ✅ complete.** Auth + reputation + rate-limit + shadcn + design pass.
 
 ## Active dispatch
 
 (Updated by the Orchestrator per wake cycle.)
 
-- Wave 4 imminent: A-AUTH-4, B-GROUP-2, B-POST-1 (chosen for critical-path progress)
+- Wave 5: B-POST-2, B-COMMENT-1, C-MOD-1 (community fill-out + first real moderation provider)
