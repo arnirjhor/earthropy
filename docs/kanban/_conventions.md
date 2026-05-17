@@ -75,3 +75,7 @@ A task moves `ready` only when every `deps` task is `done`. The Orchestrator sca
 ## INDEX.md
 
 A flat, grouped, derived view. The Orchestrator regenerates it after each batch. Do not hand-edit `INDEX.md`.
+
+## One-time setup
+
+After `pnpm install`, install the Playwright browser binary: `pnpm exec playwright install --with-deps chromium`
