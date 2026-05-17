@@ -1,6 +1,6 @@
 import { getGroupBySlug } from '@repo/groups';
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export default async function GroupPage({
   params,

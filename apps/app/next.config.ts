@@ -7,6 +7,7 @@ const config: NextConfig = {
   reactStrictMode: true,
   transpilePackages: [
     '@repo/auth',
+    '@repo/comments',
     '@repo/database',
     '@repo/design-system',
     '@repo/groups',

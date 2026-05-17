@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@repo/auth": "workspace:*",
+    "@repo/comments": "workspace:*",
     "@repo/database": "workspace:*",
     "@repo/design-system": "workspace:*",
     "@repo/groups": "workspace:*",
