@@ -240,13 +240,13 @@ const BY_CODE = new Map<SdgCode, Sdg>(SDGS.map((s) => [s.code, s]));
 
 export function getSdgById(id: SdgId): Sdg {
   const sdg = BY_ID.get(id);
-  if (!sdg) throw new Error(`Unknown SDG id: ${id satisfies never}`);
+  if (!sdg) throw new Error(`Unknown SDG id: ${id}`);
   return sdg;
 }
 
 export function getSdgByCode(code: SdgCode): Sdg {
   const sdg = BY_CODE.get(code);
-  if (!sdg) throw new Error(`Unknown SDG code: ${code satisfies never}`);
+  if (!sdg) throw new Error(`Unknown SDG code: ${code}`);
   return sdg;
 }
 
