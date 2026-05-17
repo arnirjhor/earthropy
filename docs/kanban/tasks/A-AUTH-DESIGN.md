@@ -1,18 +1,20 @@
 ---
 id: A-AUTH-DESIGN
 title: "Architect: @repo/auth design doc"
-status: ready
+status: done
 priority: critical
 phase: A
 agent_model: opus
 deps: []
 tags: [auth, architecture, security]
-owner: ""
-branch: ""
-pr: ""
+owner: architect-opus
+branch: A-AUTH-DESIGN-doc (cherry-picked + deleted)
+pr: "local:merged"
 estimated_hours: 1
 created: 2026-05-18
 updated: 2026-05-18
+merged_at: 2026-05-18
+merged_sha: 2872101
 ---
 
 ## Description

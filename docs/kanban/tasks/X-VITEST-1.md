@@ -1,18 +1,20 @@
 ---
 id: X-VITEST-1
 title: "Vitest config + first cross-package smoke test"
-status: ready
+status: done
 priority: critical
 phase: X
 agent_model: sonnet
 deps: []
 tags: [tooling, tests, foundation]
-owner: ""
-branch: ""
-pr: ""
+owner: builder-sonnet
+branch: X-VITEST-1-config-and-smoke-test (merged + deleted)
+pr: "local:merged"
 estimated_hours: 1
 created: 2026-05-18
 updated: 2026-05-18
+merged_at: 2026-05-18
+merged_sha: 325a3d5
 ---
 
 ## Description
