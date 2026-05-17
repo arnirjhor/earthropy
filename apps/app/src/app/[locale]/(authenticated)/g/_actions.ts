@@ -117,6 +117,85 @@ export async function createGroupAction(
   redirect(`/g/${slug}`);
 }
 
+// ── joinGroupAction ────────────────────────────────────────────────────────────
+
+/**
+ * Join a group as a member.
+ *
+ * Stub: directly inserts into `group_members` with role='member'.
+ * TODO B-GROUP-5: replace with `joinGroup` from @repo/groups once that package
+ * exposes a proper service function with invite-token support.
+ *
+ * On success, revalidates + redirects back to the group detail page.
+ */
+export async function joinGroupAction(
+  groupId: string,
+  slug: string,
+  locale: string,
+): Promise<ActionResult<{ joined: true }>> {
+  const { db } = await import('@repo/database/client');
+  const { groupMembers } = await import('@repo/database/schema');
+
+  const user = await requireSession();
+  if (!user) return { ok: false, error: 'unauthenticated' };
+
+  try {
+    await db
+      .insert(groupMembers)
+      .values({ groupId, userId: user.id, role: 'member' })
+      .onConflictDoNothing();
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return { ok: false, error: message };
+  }
+
+  redirect(`/${locale}/g/${slug}`);
+}
+
+// ── leaveGroupAction ───────────────────────────────────────────────────────────
+
+/**
+ * Leave a group (delete the caller's membership row).
+ *
+ * Owners cannot leave; they must transfer ownership first (not yet
+ * implemented — returns an error for owners).
+ *
+ * On success, revalidates + redirects back to the group detail page.
+ */
+export async function leaveGroupAction(
+  groupId: string,
+  slug: string,
+  locale: string,
+): Promise<ActionResult<{ left: true }>> {
+  const { db } = await import('@repo/database/client');
+  const { groupMembers } = await import('@repo/database/schema');
+  const { eq, and } = await import('drizzle-orm');
+
+  const user = await requireSession();
+  if (!user) return { ok: false, error: 'unauthenticated' };
+
+  // Check current role
+  const rows = await db
+    .select({ role: groupMembers.role })
+    .from(groupMembers)
+    .where(and(eq(groupMembers.groupId, groupId), eq(groupMembers.userId, user.id)));
+
+  const membership = rows[0];
+  if (!membership) return { ok: false, error: 'not_a_member' };
+  if (membership.role === 'owner') return { ok: false, error: 'owners_cannot_leave' };
+
+  try {
+    await db
+      .delete(groupMembers)
+      .where(and(eq(groupMembers.groupId, groupId), eq(groupMembers.userId, user.id)));
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return { ok: false, error: message };
+  }
+
+  redirect(`/${locale}/g/${slug}`);
+}
+
 // ── updateGroupAction ──────────────────────────────────────────────────────────
 
 /**
