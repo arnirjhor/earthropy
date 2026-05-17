@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getSdgById, getSdgByCode, isSdgId } from './sdgs.ts';
+import { getSdgByCode, getSdgById, isSdgId } from './sdgs.ts';
 
 describe('getSdgById', () => {
   it('returns the Climate Action row for id 13', () => {
