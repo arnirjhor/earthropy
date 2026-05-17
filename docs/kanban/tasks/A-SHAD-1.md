@@ -1,18 +1,24 @@
 ---
 id: A-SHAD-1
 title: "Init shadcn/ui in @repo/design-system + base components"
-status: ready
+status: done
 priority: critical
 phase: A
 agent_model: sonnet
 deps: []
 tags: [design-system, ui, foundation]
-owner: ""
-branch: ""
-pr: ""
+owner: builder-sonnet (+ fixup pass by sonnet reviewer)
+branch: A-SHAD-1-shadcn-base-components (squashed + deleted)
+pr: "local:merged"
 estimated_hours: 3
 created: 2026-05-18
 updated: 2026-05-18
+merged_at: 2026-05-18
+merged_sha: c978bbb
+notes_on_merge: |
+  Reviewer dispatched a fixup Builder to remove Form/RHF deviation +
+  trim unused deps + pin vitest version. Squash-merged as one feat
+  commit. 18 component tests pass.
 ---
 
 ## Description

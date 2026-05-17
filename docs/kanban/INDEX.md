@@ -22,7 +22,7 @@ Last regenerated: 2026-05-18 (manual; Orchestrator regenerates after each batch)
 
 | ID | Title | Status | Model | Deps |
 |---|---|---|---|---|
-| `A-SHAD-1` | Init shadcn/ui in @repo/design-system + base components | 🟦 | S | — |
+| `A-SHAD-1` | Init shadcn/ui in @repo/design-system + base components | ✅ | S | — |
 | `A-AUTH-DESIGN` | Architect: @repo/auth design doc | ✅ | O | — |
 | `A-AUTH-1` | @repo/auth core: sessions, Argon2id, tokens, CSRF helpers | 🟦 | S | `A-AUTH-DESIGN, X-VITEST-1` |
 | `A-AUTH-2` | SMTP via Nodemailer + React Email templates | ⬜ | S | `A-AUTH-1` |

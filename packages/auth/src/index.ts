@@ -1,10 +1,11 @@
-// Scaffold. Real implementation lands in Phase A step 2 (week 1–2):
-//   - Argon2id password hashing (oslo/password or @node-rs/argon2)
-//   - Session cookies (HttpOnly, SameSite=Lax, Secure in prod), 30-day rolling
-//   - Email verification + magic-link tokens (rotate on use)
-//   - CSRF middleware (double-submit token) for mutations
-//
-// Until then, export type stubs so apps can wire imports.
+/**
+ * @repo/auth — core auth primitives.
+ * Phase A implementation of docs/architecture/auth.md.
+ */
+
+// ── Shared types ──────────────────────────────────────────────────────────────
+
+export type { TokenPurpose } from './types.ts';
 
 export interface SessionUser {
   readonly id: string;
@@ -17,9 +18,38 @@ export interface SessionUser {
 
 export type AuthResult =
   | { ok: true; user: SessionUser }
-  | { ok: false; error: 'invalid_credentials' | 'unverified_email' | 'disabled' | 'rate_limited' };
+  | {
+      ok: false;
+      error: 'invalid_credentials' | 'unverified_email' | 'disabled' | 'rate_limited';
+    };
 
-// Placeholder — implemented in Phase A.
+// ── Password ──────────────────────────────────────────────────────────────────
+
+export { hashPassword, verifyPassword, needsRehash } from './password.ts';
+
+// ── Sessions ──────────────────────────────────────────────────────────────────
+
+export {
+  createSession,
+  getSession,
+  rotateSession,
+  revokeSession,
+  revokeAllForUser,
+  revokeOtherSessions,
+  sessionCookie,
+} from './sessions.ts';
+
+// ── Tokens ────────────────────────────────────────────────────────────────────
+
+export { issueToken, consumeToken, TOKEN_TTL, hashToken } from './tokens.ts';
+
+// ── CSRF ──────────────────────────────────────────────────────────────────────
+
+export { issueCsrfToken, verifyCsrfToken } from './csrf.ts';
+
+// ── Placeholder getCurrentUser (implemented by apps/app using getSession) ─────
+
+// Placeholder — apps/app implements the full Server Component wrapper.
 export async function getCurrentUser(): Promise<SessionUser | null> {
   return null;
 }
