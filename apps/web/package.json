@@ -6,7 +6,7 @@
   "description": "Earthropy marketing website — public landing, mission, SDG hubs.",
   "type": "module",
   "scripts": {
-    "dev": "next dev --port 3001 --turbopack",
+    "dev": "next dev --port ${WEB_PORT:-3001} --turbopack",
     "build": "next build",
     "start": "next start --port 3001",
     "typecheck": "tsc --noEmit",

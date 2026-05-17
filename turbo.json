@@ -2,6 +2,12 @@
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
   "globalDependencies": [".env", ".env.local", "tsconfig.base.json"],
+  "globalPassThroughEnv": [
+    "APP_PORT",
+    "WEB_PORT",
+    "API_PORT",
+    "DOCS_PORT"
+  ],
   "globalEnv": [
     "NODE_ENV",
     "APP_URL",

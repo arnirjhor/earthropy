@@ -6,7 +6,7 @@
   "description": "Earthropy API — REST endpoints, webhooks, and BullMQ workers for moderation + notifications.",
   "type": "module",
   "scripts": {
-    "dev": "next dev --port 3002 --turbopack",
+    "dev": "next dev --port ${API_PORT:-3002} --turbopack",
     "build": "next build",
     "start": "next start --port 3002",
     "worker": "tsx src/workers/index.ts",
