@@ -1,7 +1,7 @@
 ---
 id: D-I18N-AR
 title: "Translate messages/ar.json (Arabic)"
-status: ready
+status: done
 priority: medium
 phase: D
 agent_model: haiku

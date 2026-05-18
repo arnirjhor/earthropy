@@ -1,7 +1,7 @@
 ---
 id: D-I18N-HI
 title: "Translate messages/hi.json (Hindi)"
-status: ready
+status: done
 priority: medium
 phase: D
 agent_model: haiku

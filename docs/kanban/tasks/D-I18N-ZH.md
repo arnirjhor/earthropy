@@ -1,7 +1,7 @@
 ---
 id: D-I18N-ZH
 title: "Translate messages/zh.json (Chinese Simplified)"
-status: ready
+status: done
 priority: medium
 phase: D
 agent_model: haiku
