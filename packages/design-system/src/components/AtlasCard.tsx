@@ -37,7 +37,10 @@ export function AtlasCard({ group, memberCountLabel, Link = FallbackAnchor }: At
   const label = memberCountLabel ?? `${group.memberCount} MEMBERS`;
 
   return (
-    <Link href={group.href} className="atlas-card group/atlas block no-underline">
+    <Link
+      href={group.href}
+      className="atlas-card group/atlas block no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
+    >
       <article
         className="bg-[var(--color-surface)] border border-[var(--color-border)] overflow-hidden text-[var(--color-text)] transition-transform"
         style={{

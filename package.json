@@ -23,6 +23,7 @@
     "db:down": "docker compose down",
     "db:migrate": "pnpm --filter @repo/database migrate",
     "db:seed": "pnpm --filter @repo/database seed",
+    "db:seed-groups": "pnpm --filter @repo/database seed-groups",
     "db:studio": "pnpm --filter @repo/database studio"
   },
   "devDependencies": {

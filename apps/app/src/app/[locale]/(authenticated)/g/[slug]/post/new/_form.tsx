@@ -156,17 +156,22 @@ export function PostCreateForm({
         {/* Body with tab toggle */}
         <div className="flex flex-col gap-[var(--spacing-2)]">
           {/* Tab controls (JS-enhanced) */}
-          <div className="flex items-center gap-0 border-b border-[var(--color-border)]">
+          <div
+            role="tablist"
+            aria-label="Editor mode"
+            className="flex items-center gap-0 border-b border-[var(--color-border)]"
+          >
             <button
               type="button"
               role="tab"
+              id="tab-write"
               aria-selected={tab === 'write'}
               aria-controls="post-body-write-panel"
               onClick={() => {
                 void handleTabChange('write');
               }}
               className={[
-                'font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border-b-2 transition-colors',
+                'font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border-b-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2',
                 tab === 'write'
                   ? 'border-[var(--color-text)] text-[var(--color-text)]'
                   : 'border-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text)]',
@@ -177,14 +182,14 @@ export function PostCreateForm({
             <button
               type="button"
               role="tab"
+              id="tab-preview"
               aria-selected={tab === 'preview'}
               aria-controls="post-body-preview-panel"
-              aria-label="Preview"
               onClick={() => {
                 void handleTabChange('preview');
               }}
               className={[
-                'font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border-b-2 transition-colors',
+                'font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border-b-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2',
                 tab === 'preview'
                   ? 'border-[var(--color-text)] text-[var(--color-text)]'
                   : 'border-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text)]',
@@ -195,7 +200,12 @@ export function PostCreateForm({
           </div>
 
           {/* Write panel */}
-          <div id="post-body-write-panel" role="tabpanel" hidden={tab !== 'write'}>
+          <div
+            id="post-body-write-panel"
+            role="tabpanel"
+            aria-labelledby="tab-write"
+            hidden={tab !== 'write'}
+          >
             <Label
               htmlFor="post-body"
               className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] mb-[var(--spacing-2)] block"
@@ -224,7 +234,12 @@ export function PostCreateForm({
           </div>
 
           {/* Preview panel */}
-          <div id="post-body-preview-panel" role="tabpanel" hidden={tab !== 'preview'}>
+          <div
+            id="post-body-preview-panel"
+            role="tabpanel"
+            aria-labelledby="tab-preview"
+            hidden={tab !== 'preview'}
+          >
             <noscript>
               <p className="text-[length:var(--text-body-sm)] text-[var(--color-text-muted)] italic">
                 JavaScript is required for the rendered preview. Your markdown will be rendered when
@@ -238,10 +253,16 @@ export function PostCreateForm({
         {/* SDG multi-select */}
         <div className="flex flex-col gap-[var(--spacing-3)]">
           <div className="flex flex-col gap-[var(--spacing-1)]">
-            <span className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]">
+            <span
+              id="post-sdg-label"
+              className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]"
+            >
               Sustainable Development Goals
             </span>
-            <p className="text-[length:var(--text-body-sm)] text-[var(--color-text-muted)] leading-[var(--text-body-sm--line-height)]">
+            <p
+              id="post-sdg-hint"
+              className="text-[length:var(--text-body-sm)] text-[var(--color-text-muted)] leading-[var(--text-body-sm--line-height)]"
+            >
               Select the SDGs this post addresses. Mark one as primary.
             </p>
           </div>

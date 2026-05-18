@@ -1,7 +1,7 @@
 ---
 id: E-DOCS-OPS
 title: "Configuration + operations docs"
-status: ready
+status: done
 priority: medium
 phase: E
 agent_model: haiku
@@ -20,6 +20,10 @@ Write `docs/configuration.md` (all env vars, their defaults, what they control) 
 
 ## Acceptance criteria
 
-- [ ] `docs/configuration.md` lists every environment variable with description and default.
-- [ ] `docs/operations.md` covers backup, restore, upgrade, and monitoring.
-- [ ] Cross-references `docs/self-host.md`.
+- [x] `docs/configuration.md` lists every environment variable with description and default.
+- [x] `docs/operations.md` covers backup, restore, upgrade, and monitoring.
+- [x] Cross-references `docs/self-host.md`.
+
+## Completion note
+
+Created `docs/configuration.md` (all env vars grouped by feature, service-to-variable mapping table, how variables flow through Compose) and `docs/operations.md` (first-time setup, backup/restore, upgrade with rollback strategy, monitoring, troubleshooting). Both cross-reference `docs/self-host.md`. No source changes — typecheck and lint unaffected.

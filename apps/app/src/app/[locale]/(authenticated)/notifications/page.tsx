@@ -67,7 +67,10 @@ export default async function NotificationsPage({
   const hasUnread = rows.some((r) => !r.readAt);
 
   return (
-    <main className="mx-auto max-w-[800px] px-[var(--spacing-6)] py-[var(--spacing-12)]">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[800px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+    >
       <header className="flex items-center justify-between mb-[var(--spacing-8)]">
         <h1 className="m-0 text-[var(--text-h1)] leading-[var(--text-h1--line-height)] font-medium text-[var(--color-text)]">
           {t('page.heading')}
@@ -77,6 +80,7 @@ export default async function NotificationsPage({
           <form action={markAllAsReadAction}>
             <button
               type="submit"
+              aria-label={t('page.markAll')}
               className="font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
             >
               {t('page.markAll')}

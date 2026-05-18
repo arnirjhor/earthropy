@@ -17,7 +17,7 @@ export default async function VerifyEmailPage({
   const t = await getTranslations('Auth');
 
   return (
-    <main className="w-full max-w-[400px]">
+    <main id="main-content" className="w-full max-w-[400px]">
       <header className="mb-[var(--spacing-8)]">
         <Link
           href={`/${locale}`}

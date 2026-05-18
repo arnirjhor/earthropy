@@ -84,16 +84,28 @@ export function NotificationPrefs() {
       </p>
 
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse text-[var(--text-body)] text-[var(--color-text)]">
+        <table
+          className="w-full border-collapse text-[var(--text-body)] text-[var(--color-text)]"
+          aria-label="Notification channel preferences"
+        >
           <thead>
             <tr>
-              <th className="text-left py-[var(--spacing-2)] pr-[var(--spacing-6)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]">
+              <th
+                scope="col"
+                className="text-start py-[var(--spacing-2)] pe-[var(--spacing-6)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]"
+              >
                 Notification
               </th>
-              <th className="py-[var(--spacing-2)] px-[var(--spacing-4)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]">
+              <th
+                scope="col"
+                className="py-[var(--spacing-2)] px-[var(--spacing-4)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]"
+              >
                 {t('inApp')}
               </th>
-              <th className="py-[var(--spacing-2)] px-[var(--spacing-4)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]">
+              <th
+                scope="col"
+                className="py-[var(--spacing-2)] px-[var(--spacing-4)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]"
+              >
                 {t('email')}
               </th>
             </tr>
@@ -101,7 +113,7 @@ export function NotificationPrefs() {
           <tbody>
             {KINDS.map((kind) => (
               <tr key={kind} className="border-t border-[var(--color-border)]">
-                <td className="py-[var(--spacing-3)] pr-[var(--spacing-6)]">
+                <td className="py-[var(--spacing-3)] pe-[var(--spacing-6)]">
                   {t(`kinds.${kind}`)}
                 </td>
                 <td className="py-[var(--spacing-3)] px-[var(--spacing-4)] text-center">

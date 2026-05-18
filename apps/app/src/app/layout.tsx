@@ -41,7 +41,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 
   return (
     <html lang={locale} dir={dir} className={fontClassNames}>
-      <body>{children}</body>
+      <body>
+        <a
+          href="#main-content"
+          className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-4 focus-visible:z-[9999] focus-visible:inline-flex focus-visible:items-center focus-visible:px-4 focus-visible:py-2 focus-visible:bg-[var(--color-text)] focus-visible:text-[var(--color-paper)] focus-visible:font-mono focus-visible:text-sm focus-visible:uppercase focus-visible:tracking-wider focus-visible:rounded-[var(--radius-xs)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-text)]"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

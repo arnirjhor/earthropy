@@ -60,7 +60,10 @@ export default async function NewPostPage({
   // ── Render ─────────────────────────────────────────────────────────────────
 
   return (
-    <main className="mx-auto max-w-[720px] px-[var(--spacing-6)] py-[var(--spacing-12)]">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[720px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+    >
       <header className="mb-[var(--spacing-8)]">
         <Link
           href={`/${locale}/g/${slug}`}

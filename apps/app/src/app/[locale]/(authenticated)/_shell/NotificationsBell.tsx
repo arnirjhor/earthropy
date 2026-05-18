@@ -98,7 +98,7 @@ export function NotificationsBell({ initialNotifications }: Props) {
     };
   }, []);
 
-  // ── Close dropdown on outside click ─────────────────────────────────────────
+  // ── Close dropdown on outside click or Escape ────────────────────────────────
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -106,10 +106,19 @@ export function NotificationsBell({ initialNotifications }: Props) {
         setOpen(false);
       }
     }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setOpen(false);
+      }
+    }
     if (open) {
       document.addEventListener('mousedown', handleClick);
+      document.addEventListener('keydown', handleKeyDown);
     }
-    return () => document.removeEventListener('mousedown', handleClick);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [open]);
 
   // ── Actions ─────────────────────────────────────────────────────────────────
@@ -208,7 +217,8 @@ export function NotificationsBell({ initialNotifications }: Props) {
               <button
                 type="button"
                 onClick={() => void handleMarkAllAsRead()}
-                className="text-[var(--text-body-sm)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors font-mono uppercase tracking-wider"
+                aria-label={t('dropdown.markAll')}
+                className="text-[var(--text-body-sm)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors font-mono uppercase tracking-wider focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
               >
                 {t('dropdown.markAll')}
               </button>
@@ -226,6 +236,8 @@ export function NotificationsBell({ initialNotifications }: Props) {
           ) : (
             <ul
               aria-label={t('dropdown.listLabel')}
+              aria-live="polite"
+              aria-atomic="false"
               className="max-h-80 overflow-y-auto divide-y divide-[var(--color-border)]"
             >
               {recent.map((n) => (
@@ -257,7 +269,7 @@ export function NotificationsBell({ initialNotifications }: Props) {
                       type="button"
                       onClick={() => void handleMarkAsRead(n.id)}
                       aria-label={t('dropdown.markRead', { kind: kindLabel(n.kind) })}
-                      className="flex-shrink-0 text-[0.65rem] font-mono uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+                      className="flex-shrink-0 text-[0.65rem] font-mono uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
                     >
                       {t('dropdown.read')}
                     </button>
@@ -271,7 +283,7 @@ export function NotificationsBell({ initialNotifications }: Props) {
           <div className="border-t border-[var(--color-border)] px-4 py-2 text-center">
             <a
               href="/notifications"
-              className="text-[var(--text-body-sm)] font-mono uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+              className="text-[var(--text-body-sm)] font-mono uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
             >
               {t('dropdown.viewAll')}
             </a>

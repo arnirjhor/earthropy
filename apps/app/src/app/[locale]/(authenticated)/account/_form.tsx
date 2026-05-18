@@ -71,9 +71,9 @@ export function ProfileForm({ displayName, handle, locale }: ProfileFormProps) {
             </p>
           )}
           {nameState.ok && (
-            <p className="text-[var(--text-body-sm)] text-[var(--color-text-muted)]">
+            <output className="text-[var(--text-body-sm)] text-[var(--color-text-muted)]">
               {t('profile.saved')}
-            </p>
+            </output>
           )}
         </div>
         <Button
@@ -116,9 +116,9 @@ export function ProfileForm({ displayName, handle, locale }: ProfileFormProps) {
             </p>
           )}
           {handleState.ok && (
-            <p className="text-[var(--text-body-sm)] text-[var(--color-text-muted)]">
+            <output className="text-[var(--text-body-sm)] text-[var(--color-text-muted)]">
               {t('profile.saved')}
-            </p>
+            </output>
           )}
         </div>
         <Button
@@ -147,7 +147,7 @@ export function ProfileForm({ displayName, handle, locale }: ProfileFormProps) {
             defaultValue={locale}
             aria-describedby={localeState.errors?.locale ? 'locale-error' : undefined}
             aria-invalid={!!localeState.errors?.locale}
-            className="h-10 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-surface)] px-3 text-[var(--text-body)] text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-text)] focus:ring-offset-1"
+            className="h-10 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-surface)] px-3 text-[var(--text-body)] text-[var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)] focus-visible:ring-offset-1"
           >
             {LOCALES.map((l) => (
               <option key={l} value={l}>

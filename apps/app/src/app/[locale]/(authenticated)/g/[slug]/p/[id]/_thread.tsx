@@ -147,7 +147,10 @@ function CommentItem({ node, viewerId, viewerIsMod, postId, locale, depth, t }: 
       className="list-none"
       style={indentStyle}
     >
-      <article className="py-[var(--spacing-4)] border-b border-[var(--color-border)]">
+      <article
+        aria-label={`Comment by @${node.authorId}`}
+        className="py-[var(--spacing-4)] border-b border-[var(--color-border)]"
+      >
         {/* Header */}
         <header className="flex flex-wrap items-center gap-[var(--spacing-3)] mb-[var(--spacing-2)]">
           <span className="font-mono text-[length:var(--text-mono)] text-[var(--color-text-muted)]">

@@ -62,7 +62,7 @@ const SheetContent = React.forwardRef<
     <SheetOverlay />
     <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
       {children}
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-[var(--radius-xs)] opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-text)] focus:ring-offset-2 focus:ring-offset-[var(--color-surface)] disabled:pointer-events-none data-[state=open]:bg-[var(--color-surface-elevated)]">
+      <SheetPrimitive.Close className="absolute end-4 top-4 rounded-[var(--radius-xs)] opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-text)] focus:ring-offset-2 focus:ring-offset-[var(--color-surface)] disabled:pointer-events-none data-[state=open]:bg-[var(--color-surface-elevated)]">
         <X className="h-4 w-4" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
@@ -72,7 +72,7 @@ const SheetContent = React.forwardRef<
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
 const SheetHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn('flex flex-col gap-1.5 text-center sm:text-left', className)} {...props} />
+  <div className={cn('flex flex-col gap-1.5 text-center sm:text-start', className)} {...props} />
 );
 SheetHeader.displayName = 'SheetHeader';
 

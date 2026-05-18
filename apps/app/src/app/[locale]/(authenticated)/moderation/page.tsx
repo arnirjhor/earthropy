@@ -260,7 +260,11 @@ export default async function ModerationQueuePage({
   const hasNext = page < totalPages;
 
   return (
-    <main className="mx-auto max-w-[960px] px-[var(--spacing-6)] py-[var(--spacing-12)]" dir="auto">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[960px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+      dir="auto"
+    >
       {/* Header */}
       <header className="mb-[var(--spacing-8)]">
         <span className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)]">

@@ -113,6 +113,7 @@ export default async function SdgHubPage({
 
   return (
     <main
+      id="main-content"
       dir="auto"
       className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
     >

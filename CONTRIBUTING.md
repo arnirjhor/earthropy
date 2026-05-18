@@ -14,10 +14,35 @@ Read [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). It is binding for everyone in t
 - **Feature ideas.** Open a discussion before coding anything beyond a small fix — we keep scope tight (see [`CLAUDE.md`](CLAUDE.md) for what's in v0.1 vs. deferred).
 - **Code.** Pick a `good first issue` or an unowned task. Small PRs beat large ones.
 
+## Good first issues
+
+These areas are well-scoped and don't require deep knowledge of the whole codebase:
+
+- **Add a locale translation.** Copy `apps/app/messages/en.json` to a new locale file and translate the strings. Locales we'd like next: Japanese (`ja`), Spanish (`es`), Bahasa Indonesia (`id`), Korean (`ko`). See `packages/i18n/src/locales.ts` to register a new locale.
+- **Improve docs.** Any page under `docs/` that is thin, stale, or missing — especially per-package `README.md` files in `packages/`.
+- **Add a test.** The `packages/` directory always has room for more unit tests. Look for any exported function lacking a corresponding test in `*.test.ts`.
+- **Improve error messages.** Find a generic "Something went wrong" and replace it with a message that tells users what to do next.
+- **Accessibility audit follow-up.** Read `docs/a11y-keyboard-audit.md` and `docs/a11y-rtl-audit.md`; pick any open finding and fix it.
+- **Tighten TypeScript.** Find a `// @ts-ignore` or a `any` cast with a comment saying "fix later" and remove it properly.
+
+## v0.2 roadmap — open for contribution
+
+These items are planned for v0.2 and are not yet assigned. Open a discussion issue before starting to avoid duplicate work.
+
+- **Plugin SDK / MCP integrations** — a stable extension interface so third parties can hook into the moderation and notification pipelines without forking the core.
+- **AI community-manager agent** — an opt-in agent that surfaces stale discussions, suggests relevant groups to new members, and drafts digest emails.
+- **LLM-translated post bodies** — translate posts on-demand using a pluggable translation provider (LibreTranslate self-host + DeepL managed).
+- **GitHub Actions CI pipeline** — automated typecheck, lint, test, and Docker build on every PR.
+- **More locale translations** — see the list in Good first issues above.
+- **Federation exploration (ActivityPub)** — research spike: what would it cost to make groups and posts federate? No commitment to ship yet.
+- **Verifiable outcome tracking** — link posts/projects to UN SDG indicator metrics and display progress.
+
+See [`docs/v02-backlog.md`](docs/v02-backlog.md) for descriptions and complexity estimates.
+
 ## Dev setup
 
 ```bash
-git clone https://github.com/<org>/earthropy
+git clone https://github.com/arnirjhor/earthropy
 cd earthropy
 nvm use                # Node 22 from .nvmrc
 corepack enable        # pnpm via Corepack

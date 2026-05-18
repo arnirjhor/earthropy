@@ -214,10 +214,16 @@ export function CreateGroupForm({ locale }: { locale: string }) {
         {/* SDG multi-select */}
         <div className="flex flex-col gap-[var(--spacing-3)]">
           <div className="flex flex-col gap-[var(--spacing-1)]">
-            <span className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]">
+            <span
+              id="group-sdg-label"
+              className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]"
+            >
               {t('fields.sdgs')}
             </span>
-            <p className="text-[length:var(--text-body-sm)] text-[var(--color-text-muted)] leading-[var(--text-body-sm--line-height)]">
+            <p
+              id="group-sdg-hint"
+              className="text-[length:var(--text-body-sm)] text-[var(--color-text-muted)] leading-[var(--text-body-sm--line-height)]"
+            >
               {t('fields.sdgsHint')}
             </p>
           </div>

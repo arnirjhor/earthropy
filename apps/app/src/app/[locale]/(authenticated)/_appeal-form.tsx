@@ -89,7 +89,7 @@ export function AppealForm({
         type="button"
         data-testid="appeal-trigger"
         onClick={handleOpen}
-        className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+        className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
         style={{ transitionDuration: 'var(--duration-base)' }}
         aria-label={`${submitLabel} for this ${targetType}`}
       >
@@ -117,7 +117,7 @@ export function AppealForm({
         rows={4}
         disabled={isPending}
         aria-label={placeholderText}
-        className="w-full resize-y border border-[var(--color-border)] bg-[var(--color-surface)] px-[var(--spacing-3)] py-[var(--spacing-2)] text-[length:var(--text-body-sm)] leading-[var(--text-body-sm--line-height)] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-text)] disabled:opacity-50"
+        className="w-full resize-y border border-[var(--color-border)] bg-[var(--color-surface)] px-[var(--spacing-3)] py-[var(--spacing-2)] text-[length:var(--text-body-sm)] leading-[var(--text-body-sm--line-height)] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)] disabled:opacity-50"
         style={{ borderRadius: 'var(--radius-sm)' }}
       />
 
@@ -136,7 +136,7 @@ export function AppealForm({
           data-testid="appeal-submit"
           disabled={isPending}
           aria-busy={isPending}
-          className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] hover:border-[var(--color-text)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] hover:border-[var(--color-text)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
           style={{
             borderRadius: 'var(--radius-xs)',
             transitionDuration: 'var(--duration-base)',
@@ -150,7 +150,7 @@ export function AppealForm({
           data-testid="appeal-cancel"
           disabled={isPending}
           onClick={handleCancel}
-          className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors disabled:opacity-50"
+          className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
           style={{ transitionDuration: 'var(--duration-base)' }}
         >
           {cancelLabel}

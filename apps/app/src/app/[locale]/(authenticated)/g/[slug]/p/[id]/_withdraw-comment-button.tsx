@@ -35,7 +35,7 @@ export function WithdrawCommentButton({
       onClick={handleWithdraw}
       disabled={isPending}
       aria-busy={isPending}
-      className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[color:var(--sdg-1)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[color:var(--sdg-1)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
     >
       {isPending ? withdrawingLabel : withdrawLabel}
     </button>

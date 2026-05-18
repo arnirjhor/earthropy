@@ -108,7 +108,10 @@ export default async function GroupDetailPage({
   const canLeave = isMember && memberRole !== 'owner';
 
   return (
-    <main className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+    >
       {/* ── Group header card ─────────────────────────────────────────────── */}
       <header
         className="mb-[var(--spacing-10)] bg-[var(--color-surface)] border border-[var(--color-border)] overflow-hidden"
@@ -177,6 +180,7 @@ export default async function GroupDetailPage({
               >
                 <button
                   type="submit"
+                  aria-label={`Join ${group.name}`}
                   className="inline-flex items-center px-[var(--spacing-5)] py-[var(--spacing-2)] bg-[var(--color-text)] text-[var(--color-paper)] font-mono text-[length:var(--text-mono)] uppercase tracking-wider border border-[var(--color-text)] hover:bg-transparent hover:text-[var(--color-text)] transition-colors"
                   style={{
                     borderRadius: 'var(--radius-xs)',
@@ -196,6 +200,7 @@ export default async function GroupDetailPage({
               >
                 <button
                   type="submit"
+                  aria-label={`Leave ${group.name}`}
                   className="inline-flex items-center px-[var(--spacing-5)] py-[var(--spacing-2)] bg-transparent text-[var(--color-text)] font-mono text-[length:var(--text-mono)] uppercase tracking-wider border border-[var(--color-border)] hover:border-[var(--color-text)] transition-colors"
                   style={{
                     borderRadius: 'var(--radius-xs)',

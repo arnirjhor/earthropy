@@ -139,6 +139,7 @@ export default async function DashboardPage({
 
   return (
     <main
+      id="main-content"
       className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
       dir="auto"
     >
@@ -147,7 +148,7 @@ export default async function DashboardPage({
         <h1 className="m-0 text-[length:var(--text-h1)] leading-[var(--text-h1--line-height)] font-medium text-[var(--color-text)]">
           {t('dashboard.welcome', { name: viewer?.displayName ?? t('dashboard.defaultName') })}
         </h1>
-        <nav>
+        <nav aria-label="Account">
           <Link
             href={`/${locale}/signout`}
             className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
@@ -165,7 +166,7 @@ export default async function DashboardPage({
         {/* ── Left rail ─────────────────────────────────────────────────── */}
         <aside
           className="w-full lg:w-[280px] shrink-0 flex flex-col gap-[var(--spacing-8)]"
-          aria-label="Left rail"
+          aria-label="Sidebar"
         >
           {/* Your groups */}
           <section aria-labelledby="groups-rail-heading" data-testid="groups-rail">

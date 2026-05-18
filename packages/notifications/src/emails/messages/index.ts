@@ -346,7 +346,8 @@ const verifyEmailPt: VerifyEmailMessages = {
 
 const verifyEmailRu: VerifyEmailMessages = {
   subject: 'Подтвердите адрес электронной почты Earthropy',
-  previewText: 'Перейдите по ссылке, чтобы подтвердить адрес электронной почты и завершить настройку аккаунта.',
+  previewText:
+    'Перейдите по ссылке, чтобы подтвердить адрес электронной почты и завершить настройку аккаунта.',
   heading: 'Подтвердите адрес электронной почты',
   body: 'Нажмите кнопку ниже, чтобы подтвердить адрес электронной почты. Срок действия ссылки — 24 часа.',
   cta: 'Подтвердить адрес электронной почты',
@@ -356,7 +357,8 @@ const verifyEmailRu: VerifyEmailMessages = {
 
 const verifyEmailSw: VerifyEmailMessages = {
   subject: 'Thibitisha anwani yako ya barua pepe ya Earthropy',
-  previewText: 'Bofya kiungo ili kuthibitisha barua pepe yako na kukamilisha usanidi wa akaunti yako.',
+  previewText:
+    'Bofya kiungo ili kuthibitisha barua pepe yako na kukamilisha usanidi wa akaunti yako.',
   heading: 'Thibitisha anwani yako ya barua pepe',
   body: 'Bofya kitufe hapa chini ili kuthibitisha anwani yako ya barua pepe. Kiungo hiki kitaisha baada ya saa 24.',
   cta: 'Thibitisha anwani ya barua pepe',
@@ -409,7 +411,8 @@ const passwordResetPt: PasswordResetMessages = {
   body: 'Clique no botão abaixo para definir uma nova senha. Este link expira em 60 minutos e só pode ser usado uma vez.',
   cta: 'Redefinir senha',
   expiry: 'Este link expira em 60 minutos.',
-  ignore: 'Se você não solicitou a redefinição de senha, ignore este e-mail. Sua senha não foi alterada.',
+  ignore:
+    'Se você não solicitou a redefinição de senha, ignore este e-mail. Sua senha não foi alterada.',
 };
 
 const passwordResetRu: PasswordResetMessages = {
@@ -419,7 +422,8 @@ const passwordResetRu: PasswordResetMessages = {
   body: 'Нажмите кнопку ниже, чтобы задать новый пароль. Срок действия ссылки — 60 минут; использовать можно только один раз.',
   cta: 'Сбросить пароль',
   expiry: 'Срок действия ссылки — 60 минут.',
-  ignore: 'Если вы не запрашивали сброс пароля, проигнорируйте это письмо. Ваш пароль не был изменён.',
+  ignore:
+    'Если вы не запрашивали сброс пароля, проигнорируйте это письмо. Ваш пароль не был изменён.',
 };
 
 const passwordResetSw: PasswordResetMessages = {
@@ -429,7 +433,8 @@ const passwordResetSw: PasswordResetMessages = {
   body: 'Bofya kitufe hapa chini ili kuweka nenosiri jipya. Kiungo hiki kitaisha baada ya dakika 60 na kinaweza kutumika mara moja tu.',
   cta: 'Weka upya nenosiri',
   expiry: 'Kiungo hiki kitaisha baada ya dakika 60.',
-  ignore: 'Ikiwa hukuomba kuweka upya nenosiri, puuza barua pepe hii. Nenosiri lako halijabadilishwa.',
+  ignore:
+    'Ikiwa hukuomba kuweka upya nenosiri, puuza barua pepe hii. Nenosiri lako halijabadilishwa.',
 };
 
 // ---------------------------------------------------------------------------
@@ -476,7 +481,17 @@ function localeOrEn<T>(map: Partial<Record<Locale, T>>, fallback: T, locale: Loc
 
 export function getVerifyEmailMessages(locale: Locale): VerifyEmailMessages {
   return localeOrEn<VerifyEmailMessages>(
-    { en: verifyEmailEn, ar: verifyEmailAr, es: verifyEmailEs, fr: verifyEmailFr, zh: verifyEmailZh, hi: verifyEmailHi, pt: verifyEmailPt, ru: verifyEmailRu, sw: verifyEmailSw },
+    {
+      en: verifyEmailEn,
+      ar: verifyEmailAr,
+      es: verifyEmailEs,
+      fr: verifyEmailFr,
+      zh: verifyEmailZh,
+      hi: verifyEmailHi,
+      pt: verifyEmailPt,
+      ru: verifyEmailRu,
+      sw: verifyEmailSw,
+    },
     verifyEmailEn,
     locale,
   );
@@ -484,7 +499,17 @@ export function getVerifyEmailMessages(locale: Locale): VerifyEmailMessages {
 
 export function getMagicLinkMessages(locale: Locale): MagicLinkMessages {
   return localeOrEn<MagicLinkMessages>(
-    { en: magicLinkEn, ar: magicLinkAr, es: magicLinkEs, fr: magicLinkFr, zh: magicLinkZh, hi: magicLinkHi, pt: magicLinkPt, ru: magicLinkRu, sw: magicLinkSw },
+    {
+      en: magicLinkEn,
+      ar: magicLinkAr,
+      es: magicLinkEs,
+      fr: magicLinkFr,
+      zh: magicLinkZh,
+      hi: magicLinkHi,
+      pt: magicLinkPt,
+      ru: magicLinkRu,
+      sw: magicLinkSw,
+    },
     magicLinkEn,
     locale,
   );
@@ -492,7 +517,17 @@ export function getMagicLinkMessages(locale: Locale): MagicLinkMessages {
 
 export function getPasswordResetMessages(locale: Locale): PasswordResetMessages {
   return localeOrEn<PasswordResetMessages>(
-    { en: passwordResetEn, ar: passwordResetAr, es: passwordResetEs, fr: passwordResetFr, zh: passwordResetZh, hi: passwordResetHi, pt: passwordResetPt, ru: passwordResetRu, sw: passwordResetSw },
+    {
+      en: passwordResetEn,
+      ar: passwordResetAr,
+      es: passwordResetEs,
+      fr: passwordResetFr,
+      zh: passwordResetZh,
+      hi: passwordResetHi,
+      pt: passwordResetPt,
+      ru: passwordResetRu,
+      sw: passwordResetSw,
+    },
     passwordResetEn,
     locale,
   );
@@ -500,7 +535,17 @@ export function getPasswordResetMessages(locale: Locale): PasswordResetMessages 
 
 export function getGroupInviteMessages(locale: Locale): GroupInviteMessages {
   return localeOrEn<GroupInviteMessages>(
-    { en: groupInviteEn, ar: groupInviteAr, es: groupInviteEs, fr: groupInviteFr, zh: groupInviteZh, hi: groupInviteHi, pt: groupInvitePt, ru: groupInviteRu, sw: groupInviteSw },
+    {
+      en: groupInviteEn,
+      ar: groupInviteAr,
+      es: groupInviteEs,
+      fr: groupInviteFr,
+      zh: groupInviteZh,
+      hi: groupInviteHi,
+      pt: groupInvitePt,
+      ru: groupInviteRu,
+      sw: groupInviteSw,
+    },
     groupInviteEn,
     locale,
   );

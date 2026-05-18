@@ -1,7 +1,7 @@
 ---
 id: X-GH-1
 title: "Create GitHub remote + push (user action required)"
-status: blocked
+status: done
 priority: critical
 phase: X
 agent_model: opus

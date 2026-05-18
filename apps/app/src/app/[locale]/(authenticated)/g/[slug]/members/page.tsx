@@ -125,7 +125,10 @@ export default async function GroupMembersPage({
   ]);
 
   return (
-    <main className="mx-auto max-w-[900px] px-[var(--spacing-6)] py-[var(--spacing-12)]">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[900px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+    >
       {/* ── Breadcrumb ─────────────────────────────────────────────────────── */}
       <header className="mb-[var(--spacing-8)]">
         <nav aria-label="Breadcrumb">
@@ -183,7 +186,7 @@ export default async function GroupMembersPage({
               required
               autoComplete="email"
               placeholder="user@example.com"
-              className="w-full px-[var(--spacing-3)] py-[var(--spacing-2)] bg-[var(--color-paper)] border border-[var(--color-border)] text-[length:var(--text-body-sm)] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-text)]"
+              className="w-full px-[var(--spacing-3)] py-[var(--spacing-2)] bg-[var(--color-paper)] border border-[var(--color-border)] text-[length:var(--text-body-sm)] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)]"
               style={{
                 borderRadius: 'var(--radius-xs)',
                 transitionDuration: 'var(--duration-base)',
@@ -201,7 +204,7 @@ export default async function GroupMembersPage({
             <select
               id="invite-role"
               name="role"
-              className="px-[var(--spacing-3)] py-[var(--spacing-2)] bg-[var(--color-paper)] border border-[var(--color-border)] text-[length:var(--text-body-sm)] text-[var(--color-text)] focus:outline-none focus:border-[var(--color-text)]"
+              className="px-[var(--spacing-3)] py-[var(--spacing-2)] bg-[var(--color-paper)] border border-[var(--color-border)] text-[length:var(--text-body-sm)] text-[var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)]"
               style={{ borderRadius: 'var(--radius-xs)' }}
             >
               <option value="member">Member</option>
@@ -211,7 +214,7 @@ export default async function GroupMembersPage({
 
           <button
             type="submit"
-            className="inline-flex items-center px-[var(--spacing-5)] py-[var(--spacing-2)] bg-[var(--color-text)] text-[var(--color-paper)] font-mono text-[length:var(--text-mono)] uppercase tracking-wider border border-[var(--color-text)] hover:bg-transparent hover:text-[var(--color-text)] transition-colors"
+            className="inline-flex items-center px-[var(--spacing-5)] py-[var(--spacing-2)] bg-[var(--color-text)] text-[var(--color-paper)] font-mono text-[length:var(--text-mono)] uppercase tracking-wider border border-[var(--color-text)] hover:bg-transparent hover:text-[var(--color-text)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
             style={{ borderRadius: 'var(--radius-xs)', transitionDuration: 'var(--duration-base)' }}
           >
             Send invite
@@ -320,7 +323,8 @@ export default async function GroupMembersPage({
                           <input type="hidden" name="locale" value={locale} />
                           <button
                             type="submit"
-                            className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0"
+                            aria-label={`Promote ${member.displayName} to moderator`}
+                            className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
                             style={{ transitionDuration: 'var(--duration-base)' }}
                           >
                             Promote
@@ -338,7 +342,8 @@ export default async function GroupMembersPage({
                           <input type="hidden" name="locale" value={locale} />
                           <button
                             type="submit"
-                            className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0"
+                            aria-label={`Demote ${member.displayName} to member`}
+                            className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
                             style={{ transitionDuration: 'var(--duration-base)' }}
                           >
                             Demote
@@ -360,7 +365,8 @@ export default async function GroupMembersPage({
                         <input type="hidden" name="locale" value={locale} />
                         <button
                           type="submit"
-                          className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0"
+                          aria-label={`Transfer group ownership to ${member.displayName}`}
+                          className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
                           style={{ transitionDuration: 'var(--duration-base)' }}
                         >
                           Make owner
@@ -376,7 +382,7 @@ export default async function GroupMembersPage({
                       >
                         <button
                           type="submit"
-                          className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0"
+                          className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors bg-transparent border-0 cursor-pointer p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
                           style={{ transitionDuration: 'var(--duration-base)' }}
                           aria-label={`Remove ${member.displayName} from group`}
                         >

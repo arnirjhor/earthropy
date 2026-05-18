@@ -93,7 +93,10 @@ export default async function GroupBrowsePage({
   const hasActiveFilter = sdgIds.length > 0;
 
   return (
-    <main className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+    >
       {/* Page header */}
       <header className="flex flex-col gap-[var(--spacing-2)] md:flex-row md:items-baseline md:justify-between mb-[var(--spacing-8)]">
         <div className="flex flex-col gap-[var(--spacing-1)]">
@@ -127,6 +130,7 @@ export default async function GroupBrowsePage({
             publicLabel={t('visibilityPublic')}
             listedLabel={t('visibilityListed')}
             bothLabel={t('visibilityBoth')}
+            noscriptBaseHref={`/${locale}/g`}
           />
         </div>
 
@@ -134,7 +138,11 @@ export default async function GroupBrowsePage({
           <span className="font-mono text-[var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)] shrink-0 pt-[7px]">
             {t('filterLabel')}
           </span>
-          <SdgFilter activeSdgIds={sdgIds} filterLabel={t('filterLabel')} />
+          <SdgFilter
+            activeSdgIds={sdgIds}
+            filterLabel={t('filterLabel')}
+            noscriptBaseHref={`/${locale}/g`}
+          />
         </div>
       </section>
 

@@ -10,7 +10,7 @@ export default async function CheckYourEmailPage({
   const t = await getTranslations('Auth');
 
   return (
-    <main className="w-full max-w-[400px] text-center">
+    <main id="main-content" className="w-full max-w-[400px] text-center">
       <header className="mb-[var(--spacing-8)]">
         <Link
           href={`/${locale}`}

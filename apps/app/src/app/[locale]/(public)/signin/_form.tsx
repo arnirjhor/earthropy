@@ -30,7 +30,10 @@ export function SignInForm({ locale: _locale }: SignInFormProps) {
 
   return (
     <Tabs defaultValue="password">
-      <TabsList className="w-full mb-[var(--spacing-6)] bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] p-[var(--spacing-1)]">
+      <TabsList
+        aria-label={t('signin.heading')}
+        className="w-full mb-[var(--spacing-6)] bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-sm)] p-[var(--spacing-1)]"
+      >
         <TabsTrigger
           value="password"
           data-value="password"

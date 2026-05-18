@@ -162,7 +162,11 @@ export default async function AppealsPage({
   const items = await fetchPendingAppeals(groupIds);
 
   return (
-    <main className="mx-auto max-w-[960px] px-[var(--spacing-6)] py-[var(--spacing-12)]" dir="auto">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[960px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+      dir="auto"
+    >
       {/* Header */}
       <header className="mb-[var(--spacing-8)]">
         <nav aria-label="Breadcrumb" className="mb-[var(--spacing-3)]">

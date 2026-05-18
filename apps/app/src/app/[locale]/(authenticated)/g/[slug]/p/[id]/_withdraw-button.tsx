@@ -44,7 +44,7 @@ export function WithdrawButton({
         data-testid="withdraw-button"
         disabled={isPending}
         aria-busy={isPending}
-        className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] rounded-[var(--radius-xs)] hover:border-[color:var(--sdg-1)] hover:text-[color:var(--sdg-1)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider px-[var(--spacing-4)] py-[var(--spacing-2)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] rounded-[var(--radius-xs)] hover:border-[color:var(--sdg-1)] hover:text-[color:var(--sdg-1)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-text)] focus-visible:outline-offset-2"
       >
         {isPending ? withdrawingLabel : withdrawLabel}
       </button>

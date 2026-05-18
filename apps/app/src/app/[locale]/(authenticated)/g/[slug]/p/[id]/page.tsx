@@ -104,6 +104,7 @@ export default async function PostDetailPage({
 
   return (
     <main
+      id="main-content"
       className="mx-auto max-w-[720px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
       lang={post.locale}
     >

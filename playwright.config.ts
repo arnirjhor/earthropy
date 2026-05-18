@@ -11,7 +11,10 @@ if (fs.existsSync(envFile)) {
     const eq = trimmed.indexOf('=');
     if (eq === -1) continue;
     const key = trimmed.slice(0, eq).trim();
-    const val = trimmed.slice(eq + 1).trim().replace(/^["']|["']$/g, '');
+    const val = trimmed
+      .slice(eq + 1)
+      .trim()
+      .replace(/^["']|["']$/g, '');
     if (!(key in process.env)) process.env[key] = val;
   }
 }
@@ -46,7 +49,9 @@ export default defineConfig({
     env: {
       APP_PORT: '3011',
       NEXT_PUBLIC_APP_URL: 'http://localhost:3011',
-      DATABASE_URL: fixLocalhost(process.env.DATABASE_URL ?? 'postgres://earthropy:earthropy@127.0.0.1:5434/earthropy'),
+      DATABASE_URL: fixLocalhost(
+        process.env.DATABASE_URL ?? 'postgres://earthropy:earthropy@127.0.0.1:5434/earthropy',
+      ),
       AUTH_SECRET: process.env.AUTH_SECRET ?? 'dev-test-secret-replace-in-prod-32-bytes-min',
       // Redis is atlas-redis on 127.0.0.1:6379 (macOS localhost → ::1 so must use 127.0.0.1)
       REDIS_URL: 'redis://127.0.0.1:6379',

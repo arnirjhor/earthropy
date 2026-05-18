@@ -1,0 +1,43 @@
+# Earthropy — Caddy reverse proxy configuration.
+# Domain is read from the DOMAIN environment variable (default: localhost).
+# Automatic HTTPS is provided by Caddy's built-in ACME client when a real
+# domain is set. On localhost Caddy falls back to a self-signed certificate.
+
+{$DOMAIN:localhost} {
+
+  # ── Security headers ────────────────────────────────────────────────────────
+  header {
+    X-Frame-Options           "SAMEORIGIN"
+    X-Content-Type-Options    "nosniff"
+    Referrer-Policy           "strict-origin-when-cross-origin"
+    Permissions-Policy        "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    X-XSS-Protection          "1; mode=block"
+    # Remove server fingerprinting
+    -Server
+  }
+
+  # ── API: all /api/* traffic goes to the API service ─────────────────────────
+  handle /api/* {
+    reverse_proxy api:3002 {
+      health_uri     /api/health
+      health_interval 30s
+      health_timeout  10s
+    }
+  }
+
+  # ── App: everything else goes to the Next.js app ────────────────────────────
+  handle {
+    reverse_proxy app:3000 {
+      health_uri     /api/health
+      health_interval 30s
+      health_timeout  10s
+    }
+  }
+
+  # ── Logging ─────────────────────────────────────────────────────────────────
+  log {
+    output stdout
+    format json
+  }
+}

@@ -122,9 +122,7 @@ function assertNoSeriousCritical(
     (v) => v.impact === 'serious' || v.impact === 'critical',
   );
   if (serious.length > 0) {
-    const summary = serious
-      .map((v) => `[${v.impact}] ${v.id}: ${v.description}`)
-      .join('\n  ');
+    const summary = serious.map((v) => `[${v.impact}] ${v.id}: ${v.description}`).join('\n  ');
     throw new Error(`${route} has ${serious.length} serious/critical violation(s):\n  ${summary}`);
   }
   expect(serious).toHaveLength(0);
@@ -199,7 +197,7 @@ test.describe('a11y: authenticated routes', () => {
   // Shared auth state — saved once in beforeAll, reused by every test.
   // This avoids creating a new user per test which would exhaust the
   // signup rate limit (5/hour per IP) with 9+ tests.
-  let sharedStorageState: string = '';
+  let sharedStorageState = '';
 
   test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();

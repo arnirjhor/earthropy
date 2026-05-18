@@ -6,7 +6,10 @@ import Link from 'next/link';
 export default async function HomePage() {
   const t = await getTranslations('Home');
   return (
-    <main className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[1200px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+    >
       <header className="flex flex-col gap-[var(--spacing-2)] md:flex-row md:items-baseline md:justify-between">
         <h1 className="m-0 text-[var(--text-display)] leading-[var(--text-display--line-height)] font-medium tracking-tight">
           {t('title')}

@@ -42,7 +42,7 @@ export function SdgColorBar({ Link = FallbackAnchor }: SdgColorBarProps = {}) {
             <Link
               href={`/sdg/${sdg.code}`}
               aria-label={`Sustainable Development Goal ${sdg.id}: ${sdg.name}`}
-              className="block h-full w-full"
+              className="block h-full w-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-text)]"
             >
               <span aria-hidden="true" className="block h-full w-full" />
             </Link>

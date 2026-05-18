@@ -41,7 +41,7 @@ function SessionItem({ session }: { session: SessionRow }) {
         <span className="text-[var(--text-body)] text-[var(--color-text)]">
           {truncateUserAgent(session.userAgent)}
           {session.isCurrent && (
-            <span className="ml-[var(--spacing-2)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]">
+            <span className="ms-[var(--spacing-2)] font-mono text-[var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)]">
               — {t('currentDevice')}
             </span>
           )}
@@ -58,6 +58,7 @@ function SessionItem({ session }: { session: SessionRow }) {
             variant="destructive"
             size="sm"
             disabled={pending}
+            aria-label={`${pending ? t('revoking') : t('revoke')} — ${truncateUserAgent(session.userAgent)}`}
             className="font-mono text-[var(--text-mono)] uppercase tracking-wider"
           >
             {pending ? t('revoking') : t('revoke')}
@@ -95,7 +96,7 @@ export function SessionsList({ sessions }: SessionsListProps) {
           {t('noOtherSessions')}
         </p>
       ) : (
-        <ul className="list-none p-0 m-0">
+        <ul aria-label="Active sessions" className="list-none p-0 m-0">
           {sessions.map((session) => (
             <SessionItem key={session.id} session={session} />
           ))}

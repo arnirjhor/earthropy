@@ -15,24 +15,47 @@ Earthropy is a managed open-source platform for coordinating global action on th
 
 ## Status
 
-**v0.0.1 — foundations laid.** Monorepo scaffolded; data model defined; moderation contract defined; i18n scaffolding in place; UI work not started (pending design pass).
+**v0.1 — available now.**
 
-See [`CLAUDE.md`](CLAUDE.md) and the approved [v0.1 plan](file:///Users/arnirjhor/.claude-personal/plans/i-have-a-project-merry-glacier.md) for the full roadmap.
+- Accounts: email + password, magic links, rate limiting
+- Community: groups, posts, comments, SDG-tagged content
+- AI moderation: Anthropic Claude (default) + Ollama (self-host fallback), transparent decisions, appeals
+- i18n: 9 locales — Arabic, Chinese, English, French, German, Hindi, Portuguese, Russian, Swahili — with RTL support
+- Accessibility: keyboard navigation, screen reader support, axe audit, RTL audit, WCAG AA contrast
+- Self-host: Docker + Caddy, documented from zero to running
+- Vercel deployment config for managed hosting
+- 500+ tests
 
-## Quick start (after the toolchain is wired up — Phase A)
+## Quick start (dev)
 
 ```bash
+git clone https://github.com/arnirjhor/earthropy
+cd earthropy
+nvm use           # Node 22 via .nvmrc
+corepack enable   # pnpm via Corepack
 pnpm i
-pnpm db:up         # Postgres + Redis + MailHog + MinIO via docker compose
+pnpm db:up        # Postgres + Redis + MailHog + MinIO via docker compose
 pnpm db:migrate
-pnpm db:seed       # Seed the 17 SDGs
-pnpm dev           # Starts apps/app (3000), apps/web (3001), apps/api (3002), apps/docs (3004)
+pnpm db:seed      # Seed the 17 SDGs
+pnpm dev          # app:3000  web:3001  api:3002  docs:3004
 ```
 
-## License
+## Self-host
 
-[GNU AGPL-3.0-or-later](LICENSE). Modifications served over a network must publish their source.
+See [`docs/self-host.md`](docs/self-host.md) and [`docs/operations.md`](docs/operations.md) for a complete self-host guide (Docker Compose, Caddy reverse proxy, env vars, backup).
+
+## Deploy to Vercel
+
+See [`docs/deploy-vercel.md`](docs/deploy-vercel.md).
+
+## Configuration reference
+
+See [`docs/configuration.md`](docs/configuration.md).
 
 ## Contributing
 
 We welcome contributors from any country, culture, background, or experience level. See [`CONTRIBUTING.md`](CONTRIBUTING.md) and the [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). Maintenance and decision rights are documented in [`GOVERNANCE.md`](GOVERNANCE.md).
+
+## License
+
+[GNU AGPL-3.0-or-later](LICENSE). Modifications served over a network must publish their source.

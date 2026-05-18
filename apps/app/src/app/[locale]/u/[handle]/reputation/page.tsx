@@ -135,7 +135,11 @@ export default async function ReputationHistoryPage({
   const tier = tierOf(user.reputation);
 
   return (
-    <main className="mx-auto max-w-[720px] px-[var(--spacing-6)] py-[var(--spacing-12)]" dir="auto">
+    <main
+      id="main-content"
+      className="mx-auto max-w-[720px] px-[var(--spacing-6)] py-[var(--spacing-12)]"
+      dir="auto"
+    >
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <header className="mb-[var(--spacing-10)]">
         <Link

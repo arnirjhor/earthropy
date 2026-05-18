@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "cd ../.. && pnpm turbo build --filter=@earthropy/app",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "outputDirectory": ".next",
+  "regions": ["iad1"],
+  "env": {
+    "DATABASE_URL": "@database-url",
+    "REDIS_URL": "@redis-url",
+    "AUTH_SECRET": "@auth-secret",
+    "NEXT_PUBLIC_APP_URL": "@next-public-app-url",
+    "SMTP_HOST": "@smtp-host",
+    "SMTP_PORT": "@smtp-port",
+    "SMTP_USER": "@smtp-user",
+    "SMTP_PASS": "@smtp-pass",
+    "SMTP_FROM": "@smtp-from",
+    "ANTHROPIC_API_KEY": "@anthropic-api-key",
+    "OLLAMA_URL": "@ollama-url",
+    "S3_ENDPOINT": "@s3-endpoint",
+    "S3_BUCKET": "@s3-bucket",
+    "S3_ACCESS_KEY": "@s3-access-key",
+    "S3_SECRET_KEY": "@s3-secret-key"
+  }
+}
