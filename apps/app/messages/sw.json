@@ -1,0 +1,244 @@
+{
+  "CommentThread": {
+    "heading": "Maoni",
+    "sectionLabel": "Mlolongo wa maoni",
+    "listLabel": "Maoni",
+    "empty": "Hakuna maoni bado. Kuwa wa kwanza kujibu.",
+    "reply": "Jibu",
+    "cancel": "Ghairi",
+    "submitComment": "Toa maoni",
+    "submitReply": "Jibu",
+    "submitting": "Inatuma…",
+    "commentPlaceholder": "Andika maoni…",
+    "replyPlaceholder": "Andika jibu…",
+    "withdrawComment": "Ondoa",
+    "withdrawingComment": "Inaondoa…",
+    "appeal": "Tetea",
+    "appealing": "Inatuma…",
+    "appealPlaceholder": "Eleza kwa nini uamuzi huu haulikufanya sawa…",
+    "commentStatus": {
+      "pending_ai": "Inapitia ukaguzi wa AI",
+      "pending_review": "Inasubiri ukaguzi",
+      "rejected": "Ilizuiliwa",
+      "withdrawn": "Iliondonolewa"
+    }
+  },
+  "Home": {
+    "title": "Malengo ya 17",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "Malengo 17 ya Maendeleo Endelevu",
+    "mission": "Earthropy ni jukwaa la bure milele, ambalo halina ushawishi wa taasisi, limeundwa kusambaza kazi kwenye Malengo 17 ya Maendeleo Endelevu ya Umoja wa Mataifa. Imetengenezwa kwa NGO, watafiti, na jamii za ndani — watu kazi inategemea, katika lugha wanazozozungumza.",
+    "missionAttribution": "— Lengo la Earthropy",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "Unda kikundi",
+    "subheading": "Vikundi vinaleta watu pamoja karibu na Malengo maalum ya Maendeleo Endelevu.",
+    "fields": {
+      "name": "Jina",
+      "slug": "Slug",
+      "slugHint": "Inatokana kiotomatiki kutokana na jina. Inaweza kubadilishwa.",
+      "description": "Maelezo",
+      "visibility": "Ubaini",
+      "visibilityPublic": "Umma",
+      "visibilityPublicHint": "Kila mtu anaweza kupata na kujiunge",
+      "visibilityListed": "Iliyoandikwa",
+      "visibilityListedHint": "Inaonekana katika utaftaji; kamatanisha ili kujiunge",
+      "visibilityPrivate": "Siri",
+      "visibilityPrivateHint": "Kukamatanisha tu, haijaorodheshwa",
+      "preferredLocale": "Lugha ya msingi",
+      "locationText": "Mahali (si lazima)",
+      "locationTextPlaceholder": "K.m. Nairobi, Kenya",
+      "sdgs": "Malengo ya Maendeleo Endelevu",
+      "sdgsHint": "Chagua Malengo ya Maendeleo Endelevu ambayo kikundi hiki kinafanya kazi. Alama moja kama ya msingi.",
+      "sdgPrimary": "Lengo la Msingi"
+    },
+    "submit": "Unda kikundi",
+    "submitting": "Inaunda…",
+    "cancel": "Ghairi"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "Inapitia ukaguzi wa AI",
+      "pendingReview": "Inasubiri ukaguzi wa binadamu",
+      "rejected": "Ilizuiliwa — sababu: {reason}; tetea inaweza kupatikana",
+      "rejectedNoReason": "Ilizuiliwa",
+      "withdrawn": "Iliondonolewa na mwandishi"
+    },
+    "withdraw": "Ondoa",
+    "withdrawing": "Inaondoa…",
+    "appeal": "Tetea",
+    "appealing": "Inatuma…",
+    "appealPlaceholder": "Eleza kwa nini uamuzi huu haulikufanya sawa…",
+    "cancel": "Ghairi",
+    "by": "na",
+    "publishedLabel": "Imechapishwa",
+    "statusLabel": {
+      "pending_ai": "Inapitia ukaguzi wa AI",
+      "pending_review": "Inasubiri ukaguzi wa binadamu",
+      "published": "Imechapishwa",
+      "rejected": "Ilizuiliwa",
+      "withdrawn": "Iliondonolewa"
+    }
+  },
+  "GroupBrowse": {
+    "heading": "Vikundi",
+    "caption": "VINJIA VIKUNDI VYOTE",
+    "filterLabel": "Chuja kwa Lengo la Maendeleo Endelevu",
+    "visibilityLabel": "Ubaini",
+    "visibilityPublic": "Umma",
+    "visibilityListed": "Iliyoandikwa",
+    "visibilityBoth": "Umma + Iliyoandikwa",
+    "members": "{count} WAJUMBE",
+    "member": "1 MJUMBE",
+    "empty": {
+      "heading": "Hakuna vikundi vilivyopatikana",
+      "descriptionFiltered": "Hakuna vikundi vinavyolingana na Malengo yaliyochaguliwa. Jaribu kupanua kichuja chako.",
+      "descriptionAll": "Hakuna vikundi vilivyoundwa bado.",
+      "clearFilter": "Futa kichuja cha Lengo",
+      "createGroup": "Unda kikundi"
+    },
+    "pagination": {
+      "prev": "Ukurasa wa awali",
+      "next": "Ukurasa ufuatao",
+      "pageOf": "Ukurasa {page} wa {total}"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "Arifa",
+      "unreadCount": "{count} arifa ambazo hazijakamatwa"
+    },
+    "dropdown": {
+      "label": "Paneli ya arifa",
+      "title": "Arifa",
+      "markAll": "Alama zote kama zilizosomwa",
+      "markRead": "Alama {kind} kama iliyosomwa",
+      "read": "Soma",
+      "empty": "Hakuna arifa bado.",
+      "listLabel": "Arifa za karibuni",
+      "viewAll": "Angalia zote"
+    },
+    "page": {
+      "heading": "Arifa",
+      "empty": "Hakuna arifa.",
+      "markAll": "Alama zote kama zilizosomwa"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "Barua pepe",
+      "password": "Nenosiri",
+      "handle": "Jina la watumiaji"
+    },
+    "signup": {
+      "heading": "Unda akaunti",
+      "subheading": "Jiunge na jukwaa linaloandaa hatua za kimataifa kwenye Malengo ya Maendeleo Endelevu.",
+      "submit": "Unda akaunti",
+      "submitting": "Inaunda akaunti…",
+      "alreadyHaveAccount": "Una akaunti tayari?",
+      "signInLink": "Ingia"
+    },
+    "signin": {
+      "heading": "Ingia",
+      "submit": "Ingia",
+      "submitting": "Inaingia…",
+      "forgotPassword": "Ulisahau nenosiri?",
+      "noAccount": "Haina akaunti?",
+      "signUpLink": "Unda moja",
+      "tabs": {
+        "password": "Nenosiri",
+        "magic": "Kiungo cha uchawi"
+      },
+      "magic": {
+        "submit": "Tuma kiungo cha kuingia",
+        "submitting": "Inatuma…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "Thibitisha barua pepe yako",
+      "description": "Bofya kitufe hapa chini ili kuthibitisha anwani yako ya barua pepe na kuamilisha akaunti yako.",
+      "submit": "Thibitisha barua pepe",
+      "submitting": "Inathibitisha…"
+    },
+    "magicLink": {
+      "heading": "Ingia",
+      "description": "Bofya kitufe hapa chini ili kuingia kwenye akaunti yako.",
+      "submit": "Ingia",
+      "submitting": "Inaingia…",
+      "requestNew": "Omba kiungo cha kuingia kipya"
+    },
+    "forgotPassword": {
+      "heading": "Tengeneza upya nenosiri",
+      "description": "Ingiza barua pepe yako na tutakutumia kiungo cha kubadilisha ikiwa akaunti ipo.",
+      "submit": "Tuma kiungo cha kubadilisha",
+      "submitting": "Inatuma…",
+      "backToSignIn": "Rudi kwa kuingia"
+    },
+    "resetPassword": {
+      "heading": "Weka nenosiri mpya",
+      "description": "Ingiza nenosiri mpya kwa akaunti yako.",
+      "newPassword": "Nenosiri mpya",
+      "submit": "Weka nenosiri",
+      "submitting": "Inaweka nenosiri…"
+    },
+    "checkYourEmail": {
+      "heading": "Angalia barua pepe yako",
+      "description": "Tumetumia barua pepe. Fuata kiungo ndani ili kuendelea.",
+      "wrongEmail": "Barua pepe isiyo sahihi?",
+      "tryAgain": "Jaribu tena"
+    },
+    "dashboard": {
+      "welcome": "Karibu, {name}",
+      "defaultName": "hapo",
+      "signOut": "Toka",
+      "placeholder": "Dashibodi yako inaundwa. Angalia tena karibuni."
+    },
+    "account": {
+      "heading": "Akaunti",
+      "sections": {
+        "profile": "Profaili",
+        "sessions": "Vikazi vya kazi vya sasa",
+        "notifications": "Pendekezo la arifa",
+        "danger": "Eneo la hatari"
+      },
+      "profile": {
+        "displayName": "Jina la kuonyesha",
+        "handle": "Jina la watumiaji",
+        "locale": "Lugha",
+        "save": "Hifadhi mabadiliko",
+        "saving": "Inahifadhi…",
+        "saved": "Ilihifadhiwa."
+      },
+      "sessions": {
+        "currentDevice": "Simu ya sasa",
+        "otherDevices": "Simu nyingine",
+        "noOtherSessions": "Hakuna vikazi vingine vya kazi vya sasa.",
+        "createdAgo": "imeundwa {days} siku zilizopita",
+        "createdToday": "imeundwa leo",
+        "revoke": "Batilisha",
+        "revokeAll": "Batilisha vikazi vingine vyote vya kazi",
+        "revoking": "Inabatilisha…"
+      },
+      "notifications": {
+        "description": "Pendekezo la arifa hifadhi ndani kwa sasa (v0.1). Kubaki kwenye seva ni v0.2 ifuatayo.",
+        "inApp": "Arifa ndani ya programu",
+        "email": "Arifa ya barua pepe",
+        "kinds": {
+          "newPost": "Machapisho mapya katika vikundi unaovifuata",
+          "mention": "Majina yanayotajwa",
+          "groupInvite": "Mwaliko wa kujiunge na kikundi",
+          "moderation": "Uamuzi wa udhibiti kwenye maudhui yako"
+        }
+      },
+      "danger": {
+        "heading": "Futa akaunti",
+        "description": "Kufuta akaunti yako ni milele. Machapisho na maoni yako yanabaki kwa madhumuni ya ukaguzi wa udhibiti lakini akaunti yako itakamatiliwa mara moja na utaondoka.",
+        "confirm": "Ili kuthibitisha, ingiza anwani yako ya barua pepe:",
+        "email": "Barua pepe yako",
+        "submit": "Kamata akaunti yangu",
+        "submitting": "Inakamata akaunti…"
+      }
+    }
+  }
+}

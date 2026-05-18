@@ -1,0 +1,17 @@
+{
+  "Landing": {
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "Idioma",
+    "hero": "Ação contra a crescente desordem do planeta.",
+    "subhero": "Earthropy coordena trabalho global nos 17 Objetivos de Desenvolvimento Sustentável da ONU. Gratuito para sempre. Agnóstico de corporações. Construído para todos, em todos os lugares.",
+    "cta": "Começar →",
+    "whatItIsHeading": "O que é",
+    "whatItIsP1": "Uma plataforma neutra de bem público para coordenar trabalho nos 17 Objetivos de Desenvolvimento Sustentável da ONU. Não é um marketplace. Não é um portal de arrecadação de fundos. Um lugar para organizar, discutir e documentar o trabalho em si — os grupos, os posts, a moderação, os sinais de confiança — sem um guardião corporativo.",
+    "whatItIsP2": "Gratuito para sempre, em cada localidade que lançamos. Auto-hospedável. Código-aberto sob AGPL-3.0-or-later. Construído para ONGs, pesquisadores, comunidades locais e qualquer um que prefira coordenar o trabalho a coordenar a marca ao redor dele.",
+    "goalsHeading": "Os 17 Objetivos",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "Docs",
+    "footerGovernance": "Governance",
+    "footerSource": "Source ↗"
+  }
+}

@@ -331,6 +331,142 @@ const groupInviteHi: GroupInviteMessages = {
 };
 
 // ---------------------------------------------------------------------------
+// verify-email — pt, ru, sw
+// ---------------------------------------------------------------------------
+
+const verifyEmailPt: VerifyEmailMessages = {
+  subject: 'Confirme seu endereço de e-mail na Earthropy',
+  previewText: 'Clique no link para verificar seu e-mail e concluir a configuração da sua conta.',
+  heading: 'Confirme seu endereço de e-mail',
+  body: 'Clique no botão abaixo para verificar seu endereço de e-mail. Este link expira em 24 horas.',
+  cta: 'Verificar endereço de e-mail',
+  expiry: 'Este link expira em 24 horas.',
+  ignore: 'Se você não criou uma conta na Earthropy, ignore este e-mail.',
+};
+
+const verifyEmailRu: VerifyEmailMessages = {
+  subject: 'Подтвердите адрес электронной почты Earthropy',
+  previewText: 'Перейдите по ссылке, чтобы подтвердить адрес электронной почты и завершить настройку аккаунта.',
+  heading: 'Подтвердите адрес электронной почты',
+  body: 'Нажмите кнопку ниже, чтобы подтвердить адрес электронной почты. Срок действия ссылки — 24 часа.',
+  cta: 'Подтвердить адрес электронной почты',
+  expiry: 'Срок действия ссылки — 24 часа.',
+  ignore: 'Если вы не создавали аккаунт в Earthropy, проигнорируйте это письмо.',
+};
+
+const verifyEmailSw: VerifyEmailMessages = {
+  subject: 'Thibitisha anwani yako ya barua pepe ya Earthropy',
+  previewText: 'Bofya kiungo ili kuthibitisha barua pepe yako na kukamilisha usanidi wa akaunti yako.',
+  heading: 'Thibitisha anwani yako ya barua pepe',
+  body: 'Bofya kitufe hapa chini ili kuthibitisha anwani yako ya barua pepe. Kiungo hiki kitaisha baada ya saa 24.',
+  cta: 'Thibitisha anwani ya barua pepe',
+  expiry: 'Kiungo hiki kitaisha baada ya saa 24.',
+  ignore: 'Ikiwa hukufungua akaunti ya Earthropy, puuza barua pepe hii.',
+};
+
+// ---------------------------------------------------------------------------
+// magic-link — pt, ru, sw
+// ---------------------------------------------------------------------------
+
+const magicLinkPt: MagicLinkMessages = {
+  subject: 'Seu link de acesso à Earthropy',
+  previewText: 'Clique no link para entrar na sua conta Earthropy.',
+  heading: 'Entrar na Earthropy',
+  body: 'Clique no botão abaixo para entrar. Este link expira em 15 minutos e só pode ser usado uma vez.',
+  cta: 'Entrar',
+  expiry: 'Este link expira em 15 minutos.',
+  ignore: 'Se você não solicitou um link de acesso, ignore este e-mail.',
+};
+
+const magicLinkRu: MagicLinkMessages = {
+  subject: 'Ваша ссылка для входа в Earthropy',
+  previewText: 'Перейдите по ссылке, чтобы войти в свой аккаунт Earthropy.',
+  heading: 'Вход в Earthropy',
+  body: 'Нажмите кнопку ниже, чтобы войти. Срок действия ссылки — 15 минут; использовать можно только один раз.',
+  cta: 'Войти',
+  expiry: 'Срок действия ссылки — 15 минут.',
+  ignore: 'Если вы не запрашивали ссылку для входа, проигнорируйте это письмо.',
+};
+
+const magicLinkSw: MagicLinkMessages = {
+  subject: 'Kiungo chako cha kuingia Earthropy',
+  previewText: 'Bofya kiungo ili kuingia kwenye akaunti yako ya Earthropy.',
+  heading: 'Ingia kwenye Earthropy',
+  body: 'Bofya kitufe hapa chini ili kuingia. Kiungo hiki kitaisha baada ya dakika 15 na kinaweza kutumika mara moja tu.',
+  cta: 'Ingia',
+  expiry: 'Kiungo hiki kitaisha baada ya dakika 15.',
+  ignore: 'Ikiwa hukuomba kiungo cha kuingia, puuza barua pepe hii.',
+};
+
+// ---------------------------------------------------------------------------
+// password-reset — pt, ru, sw
+// ---------------------------------------------------------------------------
+
+const passwordResetPt: PasswordResetMessages = {
+  subject: 'Redefinir sua senha da Earthropy',
+  previewText: 'Clique no link para definir uma nova senha para sua conta Earthropy.',
+  heading: 'Redefinir sua senha',
+  body: 'Clique no botão abaixo para definir uma nova senha. Este link expira em 60 minutos e só pode ser usado uma vez.',
+  cta: 'Redefinir senha',
+  expiry: 'Este link expira em 60 minutos.',
+  ignore: 'Se você não solicitou a redefinição de senha, ignore este e-mail. Sua senha não foi alterada.',
+};
+
+const passwordResetRu: PasswordResetMessages = {
+  subject: 'Сброс пароля Earthropy',
+  previewText: 'Перейдите по ссылке, чтобы задать новый пароль для аккаунта Earthropy.',
+  heading: 'Сброс пароля',
+  body: 'Нажмите кнопку ниже, чтобы задать новый пароль. Срок действия ссылки — 60 минут; использовать можно только один раз.',
+  cta: 'Сбросить пароль',
+  expiry: 'Срок действия ссылки — 60 минут.',
+  ignore: 'Если вы не запрашивали сброс пароля, проигнорируйте это письмо. Ваш пароль не был изменён.',
+};
+
+const passwordResetSw: PasswordResetMessages = {
+  subject: 'Weka upya nenosiri lako la Earthropy',
+  previewText: 'Bofya kiungo ili kuweka nenosiri jipya kwa akaunti yako ya Earthropy.',
+  heading: 'Weka upya nenosiri lako',
+  body: 'Bofya kitufe hapa chini ili kuweka nenosiri jipya. Kiungo hiki kitaisha baada ya dakika 60 na kinaweza kutumika mara moja tu.',
+  cta: 'Weka upya nenosiri',
+  expiry: 'Kiungo hiki kitaisha baada ya dakika 60.',
+  ignore: 'Ikiwa hukuomba kuweka upya nenosiri, puuza barua pepe hii. Nenosiri lako halijabadilishwa.',
+};
+
+// ---------------------------------------------------------------------------
+// group-invite — pt, ru, sw
+// ---------------------------------------------------------------------------
+
+const groupInvitePt: GroupInviteMessages = {
+  subject: 'Você foi convidado a participar de um grupo na Earthropy',
+  previewText: 'Clique no link para participar do grupo na Earthropy.',
+  heading: 'Você foi convidado a participar de um grupo',
+  body: 'Clique no botão abaixo para aceitar o convite. Este link expira em 7 dias e só pode ser usado uma vez.',
+  cta: 'Aceitar convite',
+  expiry: 'Este link expira em 7 dias.',
+  ignore: 'Se você não esperava este convite, pode ignorar este e-mail com segurança.',
+};
+
+const groupInviteRu: GroupInviteMessages = {
+  subject: 'Вас пригласили в группу на Earthropy',
+  previewText: 'Перейдите по ссылке, чтобы присоединиться к группе на Earthropy.',
+  heading: 'Вас пригласили в группу',
+  body: 'Нажмите кнопку ниже, чтобы принять приглашение. Срок действия ссылки — 7 дней; использовать можно только один раз.',
+  cta: 'Принять приглашение',
+  expiry: 'Срок действия ссылки — 7 дней.',
+  ignore: 'Если вы не ожидали этого приглашения, можете проигнорировать это письмо.',
+};
+
+const groupInviteSw: GroupInviteMessages = {
+  subject: 'Umealikwa kujiunga na kikundi kwenye Earthropy',
+  previewText: 'Bofya kiungo ili kujiunga na kikundi kwenye Earthropy.',
+  heading: 'Umealikwa kujiunga na kikundi',
+  body: 'Bofya kitufe hapa chini ili kukubali mwaliko wako. Kiungo hiki kitaisha baada ya siku 7 na kinaweza kutumika mara moja tu.',
+  cta: 'Kubali mwaliko',
+  expiry: 'Kiungo hiki kitaisha baada ya siku 7.',
+  ignore: 'Ikiwa hukutarajia mwaliko huu, unaweza kupuuza barua pepe hii kwa usalama.',
+};
+
+// ---------------------------------------------------------------------------
 // Lookup helpers
 // ---------------------------------------------------------------------------
 
@@ -340,7 +476,7 @@ function localeOrEn<T>(map: Partial<Record<Locale, T>>, fallback: T, locale: Loc
 
 export function getVerifyEmailMessages(locale: Locale): VerifyEmailMessages {
   return localeOrEn<VerifyEmailMessages>(
-    { en: verifyEmailEn, ar: verifyEmailAr, es: verifyEmailEs, fr: verifyEmailFr, zh: verifyEmailZh, hi: verifyEmailHi },
+    { en: verifyEmailEn, ar: verifyEmailAr, es: verifyEmailEs, fr: verifyEmailFr, zh: verifyEmailZh, hi: verifyEmailHi, pt: verifyEmailPt, ru: verifyEmailRu, sw: verifyEmailSw },
     verifyEmailEn,
     locale,
   );
@@ -348,7 +484,7 @@ export function getVerifyEmailMessages(locale: Locale): VerifyEmailMessages {
 
 export function getMagicLinkMessages(locale: Locale): MagicLinkMessages {
   return localeOrEn<MagicLinkMessages>(
-    { en: magicLinkEn, ar: magicLinkAr, es: magicLinkEs, fr: magicLinkFr, zh: magicLinkZh, hi: magicLinkHi },
+    { en: magicLinkEn, ar: magicLinkAr, es: magicLinkEs, fr: magicLinkFr, zh: magicLinkZh, hi: magicLinkHi, pt: magicLinkPt, ru: magicLinkRu, sw: magicLinkSw },
     magicLinkEn,
     locale,
   );
@@ -356,7 +492,7 @@ export function getMagicLinkMessages(locale: Locale): MagicLinkMessages {
 
 export function getPasswordResetMessages(locale: Locale): PasswordResetMessages {
   return localeOrEn<PasswordResetMessages>(
-    { en: passwordResetEn, ar: passwordResetAr, es: passwordResetEs, fr: passwordResetFr, zh: passwordResetZh, hi: passwordResetHi },
+    { en: passwordResetEn, ar: passwordResetAr, es: passwordResetEs, fr: passwordResetFr, zh: passwordResetZh, hi: passwordResetHi, pt: passwordResetPt, ru: passwordResetRu, sw: passwordResetSw },
     passwordResetEn,
     locale,
   );
@@ -364,7 +500,7 @@ export function getPasswordResetMessages(locale: Locale): PasswordResetMessages 
 
 export function getGroupInviteMessages(locale: Locale): GroupInviteMessages {
   return localeOrEn<GroupInviteMessages>(
-    { en: groupInviteEn, ar: groupInviteAr, es: groupInviteEs, fr: groupInviteFr, zh: groupInviteZh, hi: groupInviteHi },
+    { en: groupInviteEn, ar: groupInviteAr, es: groupInviteEs, fr: groupInviteFr, zh: groupInviteZh, hi: groupInviteHi, pt: groupInvitePt, ru: groupInviteRu, sw: groupInviteSw },
     groupInviteEn,
     locale,
   );

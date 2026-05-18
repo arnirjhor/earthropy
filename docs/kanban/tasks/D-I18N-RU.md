@@ -1,7 +1,7 @@
 ---
 id: D-I18N-RU
 title: "Translate messages/ru.json (Russian)"
-status: ready
+status: done
 priority: medium
 phase: D
 agent_model: haiku

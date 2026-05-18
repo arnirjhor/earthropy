@@ -1,7 +1,7 @@
 ---
 id: D-I18N-SW
 title: "Translate messages/sw.json (Swahili)"
-status: ready
+status: done
 priority: medium
 phase: D
 agent_model: haiku

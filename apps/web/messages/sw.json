@@ -1,0 +1,17 @@
+{
+  "Landing": {
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "Lugha",
+    "hero": "Hatua dhidi ya machafuko yanayoongezwa ya sayari.",
+    "subhero": "Earthropy inapanga kazi ya kimataifa kwenye Malengo 17 ya Maendeleo Endelevu ya Umoja wa Mataifa. Bure milele. Isiyotegemea taasisi. Imetengenezwa kwa kila mtu, mahali popote.",
+    "cta": "Kuanza →",
+    "whatItIsHeading": "Kile kilicho",
+    "whatItIsP1": "Jukwaa la upande wa tatu, la hadharani limeundwa kusambaza kazi kwenye Malengo 17 ya Maendeleo Endelevu ya Umoja wa Mataifa. Si soko. Si bandari ya ukusanyaji wa pesa. Ni mahali pa kuandaa, kubishana, na kuandika kazi yenyewe — vikundi, machapisho, udhibiti, ishara za uaminifu — bila mtekelezaji wa taasisi.",
+    "whatItIsP2": "Bure milele, katika kila lugha tunatopeana. Inaweza kuandaa mwenyewe. Inapatikana chini ya AGPL-3.0-or-later. Imetengenezwa kwa NGO, watafiti, jamii za ndani, na kila mtu anayependa kusambaza kazi kuliko kusambaza chapa karibu nayo.",
+    "goalsHeading": "Malengo ya 17",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "Nyaraka",
+    "footerGovernance": "Utawala",
+    "footerSource": "Chanzo ↗"
+  }
+}
