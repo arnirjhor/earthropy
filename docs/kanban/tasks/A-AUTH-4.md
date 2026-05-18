@@ -1,7 +1,7 @@
 ---
 id: A-AUTH-4
 title: "Profile + settings pages (locale, notification prefs)"
-status: backlog
+status: done
 priority: high
 phase: A
 agent_model: sonnet

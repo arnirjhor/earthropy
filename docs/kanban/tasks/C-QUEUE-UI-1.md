@@ -1,7 +1,7 @@
 ---
 id: C-QUEUE-UI-1
 title: "Moderator queue UI"
-status: ready
+status: done
 priority: high
 phase: C
 agent_model: sonnet

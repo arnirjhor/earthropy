@@ -1,7 +1,7 @@
 ---
 id: B-COMMENT-2
 title: "Comments thread component + reply form"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

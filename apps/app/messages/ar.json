@@ -1,0 +1,244 @@
+{
+  "CommentThread": {
+    "heading": "التعليقات",
+    "sectionLabel": "سلسلة التعليقات",
+    "listLabel": "التعليقات",
+    "empty": "لا توجد تعليقات حتى الآن. كن أول من يرد.",
+    "reply": "رد",
+    "cancel": "إلغاء",
+    "submitComment": "تعليق",
+    "submitReply": "رد",
+    "submitting": "جاري الإرسال…",
+    "commentPlaceholder": "اكتب تعليقاً…",
+    "replyPlaceholder": "اكتب ردّاً…",
+    "withdrawComment": "سحب",
+    "withdrawingComment": "جاري السحب…",
+    "appeal": "تقديم استئناف",
+    "appealing": "جاري الإرسال…",
+    "appealPlaceholder": "اشرح لماذا كان هذا القرار غير صحيح…",
+    "commentStatus": {
+      "pending_ai": "قيد المراجعة الآلية",
+      "pending_review": "في انتظار المراجعة",
+      "rejected": "مرفوض",
+      "withdrawn": "تم السحب"
+    }
+  },
+  "Home": {
+    "title": "الأهداف السبعة عشر",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "أهداف التنمية المستدامة السبعة عشر للأمم المتحدة",
+    "mission": "إيرثروبي منصة حرة للأبد وغير متحيزة للشركات، مخصصة لتنسيق العمل على أهداف التنمية المستدامة السبعة عشر للأمم المتحدة. مبنية للمنظمات غير الحكومية والباحثين والمجتمعات المحلية — الأشخاص الذين يعتمد العمل عليهم، باللغات التي يتحدثونها فعلاً.",
+    "missionAttribution": "— مهمة إيرثروبي",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "إنشاء مجموعة",
+    "subheading": "تجمع المجموعات الناس حول أهداف مستدامة محددة.",
+    "fields": {
+      "name": "الاسم",
+      "slug": "الاسم المختصر",
+      "slugHint": "مشتق تلقائياً من الاسم. يمكن تخصيصه.",
+      "description": "الوصف",
+      "visibility": "الرؤية",
+      "visibilityPublic": "عام",
+      "visibilityPublicHint": "يمكن لأي شخص أن يجد ويشارك",
+      "visibilityListed": "مدرج",
+      "visibilityListedHint": "مرئي في البحث؛ الانضمام بدعوة",
+      "visibilityPrivate": "خاص",
+      "visibilityPrivateHint": "خاص بالدعوة فقط، غير مدرج",
+      "preferredLocale": "اللغة الأساسية",
+      "locationText": "الموقع (اختياري)",
+      "locationTextPlaceholder": "مثلاً: نيروبي، كينيا",
+      "sdgs": "أهداف التنمية المستدامة",
+      "sdgsHint": "اختر أهداف التنمية المستدامة التي تعمل عليها هذه المجموعة. حدد واحداً كهدف أساسي.",
+      "sdgPrimary": "الهدف الأساسي"
+    },
+    "submit": "إنشاء مجموعة",
+    "submitting": "جاري الإنشاء…",
+    "cancel": "إلغاء"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "قيد المراجعة الآلية",
+      "pendingReview": "موضوع للمراجعة البشرية",
+      "rejected": "مرفوض — السبب: {reason}؛ الاستئناف متاح",
+      "rejectedNoReason": "مرفوض",
+      "withdrawn": "تم السحب من قبل المؤلف"
+    },
+    "withdraw": "سحب",
+    "withdrawing": "جاري السحب…",
+    "appeal": "تقديم استئناف",
+    "appealing": "جاري الإرسال…",
+    "appealPlaceholder": "اشرح لماذا كان هذا القرار غير صحيح…",
+    "cancel": "إلغاء",
+    "by": "بواسطة",
+    "publishedLabel": "تم النشر",
+    "statusLabel": {
+      "pending_ai": "قيد المراجعة الآلية",
+      "pending_review": "في انتظار المراجعة البشرية",
+      "published": "منشور",
+      "rejected": "مرفوض",
+      "withdrawn": "تم السحب"
+    }
+  },
+  "GroupBrowse": {
+    "heading": "المجموعات",
+    "caption": "استعرض جميع المجموعات",
+    "filterLabel": "التصفية حسب الهدف",
+    "visibilityLabel": "الرؤية",
+    "visibilityPublic": "عام",
+    "visibilityListed": "مدرج",
+    "visibilityBoth": "عام + مدرج",
+    "members": "{count} أعضاء",
+    "member": "عضو واحد",
+    "empty": {
+      "heading": "لم يتم العثور على مجموعات",
+      "descriptionFiltered": "لا توجد مجموعات تطابق أهداف التنمية المستدامة المختارة. حاول توسيع الفلتر.",
+      "descriptionAll": "لم يتم إنشاء أي مجموعات بعد.",
+      "clearFilter": "مسح فلتر أهداف التنمية المستدامة",
+      "createGroup": "إنشاء مجموعة"
+    },
+    "pagination": {
+      "prev": "الصفحة السابقة",
+      "next": "الصفحة التالية",
+      "pageOf": "الصفحة {page} من {total}"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "الإشعارات",
+      "unreadCount": "{count} إشعارات غير مقروءة"
+    },
+    "dropdown": {
+      "label": "لوحة الإشعارات",
+      "title": "الإشعارات",
+      "markAll": "وضع علامة الكل كمقروء",
+      "markRead": "وضع علامة {kind} كمقروء",
+      "read": "مقروء",
+      "empty": "لا توجد إشعارات حتى الآن.",
+      "listLabel": "الإشعارات الأخيرة",
+      "viewAll": "عرض الكل"
+    },
+    "page": {
+      "heading": "الإشعارات",
+      "empty": "لا توجد إشعارات.",
+      "markAll": "وضع علامة الكل كمقروء"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "handle": "اسم المستخدم"
+    },
+    "signup": {
+      "heading": "إنشاء حساب",
+      "subheading": "انضم إلى المنصة التي تنسق العمل العالمي على أهداف التنمية المستدامة.",
+      "submit": "إنشاء حساب",
+      "submitting": "جاري إنشاء الحساب…",
+      "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+      "signInLink": "تسجيل الدخول"
+    },
+    "signin": {
+      "heading": "تسجيل الدخول",
+      "submit": "تسجيل الدخول",
+      "submitting": "جاري تسجيل الدخول…",
+      "forgotPassword": "هل نسيت كلمة المرور؟",
+      "noAccount": "ليس لديك حساب؟",
+      "signUpLink": "أنشئ واحداً",
+      "tabs": {
+        "password": "كلمة المرور",
+        "magic": "رابط سحري"
+      },
+      "magic": {
+        "submit": "أرسل رابط تسجيل الدخول",
+        "submitting": "جاري الإرسال…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "تأكيد بريدك الإلكتروني",
+      "description": "انقر الزر أدناه لتأكيد عنوان بريدك الإلكتروني وتفعيل حسابك.",
+      "submit": "تأكيد البريد الإلكتروني",
+      "submitting": "جاري التأكيد…"
+    },
+    "magicLink": {
+      "heading": "تسجيل الدخول",
+      "description": "انقر الزر أدناه لتسجيل الدخول إلى حسابك.",
+      "submit": "تسجيل الدخول",
+      "submitting": "جاري تسجيل الدخول…",
+      "requestNew": "طلب رابط تسجيل دخول جديد"
+    },
+    "forgotPassword": {
+      "heading": "إعادة تعيين كلمة المرور",
+      "description": "أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين إذا كان الحساب موجوداً.",
+      "submit": "أرسل رابط إعادة التعيين",
+      "submitting": "جاري الإرسال…",
+      "backToSignIn": "العودة إلى تسجيل الدخول"
+    },
+    "resetPassword": {
+      "heading": "تعيين كلمة مرور جديدة",
+      "description": "أدخل كلمة مرور جديدة لحسابك.",
+      "newPassword": "كلمة مرور جديدة",
+      "submit": "تعيين كلمة المرور",
+      "submitting": "جاري تعيين كلمة المرور…"
+    },
+    "checkYourEmail": {
+      "heading": "تحقق من بريدك الإلكتروني",
+      "description": "أرسلنا لك بريداً إلكترونياً. اتبع الرابط بداخله للمتابعة.",
+      "wrongEmail": "بريد إلكتروني خاطئ؟",
+      "tryAgain": "حاول مجدداً"
+    },
+    "dashboard": {
+      "welcome": "أهلاً {name}",
+      "defaultName": "هناك",
+      "signOut": "تسجيل الخروج",
+      "placeholder": "لوحة التحكم الخاصة بك قيد الإنشاء. تحقق لاحقاً."
+    },
+    "account": {
+      "heading": "الحساب",
+      "sections": {
+        "profile": "الملف الشخصي",
+        "sessions": "الجلسات النشطة",
+        "notifications": "تفضيلات الإشعارات",
+        "danger": "منطقة الخطر"
+      },
+      "profile": {
+        "displayName": "اسم العرض",
+        "handle": "اسم المستخدم",
+        "locale": "اللغة",
+        "save": "حفظ التغييرات",
+        "saving": "جاري الحفظ…",
+        "saved": "تم الحفظ."
+      },
+      "sessions": {
+        "currentDevice": "الجهاز الحالي",
+        "otherDevices": "أجهزة أخرى",
+        "noOtherSessions": "لا توجد جلسات نشطة أخرى.",
+        "createdAgo": "تم الإنشاء منذ {days} أيام",
+        "createdToday": "تم الإنشاء اليوم",
+        "revoke": "إلغاء",
+        "revokeAll": "إلغاء جميع الجلسات الأخرى",
+        "revoking": "جاري الإلغاء…"
+      },
+      "notifications": {
+        "description": "يتم حفظ تفضيلات الإشعارات محلياً حالياً (v0.1). الحفظ على الخادم سيكون متابعة في v0.2.",
+        "inApp": "إشعارات في التطبيق",
+        "email": "إشعارات البريد الإلكتروني",
+        "kinds": {
+          "newPost": "منشورات جديدة في المجموعات التي تتابعها",
+          "mention": "الإشارات",
+          "groupInvite": "دعوات المجموعة",
+          "moderation": "قرارات الإشراف على محتواك"
+        }
+      },
+      "danger": {
+        "heading": "حذف الحساب",
+        "description": "حذف حسابك دائم. سيتم الاحتفاظ بمنشوراتك وتعليقاتك لأغراض تدقيق الإشراف، لكن سيتم تعطيل حسابك فوراً وسيتم تسجيل خروجك.",
+        "confirm": "للتأكيد، أدخل عنوان بريدك الإلكتروني:",
+        "email": "بريدك الإلكتروني",
+        "submit": "تعطيل حسابي",
+        "submitting": "جاري تعطيل الحساب…"
+      }
+    }
+  }
+}

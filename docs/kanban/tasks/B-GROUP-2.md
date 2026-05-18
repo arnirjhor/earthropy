@@ -1,7 +1,7 @@
 ---
 id: B-GROUP-2
 title: "Group create form + slug-gen + SDG multi-select"
-status: ready
+status: done
 priority: critical
 phase: B
 agent_model: sonnet

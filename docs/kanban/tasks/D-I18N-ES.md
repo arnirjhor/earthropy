@@ -1,7 +1,7 @@
 ---
 id: D-I18N-ES
 title: "Translate messages/es.json (Spanish)"
-status: ready
+status: done
 priority: medium
 phase: D
 agent_model: haiku

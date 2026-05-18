@@ -1,7 +1,7 @@
 ---
 id: B-GROUP-3
 title: "Group browse with SDG facet filter"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

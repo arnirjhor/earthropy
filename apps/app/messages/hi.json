@@ -1,0 +1,244 @@
+{
+  "CommentThread": {
+    "heading": "टिप्पणियाँ",
+    "sectionLabel": "टिप्पणी थ्रेड",
+    "listLabel": "टिप्पणियाँ",
+    "empty": "अभी कोई टिप्पणी नहीं। पहली जवाब देने वाले बनें।",
+    "reply": "जवाब दें",
+    "cancel": "रद्द करें",
+    "submitComment": "टिप्पणी करें",
+    "submitReply": "जवाब दें",
+    "submitting": "सबमिट किया जा रहा है…",
+    "commentPlaceholder": "एक टिप्पणी लिखें…",
+    "replyPlaceholder": "एक जवाब लिखें…",
+    "withdrawComment": "वापस लें",
+    "withdrawingComment": "वापस लिया जा रहा है…",
+    "appeal": "अपील करें",
+    "appealing": "सबमिट किया जा रहा है…",
+    "appealPlaceholder": "समझाएँ कि यह निर्णय गलत क्यों है…",
+    "commentStatus": {
+      "pending_ai": "AI समीक्षा के तहत",
+      "pending_review": "समीक्षा के लिए लंबित",
+      "rejected": "अस्वीकृत",
+      "withdrawn": "वापस लिया गया"
+    }
+  },
+  "Home": {
+    "title": "17 लक्ष्य",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "17 सतत विकास लक्ष्य",
+    "mission": "Earthropy एक हमेशा-मुफ्त, निगम-तटस्थ मंच है जो 17 संयुक्त राष्ट्र सतत विकास लक्ष्यों पर काम को समन्वय करने के लिए बनाया गया है। NGO, शोधकर्ताओं और स्थानीय समुदायों के लिए निर्मित — वह लोग जिन पर यह काम निर्भर करता है, जिन भाषाओं में वे वास्तव में बोलते हैं।",
+    "missionAttribution": "— Earthropy मिशन",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "एक समूह बनाएँ",
+    "subheading": "समूह विशिष्ट SDG के चारों ओर लोगों को एक साथ लाते हैं।",
+    "fields": {
+      "name": "नाम",
+      "slug": "स्लग",
+      "slugHint": "नाम से स्वचालित रूप से प्राप्त। अनुकूलित किया जा सकता है।",
+      "description": "विवरण",
+      "visibility": "दृश्यता",
+      "visibilityPublic": "सार्वजनिक",
+      "visibilityPublicHint": "कोई भी खोज सकता है और शामिल हो सकता है",
+      "visibilityListed": "सूचीबद्ध",
+      "visibilityListedHint": "खोज में दृश्यमान; शामिल होने के लिए आमंत्रित करें",
+      "visibilityPrivate": "निजी",
+      "visibilityPrivateHint": "केवल निमंत्रण, सूचीबद्ध नहीं",
+      "preferredLocale": "प्राथमिक भाषा",
+      "locationText": "स्थान (वैकल्पिक)",
+      "locationTextPlaceholder": "उदा. नैरोबी, केन्या",
+      "sdgs": "सतत विकास लक्ष्य",
+      "sdgsHint": "वह SDG चुनें जिस पर यह समूह काम करता है। एक को प्राथमिक के रूप में चिह्नित करें।",
+      "sdgPrimary": "प्राथमिक SDG"
+    },
+    "submit": "समूह बनाएँ",
+    "submitting": "बनाया जा रहा है…",
+    "cancel": "रद्द करें"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "AI समीक्षा के तहत",
+      "pendingReview": "मानव समीक्षा के लिए रखा गया",
+      "rejected": "अस्वीकृत — कारण: {reason}; अपील उपलब्ध है",
+      "rejectedNoReason": "अस्वीकृत",
+      "withdrawn": "लेखक द्वारा वापस लिया गया"
+    },
+    "withdraw": "वापस लें",
+    "withdrawing": "वापस लिया जा रहा है…",
+    "appeal": "अपील करें",
+    "appealing": "सबमिट किया जा रहा है…",
+    "appealPlaceholder": "समझाएँ कि यह निर्णय गलत क्यों है…",
+    "cancel": "रद्द करें",
+    "by": "द्वारा",
+    "publishedLabel": "प्रकाशित",
+    "statusLabel": {
+      "pending_ai": "AI समीक्षा के तहत",
+      "pending_review": "मानव समीक्षा के लिए लंबित",
+      "published": "प्रकाशित",
+      "rejected": "अस्वीकृत",
+      "withdrawn": "वापस लिया गया"
+    }
+  },
+  "GroupBrowse": {
+    "heading": "समूह",
+    "caption": "सभी समूहों को ब्राउज़ करें",
+    "filterLabel": "SDG द्वारा फ़िल्टर करें",
+    "visibilityLabel": "दृश्यता",
+    "visibilityPublic": "सार्वजनिक",
+    "visibilityListed": "सूचीबद्ध",
+    "visibilityBoth": "सार्वजनिक + सूचीबद्ध",
+    "members": "{count} सदस्य",
+    "member": "1 सदस्य",
+    "empty": {
+      "heading": "कोई समूह नहीं मिला",
+      "descriptionFiltered": "कोई समूह चयनित SDG से मेल नहीं खाता है। अपने फ़िल्टर को चौड़ा करने का प्रयास करें।",
+      "descriptionAll": "अभी तक कोई समूह नहीं बनाया गया है।",
+      "clearFilter": "SDG फ़िल्टर साफ़ करें",
+      "createGroup": "एक समूह बनाएँ"
+    },
+    "pagination": {
+      "prev": "पिछला पृष्ठ",
+      "next": "अगला पृष्ठ",
+      "pageOf": "पृष्ठ {page} का {total}"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "सूचनाएँ",
+      "unreadCount": "{count} अपठित सूचनाएँ"
+    },
+    "dropdown": {
+      "label": "सूचनाएँ पैनल",
+      "title": "सूचनाएँ",
+      "markAll": "सभी को पढ़ा हुआ चिह्नित करें",
+      "markRead": "{kind} को पढ़ा हुआ चिह्नित करें",
+      "read": "पढ़ें",
+      "empty": "अभी कोई सूचनाएँ नहीं।",
+      "listLabel": "हाल की सूचनाएँ",
+      "viewAll": "सभी देखें"
+    },
+    "page": {
+      "heading": "सूचनाएँ",
+      "empty": "कोई सूचनाएँ नहीं।",
+      "markAll": "सभी को पढ़ा हुआ चिह्नित करें"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "ईमेल",
+      "password": "पासवर्ड",
+      "handle": "हैंडल"
+    },
+    "signup": {
+      "heading": "एक खाता बनाएँ",
+      "subheading": "SDG पर वैश्विक कार्रवाई का समन्वय करने वाले मंच में शामिल हों।",
+      "submit": "खाता बनाएँ",
+      "submitting": "खाता बनाया जा रहा है…",
+      "alreadyHaveAccount": "पहले से खाता है?",
+      "signInLink": "साइन इन करें"
+    },
+    "signin": {
+      "heading": "साइन इन करें",
+      "submit": "साइन इन करें",
+      "submitting": "साइन इन किया जा रहा है…",
+      "forgotPassword": "अपना पासवर्ड भूल गए?",
+      "noAccount": "खाता नहीं है?",
+      "signUpLink": "एक बनाएँ",
+      "tabs": {
+        "password": "पासवर्ड",
+        "magic": "जादुई लिंक"
+      },
+      "magic": {
+        "submit": "साइन-इन लिंक भेजें",
+        "submitting": "भेजा जा रहा है…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "अपने ईमेल की पुष्टि करें",
+      "description": "अपने ईमेल पते को सत्यापित करने और अपने खाते को सक्रिय करने के लिए नीचे दिए गए बटन पर क्लिक करें।",
+      "submit": "ईमेल की पुष्टि करें",
+      "submitting": "पुष्टि की जा रही है…"
+    },
+    "magicLink": {
+      "heading": "साइन इन करें",
+      "description": "अपने खाते में साइन इन करने के लिए नीचे दिए गए बटन पर क्लिक करें।",
+      "submit": "साइन इन करें",
+      "submitting": "साइन इन किया जा रहा है…",
+      "requestNew": "एक नया साइन-इन लिंक अनुरोध करें"
+    },
+    "forgotPassword": {
+      "heading": "अपना पासवर्ड रीसेट करें",
+      "description": "अपना ईमेल दर्ज करें और यदि खाता मौजूद है तो हम आपको एक रीसेट लिंक भेजेंगे।",
+      "submit": "रीसेट लिंक भेजें",
+      "submitting": "भेजा जा रहा है…",
+      "backToSignIn": "साइन इन पर वापस जाएँ"
+    },
+    "resetPassword": {
+      "heading": "नया पासवर्ड सेट करें",
+      "description": "अपने खाते के लिए एक नया पासवर्ड दर्ज करें।",
+      "newPassword": "नया पासवर्ड",
+      "submit": "पासवर्ड सेट करें",
+      "submitting": "पासवर्ड सेट किया जा रहा है…"
+    },
+    "checkYourEmail": {
+      "heading": "अपना ईमेल देखें",
+      "description": "हमने आपको एक ईमेल भेजा है। जारी रखने के लिए इसके अंदर लिंक का अनुसरण करें।",
+      "wrongEmail": "गलत ईमेल?",
+      "tryAgain": "फिर से कोशिश करें"
+    },
+    "dashboard": {
+      "welcome": "स्वागत है, {name}",
+      "defaultName": "वहाँ",
+      "signOut": "साइन आउट करें",
+      "placeholder": "आपका डैशबोर्ड निर्माणाधीन है। जल्द ही वापस आएँ।"
+    },
+    "account": {
+      "heading": "खाता",
+      "sections": {
+        "profile": "प्रोफ़ाइल",
+        "sessions": "सक्रिय सत्र",
+        "notifications": "सूचना प्राथमिकताएँ",
+        "danger": "खतरे का क्षेत्र"
+      },
+      "profile": {
+        "displayName": "प्रदर्शन नाम",
+        "handle": "हैंडल",
+        "locale": "भाषा",
+        "save": "परिवर्तन सहेजें",
+        "saving": "सहेजा जा रहा है…",
+        "saved": "सहेजा गया।"
+      },
+      "sessions": {
+        "currentDevice": "वर्तमान डिवाइस",
+        "otherDevices": "अन्य डिवाइस",
+        "noOtherSessions": "कोई अन्य सक्रिय सत्र नहीं।",
+        "createdAgo": "{days} दिन पहले बनाया गया",
+        "createdToday": "आज बनाया गया",
+        "revoke": "रद्द करें",
+        "revokeAll": "अन्य सभी सत्र रद्द करें",
+        "revoking": "रद्द किया जा रहा है…"
+      },
+      "notifications": {
+        "description": "सूचना प्राथमिकताएँ फिलहाल स्थानीय रूप से सहेजी जाती हैं (v0.1)। सर्वर-पक्ष दृढ़ता एक v0.2 अनुवर्ती है।",
+        "inApp": "इन-ऐप सूचनाएँ",
+        "email": "ईमेल सूचनाएँ",
+        "kinds": {
+          "newPost": "उन समूहों में नई पोस्ट जिन्हें आप फ़ॉलो करते हैं",
+          "mention": "उल्लेख",
+          "groupInvite": "समूह के आमंत्रण",
+          "moderation": "आपकी सामग्री पर मॉडरेशन निर्णय"
+        }
+      },
+      "danger": {
+        "heading": "खाता हटाएँ",
+        "description": "अपने खाते को हटाना स्थायी है। आपकी पोस्ट और टिप्पणियाँ मॉडरेशन ऑडिट उद्देश्यों के लिए बनाई रखी जाती हैं लेकिन आपका खाता तुरंत अक्षम कर दिया जाएगा और आप साइन आउट कर दिए जाएँगे।",
+        "confirm": "पुष्टि करने के लिए, अपना ईमेल पता दर्ज करें:",
+        "email": "आपका ईमेल",
+        "submit": "मेरे खाते को अक्षम करें",
+        "submitting": "खाता अक्षम किया जा रहा है…"
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 ---
 id: B-POST-3
 title: "Post detail page + moderation-status indicator"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

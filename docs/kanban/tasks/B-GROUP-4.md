@@ -1,7 +1,7 @@
 ---
 id: B-GROUP-4
 title: "Group detail page using AtlasCard patterns"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

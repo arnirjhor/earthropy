@@ -1,7 +1,7 @@
 ---
 id: A-AUTH-2
 title: "SMTP transport via Nodemailer + React Email templates"
-status: backlog
+status: done
 priority: critical
 phase: A
 agent_model: sonnet

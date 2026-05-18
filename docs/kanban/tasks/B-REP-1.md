@@ -1,7 +1,7 @@
 ---
 id: B-REP-1
 title: "Reputation accrual wiring + history page"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

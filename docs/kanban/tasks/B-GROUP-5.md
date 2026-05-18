@@ -1,7 +1,7 @@
 ---
 id: B-GROUP-5
 title: "Membership: join/leave/invite + role transitions"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

@@ -1,7 +1,7 @@
 ---
 id: C-APPEAL-1
 title: "Appeal submission + resolution UI + reputation impact"
-status: ready
+status: done
 priority: high
 phase: C
 agent_model: sonnet

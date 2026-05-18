@@ -1,7 +1,7 @@
 ---
 id: C-WORKER-1
 title: "BullMQ worker entry + queue + DLQ"
-status: ready
+status: done
 priority: critical
 phase: C
 agent_model: sonnet

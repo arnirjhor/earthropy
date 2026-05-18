@@ -1,7 +1,7 @@
 ---
 id: C-MOD-2
 title: "OllamaModerationProvider real impl + tests"
-status: ready
+status: done
 priority: high
 phase: C
 agent_model: sonnet

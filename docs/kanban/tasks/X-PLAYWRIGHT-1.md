@@ -1,7 +1,7 @@
 ---
 id: X-PLAYWRIGHT-1
 title: "Playwright config + first e2e on apps/web landing"
-status: ready
+status: done
 priority: critical
 phase: X
 agent_model: sonnet

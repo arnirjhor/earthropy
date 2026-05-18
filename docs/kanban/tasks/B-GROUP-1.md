@@ -1,7 +1,7 @@
 ---
 id: B-GROUP-1
 title: "Groups CRUD: Server Actions + DB layer + tests"
-status: ready
+status: done
 priority: critical
 phase: B
 agent_model: sonnet

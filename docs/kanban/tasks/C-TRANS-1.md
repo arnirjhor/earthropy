@@ -1,7 +1,7 @@
 ---
 id: C-TRANS-1
 title: "Public transparency stats page"
-status: ready
+status: done
 priority: medium
 phase: C
 agent_model: sonnet

@@ -1,7 +1,7 @@
 ---
 id: B-SDG-1
 title: "/sdg/[code] hub: groups + posts faceted"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

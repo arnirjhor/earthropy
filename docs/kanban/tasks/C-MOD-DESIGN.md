@@ -1,7 +1,7 @@
 ---
 id: C-MOD-DESIGN
 title: "Architect: Anthropic prompt + scoring scheme; Ollama prompt"
-status: ready
+status: done
 priority: high
 phase: C
 agent_model: opus

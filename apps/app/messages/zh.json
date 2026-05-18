@@ -1,0 +1,244 @@
+{
+  "CommentThread": {
+    "heading": "评论",
+    "sectionLabel": "评论线程",
+    "listLabel": "评论",
+    "empty": "暂无评论。成为第一个回复者。",
+    "reply": "回复",
+    "cancel": "取消",
+    "submitComment": "发表评论",
+    "submitReply": "回复",
+    "submitting": "正在提交…",
+    "commentPlaceholder": "写一条评论…",
+    "replyPlaceholder": "写一条回复…",
+    "withdrawComment": "撤回",
+    "withdrawingComment": "正在撤回…",
+    "appeal": "申诉",
+    "appealing": "正在提交…",
+    "appealPlaceholder": "解释为什么这项决定是错误的…",
+    "commentStatus": {
+      "pending_ai": "正在 AI 审核",
+      "pending_review": "等待审核",
+      "rejected": "已拒绝",
+      "withdrawn": "已撤回"
+    }
+  },
+  "Home": {
+    "title": "17 个目标",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "17 个可持续发展目标",
+    "mission": "Earthropy 是一个永久免费、不依附于任何公司的平台，用于协调全球在 17 个联合国可持续发展目标上的工作。为非政府组织、研究人员和当地社区而建 — 工作所依赖的人们，用他们实际使用的语言。",
+    "missionAttribution": "— Earthropy 使命",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "创建小组",
+    "subheading": "小组将人们聚集在一起，围绕特定的可持续发展目标工作。",
+    "fields": {
+      "name": "名称",
+      "slug": "URL 短名",
+      "slugHint": "从名称自动生成。可自定义。",
+      "description": "描述",
+      "visibility": "可见性",
+      "visibilityPublic": "公开",
+      "visibilityPublicHint": "任何人都可以查找和加入",
+      "visibilityListed": "列出",
+      "visibilityListedHint": "在搜索中可见；需要邀请才能加入",
+      "visibilityPrivate": "私密",
+      "visibilityPrivateHint": "仅限邀请，不列出",
+      "preferredLocale": "主要语言",
+      "locationText": "地点（可选）",
+      "locationTextPlaceholder": "例如 内罗毕，肯尼亚",
+      "sdgs": "可持续发展目标",
+      "sdgsHint": "选择这个小组关注的可持续发展目标。将其中一个标记为主要目标。",
+      "sdgPrimary": "主要可持续发展目标"
+    },
+    "submit": "创建小组",
+    "submitting": "正在创建…",
+    "cancel": "取消"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "正在 AI 审核",
+      "pendingReview": "等待人工审核",
+      "rejected": "已拒绝 — 原因：{reason}；可申诉",
+      "rejectedNoReason": "已拒绝",
+      "withdrawn": "由作者撤回"
+    },
+    "withdraw": "撤回",
+    "withdrawing": "正在撤回…",
+    "appeal": "申诉",
+    "appealing": "正在提交…",
+    "appealPlaceholder": "解释为什么这项决定是错误的…",
+    "cancel": "取消",
+    "by": "由",
+    "publishedLabel": "已发布",
+    "statusLabel": {
+      "pending_ai": "正在 AI 审核",
+      "pending_review": "等待人工审核",
+      "published": "已发布",
+      "rejected": "已拒绝",
+      "withdrawn": "已撤回"
+    }
+  },
+  "GroupBrowse": {
+    "heading": "小组",
+    "caption": "浏览所有小组",
+    "filterLabel": "按可持续发展目标筛选",
+    "visibilityLabel": "可见性",
+    "visibilityPublic": "公开",
+    "visibilityListed": "列出",
+    "visibilityBoth": "公开 + 列出",
+    "members": "{count} 个成员",
+    "member": "1 个成员",
+    "empty": {
+      "heading": "未找到小组",
+      "descriptionFiltered": "没有小组匹配所选的可持续发展目标。尝试扩大你的筛选范围。",
+      "descriptionAll": "还没有创建任何小组。",
+      "clearFilter": "清除可持续发展目标筛选",
+      "createGroup": "创建小组"
+    },
+    "pagination": {
+      "prev": "上一页",
+      "next": "下一页",
+      "pageOf": "第 {page} 页，共 {total} 页"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "通知",
+      "unreadCount": "{count} 条未读通知"
+    },
+    "dropdown": {
+      "label": "通知面板",
+      "title": "通知",
+      "markAll": "全部标记为已读",
+      "markRead": "将 {kind} 标记为已读",
+      "read": "已读",
+      "empty": "暂无通知。",
+      "listLabel": "最近通知",
+      "viewAll": "查看全部"
+    },
+    "page": {
+      "heading": "通知",
+      "empty": "暂无通知。",
+      "markAll": "全部标记为已读"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "电子邮件",
+      "password": "密码",
+      "handle": "用户名"
+    },
+    "signup": {
+      "heading": "创建账户",
+      "subheading": "加入协调全球可持续发展目标行动的平台。",
+      "submit": "创建账户",
+      "submitting": "正在创建账户…",
+      "alreadyHaveAccount": "已有账户？",
+      "signInLink": "登录"
+    },
+    "signin": {
+      "heading": "登录",
+      "submit": "登录",
+      "submitting": "正在登录…",
+      "forgotPassword": "忘记密码？",
+      "noAccount": "没有账户？",
+      "signUpLink": "创建一个",
+      "tabs": {
+        "password": "密码",
+        "magic": "魔法链接"
+      },
+      "magic": {
+        "submit": "发送登录链接",
+        "submitting": "正在发送…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "确认电子邮件",
+      "description": "点击下方按钮以验证你的电子邮件地址并激活你的账户。",
+      "submit": "确认电子邮件",
+      "submitting": "正在确认…"
+    },
+    "magicLink": {
+      "heading": "登录",
+      "description": "点击下方按钮以登录你的账户。",
+      "submit": "登录",
+      "submitting": "正在登录…",
+      "requestNew": "请求新的登录链接"
+    },
+    "forgotPassword": {
+      "heading": "重置密码",
+      "description": "输入你的电子邮件，如果账户存在，我们将发送重置链接。",
+      "submit": "发送重置链接",
+      "submitting": "正在发送…",
+      "backToSignIn": "返回登录"
+    },
+    "resetPassword": {
+      "heading": "设置新密码",
+      "description": "为你的账户输入新密码。",
+      "newPassword": "新密码",
+      "submit": "设置密码",
+      "submitting": "正在设置密码…"
+    },
+    "checkYourEmail": {
+      "heading": "检查你的电子邮件",
+      "description": "我们已向你发送了电子邮件。点击其中的链接继续。",
+      "wrongEmail": "邮箱错了？",
+      "tryAgain": "重试"
+    },
+    "dashboard": {
+      "welcome": "欢迎，{name}",
+      "defaultName": "朋友",
+      "signOut": "登出",
+      "placeholder": "你的仪表板正在建设中。请稍后回来查看。"
+    },
+    "account": {
+      "heading": "账户",
+      "sections": {
+        "profile": "个人资料",
+        "sessions": "活跃会话",
+        "notifications": "通知偏好",
+        "danger": "危险区域"
+      },
+      "profile": {
+        "displayName": "显示名称",
+        "handle": "用户名",
+        "locale": "语言",
+        "save": "保存更改",
+        "saving": "正在保存…",
+        "saved": "已保存。"
+      },
+      "sessions": {
+        "currentDevice": "当前设备",
+        "otherDevices": "其他设备",
+        "noOtherSessions": "没有其他活跃会话。",
+        "createdAgo": "创建于 {days} 天前",
+        "createdToday": "今天创建",
+        "revoke": "撤销",
+        "revokeAll": "撤销所有其他会话",
+        "revoking": "正在撤销…"
+      },
+      "notifications": {
+        "description": "通知偏好目前在本地保存（v0.1）。服务器端持久化是 v0.2 的后续工作。",
+        "inApp": "应用内通知",
+        "email": "电子邮件通知",
+        "kinds": {
+          "newPost": "你关注的小组中的新帖子",
+          "mention": "提及",
+          "groupInvite": "小组邀请",
+          "moderation": "你内容的审核决定"
+        }
+      },
+      "danger": {
+        "heading": "删除账户",
+        "description": "删除账户是永久的。你的帖子和评论将被保留用于审核审计目的，但你的账户将立即被禁用，你将被登出。",
+        "confirm": "确认，请输入你的电子邮件地址：",
+        "email": "你的电子邮件",
+        "submit": "禁用我的账户",
+        "submitting": "正在禁用账户…"
+      }
+    }
+  }
+}

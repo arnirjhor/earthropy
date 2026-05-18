@@ -1,7 +1,7 @@
 ---
 id: A-AUTH-3
 title: "Sign-up / sign-in / verify pages in apps/app"
-status: backlog
+status: done
 priority: critical
 phase: A
 agent_model: sonnet

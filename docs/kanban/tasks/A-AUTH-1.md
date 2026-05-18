@@ -1,7 +1,7 @@
 ---
 id: A-AUTH-1
 title: "@repo/auth core: sessions, Argon2id, token table, CSRF helpers"
-status: backlog
+status: done
 priority: critical
 phase: A
 agent_model: sonnet

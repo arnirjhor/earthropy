@@ -1,7 +1,7 @@
 ---
 id: C-PIPE-1
 title: "pending_ai → verdict pipeline wired through posts + comments"
-status: ready
+status: done
 priority: critical
 phase: C
 agent_model: sonnet

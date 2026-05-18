@@ -1,7 +1,7 @@
 ---
 id: A-RATE-1
 title: "Redis-backed rate limiting middleware (apps/api + apps/app)"
-status: backlog
+status: done
 priority: high
 phase: A
 agent_model: sonnet

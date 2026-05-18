@@ -1,7 +1,7 @@
 ---
 id: B-POST-1
 title: "Posts CRUD + status state machine"
-status: ready
+status: done
 priority: critical
 phase: B
 agent_model: sonnet

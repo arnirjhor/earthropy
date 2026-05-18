@@ -1,7 +1,7 @@
 ---
 id: B-POST-2
 title: "Post create form + markdown editor (textarea + preview)"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

@@ -1,7 +1,7 @@
 ---
 id: B-NOTIF-1
 title: "Notifications fan-out + in-app UI (SSE)"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

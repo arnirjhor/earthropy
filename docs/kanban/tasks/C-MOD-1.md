@@ -1,7 +1,7 @@
 ---
 id: C-MOD-1
 title: "AnthropicModerationProvider real impl + fixture replay"
-status: ready
+status: done
 priority: high
 phase: C
 agent_model: sonnet

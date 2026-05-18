@@ -1,0 +1,17 @@
+{
+  "Landing": {
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "语言",
+    "hero": "应对星球日益增长的混乱。",
+    "subhero": "Earthropy 协调全球在 17 个联合国可持续发展目标上的工作。永久免费。不依附于任何公司。为所有人，随处而建。",
+    "cta": "开始 →",
+    "whatItIsHeading": "它是什么",
+    "whatItIsP1": "一个中立的、公益性的平台，用于协调在 17 个联合国可持续发展目标上的工作。不是市场。不是融资门户。一个组织、讨论和记录工作本身的地方 — 小组、帖子、审核、信任信号 — 没有企业守门人。",
+    "whatItIsP2": "永久免费，所有我们发布的语言。自托管。源代码在 AGPL-3.0-or-later 下公开。为非政府组织、研究人员、当地社区和任何宁愿协调工作而不是协调品牌的人而建。",
+    "goalsHeading": "17 个目标",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "文档",
+    "footerGovernance": "治理",
+    "footerSource": "源代码 ↗"
+  }
+}

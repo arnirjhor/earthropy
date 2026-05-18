@@ -1,7 +1,7 @@
 ---
 id: B-COMMENT-1
 title: "Comments CRUD + threaded model"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet

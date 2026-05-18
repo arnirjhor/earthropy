@@ -1,7 +1,7 @@
 ---
 id: B-DASH-1
 title: "Personal dashboard — joined groups + followed SDGs feed"
-status: ready
+status: done
 priority: high
 phase: B
 agent_model: sonnet
