@@ -1,3 +1,4 @@
+import { AppealForm } from '@/app/[locale]/(authenticated)/_appeal-form.tsx';
 import { MarkdownBody } from '@/lib/markdown.tsx';
 import { getSession } from '@repo/auth';
 import { db } from '@repo/database/client';
@@ -87,6 +88,7 @@ export default async function PostDetailPage({
   }
 
   const showWithdraw = isAuthor && post.status === 'published';
+  const showAppeal = isAuthor && post.status === 'rejected';
 
   // ── Status pill label ──────────────────────────────────────────────────────
   const statusKey =
@@ -183,6 +185,20 @@ export default async function PostDetailPage({
             slug={slug}
             withdrawLabel={t('withdraw')}
             withdrawingLabel={t('withdrawing')}
+          />
+        </footer>
+      )}
+
+      {/* ── Appeal action ──────────────────────────────────────────────────── */}
+      {showAppeal && (
+        <footer className="mt-[var(--spacing-8)] pt-[var(--spacing-6)] border-t border-[var(--color-border)]">
+          <AppealForm
+            targetType="post"
+            targetId={post.id}
+            submitLabel={t('appeal')}
+            submittingLabel={t('appealing')}
+            placeholderText={t('appealPlaceholder')}
+            cancelLabel={t('cancel')}
           />
         </footer>
       )}

@@ -1,3 +1,4 @@
+import { AppealForm } from '@/app/[locale]/(authenticated)/_appeal-form.tsx';
 import { MarkdownBody } from '@/lib/markdown.tsx';
 import { getSession } from '@repo/auth';
 import { listCommentsForPost } from '@repo/comments';
@@ -122,6 +123,7 @@ interface CommentItemProps {
 function CommentItem({ node, viewerId, viewerIsMod, postId, locale, depth, t }: CommentItemProps) {
   const isAuthor = viewerId !== null && viewerId === node.authorId;
   const canWithdraw = isAuthor && node.status === 'published';
+  const canAppeal = isAuthor && node.status === 'rejected';
   const timestamp = relativeTime(node.createdAt, locale);
 
   // Status indicator for non-published comments
@@ -189,6 +191,16 @@ function CommentItem({ node, viewerId, viewerIsMod, postId, locale, depth, t }: 
               commentId={node.id}
               withdrawLabel={t('withdrawComment')}
               withdrawingLabel={t('withdrawingComment')}
+            />
+          )}
+          {canAppeal && (
+            <AppealForm
+              targetType="comment"
+              targetId={node.id}
+              submitLabel={t('appeal')}
+              submittingLabel={t('appealing')}
+              placeholderText={t('appealPlaceholder')}
+              cancelLabel={t('cancel')}
             />
           )}
         </div>

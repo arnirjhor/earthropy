@@ -13,6 +13,9 @@
     "replyPlaceholder": "Write a reply…",
     "withdrawComment": "Withdraw",
     "withdrawingComment": "Withdrawing…",
+    "appeal": "Appeal",
+    "appealing": "Submitting…",
+    "appealPlaceholder": "Explain why this decision was incorrect…",
     "commentStatus": {
       "pending_ai": "Under AI review",
       "pending_review": "Pending review",
@@ -64,6 +67,10 @@
     },
     "withdraw": "Withdraw",
     "withdrawing": "Withdrawing…",
+    "appeal": "Appeal",
+    "appealing": "Submitting…",
+    "appealPlaceholder": "Explain why this decision was incorrect…",
+    "cancel": "Cancel",
     "by": "by",
     "publishedLabel": "Published",
     "statusLabel": {
