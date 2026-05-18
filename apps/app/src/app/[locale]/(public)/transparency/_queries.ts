@@ -91,7 +91,7 @@ async function fetchTopCategoriesByVerdict(since: Date): Promise<CategoryRow[]> 
         kv.value AS score
       FROM moderation_decisions md,
            LATERAL jsonb_each(md.scores) AS kv
-      WHERE md.created_at >= ${since}
+      WHERE md.created_at >= ${since.toISOString()}
     ),
     counted AS (
       SELECT
