@@ -19,7 +19,9 @@
     "vitest": "^3.2.2"
   },
   "dependencies": {
+    "@repo/auth": "workspace:*",
     "@repo/database": "workspace:*",
+    "@repo/notifications": "workspace:*",
     "@repo/sdg": "workspace:*",
     "drizzle-orm": "^0.36.4",
     "zod": "^3.24.0"

@@ -5,13 +5,15 @@ import type { Locale } from '@repo/i18n/locales';
  * configured MailTransport.
  *
  * @param to      Recipient email address.
- * @param template Template name: 'verify-email' | 'magic-link' | 'password-reset'.
+ * @param template Template name: 'verify-email' | 'magic-link' | 'password-reset' | 'group-invite'.
  * @param props   Template-specific props (URL + any extras).
  * @param locale  BCP47 locale code; drives string selection and RTL direction.
  */
 import { createElement } from 'react';
+import { GroupInvite } from './emails/group-invite.tsx';
 import { MagicLink } from './emails/magic-link.tsx';
 import {
+  getGroupInviteMessages,
   getMagicLinkMessages,
   getPasswordResetMessages,
   getVerifyEmailMessages,
@@ -20,7 +22,7 @@ import { PasswordReset } from './emails/password-reset.tsx';
 import { VerifyEmail } from './emails/verify-email.tsx';
 import { createTransport } from './transport.ts';
 
-export type TemplateName = 'verify-email' | 'magic-link' | 'password-reset';
+export type TemplateName = 'verify-email' | 'magic-link' | 'password-reset' | 'group-invite';
 
 export interface VerifyEmailProps {
   verifyUrl: string;
@@ -34,10 +36,18 @@ export interface PasswordResetProps {
   resetUrl: string;
 }
 
+export interface GroupInviteProps {
+  inviteUrl: string;
+  groupName: string;
+  inviterName: string;
+  role: 'member' | 'moderator';
+}
+
 type TemplateProps = {
   'verify-email': VerifyEmailProps;
   'magic-link': MagicLinkProps;
   'password-reset': PasswordResetProps;
+  'group-invite': GroupInviteProps;
 };
 
 export interface SendTransactionalInput<T extends TemplateName = TemplateName> {
@@ -74,6 +84,18 @@ export async function sendTransactional<T extends TemplateName>(
       const p = props as PasswordResetProps;
       element = createElement(PasswordReset, { resetUrl: p.resetUrl, locale });
       subject = getPasswordResetMessages(locale).subject;
+      break;
+    }
+    case 'group-invite': {
+      const p = props as GroupInviteProps;
+      element = createElement(GroupInvite, {
+        inviteUrl: p.inviteUrl,
+        groupName: p.groupName,
+        inviterName: p.inviterName,
+        role: p.role,
+        locale,
+      });
+      subject = getGroupInviteMessages(locale).subject;
       break;
     }
     default: {

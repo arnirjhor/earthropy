@@ -113,6 +113,40 @@ const passwordResetAr: PasswordResetMessages = {
 };
 
 // ---------------------------------------------------------------------------
+// group-invite
+// ---------------------------------------------------------------------------
+
+export interface GroupInviteMessages {
+  subject: string;
+  previewText: string;
+  heading: string;
+  body: string;
+  cta: string;
+  expiry: string;
+  ignore: string;
+}
+
+const groupInviteEn: GroupInviteMessages = {
+  subject: "You've been invited to join a group on Earthropy",
+  previewText: 'Click the link to join the group on Earthropy.',
+  heading: "You've been invited to join a group",
+  body: 'Click the button below to accept your invitation. This link expires in 7 days and can only be used once.',
+  cta: 'Accept invitation',
+  expiry: 'This link expires in 7 days.',
+  ignore: 'If you did not expect this invitation, you can safely ignore this email.',
+};
+
+const groupInviteAr: GroupInviteMessages = {
+  subject: 'تمت دعوتك للانضمام إلى مجموعة على Earthropy',
+  previewText: 'انقر على الرابط للانضمام إلى المجموعة على Earthropy.',
+  heading: 'تمت دعوتك للانضمام إلى مجموعة',
+  body: 'انقر على الزر أدناه لقبول دعوتك. تنتهي صلاحية هذا الرابط خلال ٧ أيام ولا يمكن استخدامه إلا مرة واحدة.',
+  cta: 'قبول الدعوة',
+  expiry: 'تنتهي صلاحية هذا الرابط خلال ٧ أيام.',
+  ignore: 'إذا لم تكن تتوقع هذه الدعوة، يمكنك تجاهل هذا البريد الإلكتروني بأمان.',
+};
+
+// ---------------------------------------------------------------------------
 // Lookup helpers
 // ---------------------------------------------------------------------------
 
@@ -136,6 +170,14 @@ export function getPasswordResetMessages(locale: Locale): PasswordResetMessages 
   return localeOrEn<PasswordResetMessages>(
     { en: passwordResetEn, ar: passwordResetAr },
     passwordResetEn,
+    locale,
+  );
+}
+
+export function getGroupInviteMessages(locale: Locale): GroupInviteMessages {
+  return localeOrEn<GroupInviteMessages>(
+    { en: groupInviteEn, ar: groupInviteAr },
+    groupInviteEn,
     locale,
   );
 }

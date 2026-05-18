@@ -213,6 +213,12 @@ export default async function GroupDetailPage({
                   {memberRole === 'owner' ? 'Owner' : 'Moderator'}
                 </span>
                 <Link
+                  href={`/${locale}/g/${slug}/members`}
+                  className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)] transition-colors border-b border-[var(--color-border)]"
+                >
+                  Members
+                </Link>
+                <Link
                   href={`/${locale}/g/${slug}/settings`}
                   className="font-mono text-[length:var(--text-mono)] uppercase tracking-wider text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)] transition-colors border-b border-[var(--color-border)]"
                 >

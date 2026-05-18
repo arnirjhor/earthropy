@@ -37,12 +37,14 @@ export type {
   VerifyEmailProps,
   MagicLinkProps,
   PasswordResetProps,
+  GroupInviteProps,
 } from './sendTransactional.ts';
 
 // Template components (for preview tooling + testing)
 export { VerifyEmail } from './emails/verify-email.tsx';
 export { MagicLink } from './emails/magic-link.tsx';
 export { PasswordReset } from './emails/password-reset.tsx';
+export { GroupInvite } from './emails/group-invite.tsx';
 
 // Transport interface (for custom adapters)
 export type { MailTransport, MailMessage } from './transport.ts';

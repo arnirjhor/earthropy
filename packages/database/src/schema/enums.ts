@@ -37,6 +37,7 @@ export const tokenPurpose = pgEnum('token_purpose', [
   'email_verification',
   'magic_link',
   'password_reset',
+  'group_invite',
 ]);
 
 export const notificationKind = pgEnum('notification_kind', [

@@ -91,4 +91,5 @@ export const TOKEN_TTL = {
   email_verification: 24 * 60 * 60, // 24 hours
   magic_link: 15 * 60, // 15 minutes
   password_reset: 60 * 60, // 60 minutes
+  group_invite: 7 * 24 * 60 * 60, // 7 days
 } as const satisfies Record<TokenPurpose, number>;
