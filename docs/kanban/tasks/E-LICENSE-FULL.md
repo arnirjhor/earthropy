@@ -1,7 +1,7 @@
 ---
 id: E-LICENSE-FULL
 title: "Bundle full AGPLv3 text into LICENSE"
-status: ready
+status: done
 priority: medium
 phase: E
 agent_model: haiku

@@ -1,7 +1,7 @@
 ---
 id: E-DOCKER-API
 title: "apps/api Dockerfile"
-status: ready
+status: done
 priority: high
 phase: E
 agent_model: sonnet

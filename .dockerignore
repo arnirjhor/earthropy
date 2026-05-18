@@ -1,0 +1,32 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies (reinstalled in Docker)
+**/node_modules
+
+# Build outputs
+**/.next
+**/dist
+**/.turbo
+**/*.tsbuildinfo
+
+# Local env files
+.env*.local
+.env
+
+# Dev tooling
+.vscode
+.idea
+
+# Test artefacts
+**/coverage
+**/.playwright
+
+# Docker itself
+**/Dockerfile
+**/.dockerignore
+
+# OS artefacts
+.DS_Store
+Thumbs.db

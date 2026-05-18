@@ -1,7 +1,7 @@
 ---
 id: E-DOCKER-APP
 title: "apps/app Dockerfile (Next.js standalone)"
-status: ready
+status: done
 priority: high
 phase: E
 agent_model: sonnet
