@@ -1,0 +1,17 @@
+{
+  "Landing": {
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "Langue",
+    "hero": "Action contre le désordre croissant de la planète.",
+    "subhero": "Earthropy coordonne le travail mondial sur les 17 objectifs de développement durable des Nations unies. Gratuit à jamais. Indépendant de toute entreprise. Conçu pour tous, partout.",
+    "cta": "Commencer →",
+    "whatItIsHeading": "Ce que c'est",
+    "whatItIsP1": "Une plateforme neutre de bien public pour coordonner le travail sur les 17 objectifs de développement durable des Nations unies. Pas un marché. Pas un portail de collecte de fonds. Un endroit pour organiser, discuter et documenter le travail lui-même — les groupes, les messages, la modération, les signaux de confiance — sans un gardien d'entreprise.",
+    "whatItIsP2": "Gratuit à jamais, dans chaque région que nous desservons. Auto-hébergeable. Source disponible sous AGPL-3.0-or-later. Conçu pour les ONG, les chercheurs, les communautés locales et quiconque préférerait coordonner le travail plutôt que de coordonner la marque autour de celui-ci.",
+    "goalsHeading": "Les 17 objectifs",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "Documentation",
+    "footerGovernance": "Gouvernance",
+    "footerSource": "Source ↗"
+  }
+}
