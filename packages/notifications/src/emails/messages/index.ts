@@ -62,6 +62,16 @@ const verifyEmailAr: VerifyEmailMessages = {
   ignore: 'إذا لم تُنشئ حسابًا في Earthropy، تجاهل هذا البريد الإلكتروني.',
 };
 
+const verifyEmailEs: VerifyEmailMessages = {
+  subject: 'Confirma tu dirección de correo electrónico en Earthropy',
+  previewText: 'Haz clic en el enlace para verificar tu correo electrónico y terminar de configurar tu cuenta.',
+  heading: 'Confirma tu dirección de correo electrónico',
+  body: 'Haz clic en el botón de abajo para verificar tu dirección de correo electrónico. Este enlace expira en 24 horas.',
+  cta: 'Verificar dirección de correo electrónico',
+  expiry: 'Este enlace expira en 24 horas.',
+  ignore: 'Si no creaste una cuenta en Earthropy, ignora este correo electrónico.',
+};
+
 // ---------------------------------------------------------------------------
 // magic-link
 // ---------------------------------------------------------------------------
@@ -84,6 +94,16 @@ const magicLinkAr: MagicLinkMessages = {
   cta: 'تسجيل الدخول',
   expiry: 'تنتهي صلاحية هذا الرابط خلال ١٥ دقيقة.',
   ignore: 'إذا لم تطلب رابط تسجيل الدخول، تجاهل هذا البريد الإلكتروني.',
+};
+
+const magicLinkEs: MagicLinkMessages = {
+  subject: 'Tu enlace de inicio de sesión en Earthropy',
+  previewText: 'Haz clic en el enlace para iniciar sesión en tu cuenta en Earthropy.',
+  heading: 'Inicia sesión en Earthropy',
+  body: 'Haz clic en el botón de abajo para iniciar sesión. Este enlace expira en 15 minutos y solo puede usarse una vez.',
+  cta: 'Inicia sesión',
+  expiry: 'Este enlace expira en 15 minutos.',
+  ignore: 'Si no solicitaste un enlace de inicio de sesión, ignora este correo electrónico.',
 };
 
 // ---------------------------------------------------------------------------
@@ -110,6 +130,17 @@ const passwordResetAr: PasswordResetMessages = {
   expiry: 'تنتهي صلاحية هذا الرابط خلال ٦٠ دقيقة.',
   ignore:
     'إذا لم تطلب إعادة تعيين كلمة المرور، تجاهل هذا البريد الإلكتروني. لم يتم تغيير كلمة مرورك.',
+};
+
+const passwordResetEs: PasswordResetMessages = {
+  subject: 'Restablecer tu contraseña en Earthropy',
+  previewText: 'Haz clic en el enlace para establecer una nueva contraseña para tu cuenta en Earthropy.',
+  heading: 'Restablecer tu contraseña',
+  body: 'Haz clic en el botón de abajo para establecer una nueva contraseña. Este enlace expira en 60 minutos y solo puede usarse una vez.',
+  cta: 'Restablecer contraseña',
+  expiry: 'Este enlace expira en 60 minutos.',
+  ignore:
+    'Si no solicitaste un restablecimiento de contraseña, ignora este correo electrónico. Tu contraseña no ha cambiado.',
 };
 
 // ---------------------------------------------------------------------------
@@ -146,6 +177,16 @@ const groupInviteAr: GroupInviteMessages = {
   ignore: 'إذا لم تكن تتوقع هذه الدعوة، يمكنك تجاهل هذا البريد الإلكتروني بأمان.',
 };
 
+const groupInviteEs: GroupInviteMessages = {
+  subject: 'Has sido invitado a unirte a un grupo en Earthropy',
+  previewText: 'Haz clic en el enlace para unirte al grupo en Earthropy.',
+  heading: 'Has sido invitado a unirte a un grupo',
+  body: 'Haz clic en el botón de abajo para aceptar tu invitación. Este enlace expira en 7 días y solo puede usarse una vez.',
+  cta: 'Aceptar invitación',
+  expiry: 'Este enlace expira en 7 días.',
+  ignore: 'Si no esperabas esta invitación, puedes ignorar este correo electrónico con seguridad.',
+};
+
 // ---------------------------------------------------------------------------
 // Lookup helpers
 // ---------------------------------------------------------------------------
@@ -156,19 +197,19 @@ function localeOrEn<T>(map: Partial<Record<Locale, T>>, fallback: T, locale: Loc
 
 export function getVerifyEmailMessages(locale: Locale): VerifyEmailMessages {
   return localeOrEn<VerifyEmailMessages>(
-    { en: verifyEmailEn, ar: verifyEmailAr },
+    { en: verifyEmailEn, ar: verifyEmailAr, es: verifyEmailEs },
     verifyEmailEn,
     locale,
   );
 }
 
 export function getMagicLinkMessages(locale: Locale): MagicLinkMessages {
-  return localeOrEn<MagicLinkMessages>({ en: magicLinkEn, ar: magicLinkAr }, magicLinkEn, locale);
+  return localeOrEn<MagicLinkMessages>({ en: magicLinkEn, ar: magicLinkAr, es: magicLinkEs }, magicLinkEn, locale);
 }
 
 export function getPasswordResetMessages(locale: Locale): PasswordResetMessages {
   return localeOrEn<PasswordResetMessages>(
-    { en: passwordResetEn, ar: passwordResetAr },
+    { en: passwordResetEn, ar: passwordResetAr, es: passwordResetEs },
     passwordResetEn,
     locale,
   );
@@ -176,7 +217,7 @@ export function getPasswordResetMessages(locale: Locale): PasswordResetMessages 
 
 export function getGroupInviteMessages(locale: Locale): GroupInviteMessages {
   return localeOrEn<GroupInviteMessages>(
-    { en: groupInviteEn, ar: groupInviteAr },
+    { en: groupInviteEn, ar: groupInviteAr, es: groupInviteEs },
     groupInviteEn,
     locale,
   );

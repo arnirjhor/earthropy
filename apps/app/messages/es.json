@@ -1,0 +1,244 @@
+{
+  "CommentThread": {
+    "heading": "Comentarios",
+    "sectionLabel": "Hilo de comentarios",
+    "listLabel": "Comentarios",
+    "empty": "Sin comentarios aún. Sé el primero en responder.",
+    "reply": "Responder",
+    "cancel": "Cancelar",
+    "submitComment": "Comentar",
+    "submitReply": "Responder",
+    "submitting": "Enviando…",
+    "commentPlaceholder": "Escribe un comentario…",
+    "replyPlaceholder": "Escribe una respuesta…",
+    "withdrawComment": "Retirar",
+    "withdrawingComment": "Retirando…",
+    "appeal": "Apelar",
+    "appealing": "Enviando…",
+    "appealPlaceholder": "Explica por qué esta decisión fue incorrecta…",
+    "commentStatus": {
+      "pending_ai": "En revisión de IA",
+      "pending_review": "Pendiente de revisión",
+      "rejected": "Rechazado",
+      "withdrawn": "Retirado"
+    }
+  },
+  "Home": {
+    "title": "Los 17 Objetivos",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "Los 17 Objetivos de Desarrollo Sostenible",
+    "mission": "Earthropy es una plataforma gratuita para siempre, agnóstica respecto a corporaciones, para coordinar el trabajo en los 17 Objetivos de Desarrollo Sostenible de las Naciones Unidas. Construida para ONG, investigadores y comunidades locales — las personas de las que depende el trabajo, en los idiomas en que realmente hablan.",
+    "missionAttribution": "— La misión de Earthropy",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "Crear un grupo",
+    "subheading": "Los grupos reúnen personas en torno a ODS específicos.",
+    "fields": {
+      "name": "Nombre",
+      "slug": "URL amigable",
+      "slugHint": "Se deriva automáticamente del nombre. Puede personalizarse.",
+      "description": "Descripción",
+      "visibility": "Visibilidad",
+      "visibilityPublic": "Público",
+      "visibilityPublicHint": "Cualquiera puede encontrarlo y unirse",
+      "visibilityListed": "Listado",
+      "visibilityListedHint": "Visible en búsqueda; invitar para unirse",
+      "visibilityPrivate": "Privado",
+      "visibilityPrivateHint": "Solo por invitación, no listado",
+      "preferredLocale": "Idioma principal",
+      "locationText": "Ubicación (opcional)",
+      "locationTextPlaceholder": "p.ej. Nairobi, Kenia",
+      "sdgs": "Objetivos de Desarrollo Sostenible",
+      "sdgsHint": "Selecciona los ODS en los que trabaja este grupo. Marca uno como principal.",
+      "sdgPrimary": "ODS principal"
+    },
+    "submit": "Crear grupo",
+    "submitting": "Creando…",
+    "cancel": "Cancelar"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "En revisión de IA",
+      "pendingReview": "Retenido para revisión humana",
+      "rejected": "Rechazado — razón: {reason}; apelación disponible",
+      "rejectedNoReason": "Rechazado",
+      "withdrawn": "Retirado por el autor"
+    },
+    "withdraw": "Retirar",
+    "withdrawing": "Retirando…",
+    "appeal": "Apelar",
+    "appealing": "Enviando…",
+    "appealPlaceholder": "Explica por qué esta decisión fue incorrecta…",
+    "cancel": "Cancelar",
+    "by": "por",
+    "publishedLabel": "Publicado",
+    "statusLabel": {
+      "pending_ai": "En revisión de IA",
+      "pending_review": "Pendiente de revisión humana",
+      "published": "Publicado",
+      "rejected": "Rechazado",
+      "withdrawn": "Retirado"
+    }
+  },
+  "GroupBrowse": {
+    "heading": "Grupos",
+    "caption": "EXPLORAR TODOS LOS GRUPOS",
+    "filterLabel": "Filtrar por ODS",
+    "visibilityLabel": "Visibilidad",
+    "visibilityPublic": "Público",
+    "visibilityListed": "Listado",
+    "visibilityBoth": "Público + Listado",
+    "members": "{count} MIEMBROS",
+    "member": "1 MIEMBRO",
+    "empty": {
+      "heading": "No se encontraron grupos",
+      "descriptionFiltered": "Ningún grupo coincide con los ODS seleccionados. Intenta ampliar tu filtro.",
+      "descriptionAll": "Aún no se ha creado ningún grupo.",
+      "clearFilter": "Limpiar filtro de ODS",
+      "createGroup": "Crear un grupo"
+    },
+    "pagination": {
+      "prev": "Página anterior",
+      "next": "Siguiente página",
+      "pageOf": "Página {page} de {total}"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "Notificaciones",
+      "unreadCount": "{count} notificaciones no leídas"
+    },
+    "dropdown": {
+      "label": "Panel de notificaciones",
+      "title": "Notificaciones",
+      "markAll": "Marcar todo como leído",
+      "markRead": "Marcar {kind} como leído",
+      "read": "Leído",
+      "empty": "Sin notificaciones aún.",
+      "listLabel": "Notificaciones recientes",
+      "viewAll": "Ver todo"
+    },
+    "page": {
+      "heading": "Notificaciones",
+      "empty": "Sin notificaciones.",
+      "markAll": "Marcar todo como leído"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "handle": "Usuario"
+    },
+    "signup": {
+      "heading": "Crear una cuenta",
+      "subheading": "Únete a la plataforma que coordina la acción global en los ODS.",
+      "submit": "Crear cuenta",
+      "submitting": "Creando cuenta…",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "signInLink": "Inicia sesión"
+    },
+    "signin": {
+      "heading": "Inicia sesión",
+      "submit": "Inicia sesión",
+      "submitting": "Iniciando sesión…",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUpLink": "Crea una",
+      "tabs": {
+        "password": "Contraseña",
+        "magic": "Enlace mágico"
+      },
+      "magic": {
+        "submit": "Enviar enlace de inicio de sesión",
+        "submitting": "Enviando…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "Confirma tu correo electrónico",
+      "description": "Haz clic en el botón de abajo para verificar tu dirección de correo electrónico y activar tu cuenta.",
+      "submit": "Confirmar correo electrónico",
+      "submitting": "Confirmando…"
+    },
+    "magicLink": {
+      "heading": "Inicia sesión",
+      "description": "Haz clic en el botón de abajo para iniciar sesión en tu cuenta.",
+      "submit": "Inicia sesión",
+      "submitting": "Iniciando sesión…",
+      "requestNew": "Solicitar un nuevo enlace de inicio de sesión"
+    },
+    "forgotPassword": {
+      "heading": "Restablecer tu contraseña",
+      "description": "Ingresa tu correo electrónico y te enviaremos un enlace de restablecimiento si existe la cuenta.",
+      "submit": "Enviar enlace de restablecimiento",
+      "submitting": "Enviando…",
+      "backToSignIn": "Volver a inicio de sesión"
+    },
+    "resetPassword": {
+      "heading": "Establecer nueva contraseña",
+      "description": "Ingresa una nueva contraseña para tu cuenta.",
+      "newPassword": "Nueva contraseña",
+      "submit": "Establecer contraseña",
+      "submitting": "Estableciendo contraseña…"
+    },
+    "checkYourEmail": {
+      "heading": "Revisa tu correo electrónico",
+      "description": "Te hemos enviado un correo electrónico. Sigue el enlace dentro para continuar.",
+      "wrongEmail": "¿Correo electrónico equivocado?",
+      "tryAgain": "Intentar de nuevo"
+    },
+    "dashboard": {
+      "welcome": "Bienvenido, {name}",
+      "defaultName": "allá",
+      "signOut": "Cerrar sesión",
+      "placeholder": "Tu panel de control se está construyendo. Vuelve pronto."
+    },
+    "account": {
+      "heading": "Cuenta",
+      "sections": {
+        "profile": "Perfil",
+        "sessions": "Sesiones activas",
+        "notifications": "Preferencias de notificación",
+        "danger": "Zona de peligro"
+      },
+      "profile": {
+        "displayName": "Nombre para mostrar",
+        "handle": "Usuario",
+        "locale": "Idioma",
+        "save": "Guardar cambios",
+        "saving": "Guardando…",
+        "saved": "Guardado."
+      },
+      "sessions": {
+        "currentDevice": "Dispositivo actual",
+        "otherDevices": "Otros dispositivos",
+        "noOtherSessions": "Sin otras sesiones activas.",
+        "createdAgo": "creada hace {days} días",
+        "createdToday": "creada hoy",
+        "revoke": "Revocar",
+        "revokeAll": "Revocar todas las otras sesiones",
+        "revoking": "Revocando…"
+      },
+      "notifications": {
+        "description": "Las preferencias de notificación se guardan localmente por ahora (v0.1). La persistencia del lado del servidor es un seguimiento de v0.2.",
+        "inApp": "Notificaciones en la aplicación",
+        "email": "Notificaciones por correo electrónico",
+        "kinds": {
+          "newPost": "Nuevas publicaciones en grupos que sigues",
+          "mention": "Menciones",
+          "groupInvite": "Invitaciones a grupos",
+          "moderation": "Decisiones de moderación en tu contenido"
+        }
+      },
+      "danger": {
+        "heading": "Eliminar cuenta",
+        "description": "Eliminar tu cuenta es permanente. Tus publicaciones y comentarios se retienen con fines de auditoría de moderación, pero tu cuenta se deshabilitará inmediatamente y se cerrará tu sesión.",
+        "confirm": "Para confirmar, ingresa tu dirección de correo electrónico:",
+        "email": "Tu correo electrónico",
+        "submit": "Deshabilitar mi cuenta",
+        "submitting": "Deshabilitando cuenta…"
+      }
+    }
+  }
+}
