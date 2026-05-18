@@ -219,8 +219,7 @@ const groupInviteEs: GroupInviteMessages = {
   body: 'Haz clic en el botón de abajo para aceptar tu invitación. Este enlace expira en 7 días y solo puede usarse una vez.',
   cta: 'Aceptar invitación',
   expiry: 'Este enlace expira en 7 días.',
-  ignore:
-    'Si no esperabas esta invitación, puedes ignorar este correo electrónico con seguridad.',
+  ignore: 'Si no esperabas esta invitación, puedes ignorar este correo electrónico con seguridad.',
 };
 
 const groupInviteFr: GroupInviteMessages = {
@@ -231,7 +230,7 @@ const groupInviteFr: GroupInviteMessages = {
   cta: "Accepter l'invitation",
   expiry: 'Ce lien expire dans 7 jours.',
   ignore:
-    "Si vous ne vous attendiez pas à cette invitation, vous pouvez ignorer cet e-mail en toute sécurité.",
+    'Si vous ne vous attendiez pas à cette invitation, vous pouvez ignorer cet e-mail en toute sécurité.',
 };
 
 // ---------------------------------------------------------------------------
