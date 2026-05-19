@@ -79,7 +79,12 @@
       "published": "已发布",
       "rejected": "已拒绝",
       "withdrawn": "已撤回"
-    }
+    },
+    "translate": "翻译",
+    "showOriginal": "显示原文",
+    "translating": "翻译中…",
+    "translatedFrom": "翻译自",
+    "translateError": "翻译不可用。请稍后再试。"
   },
   "GroupBrowse": {
     "heading": "小组",
@@ -240,5 +245,12 @@
         "submitting": "正在禁用账户…"
       }
     }
+  },
+  "CommentTranslation": {
+    "translate": "翻译",
+    "showOriginal": "显示原文",
+    "translating": "翻译中…",
+    "translatedFrom": "翻译自",
+    "translateError": "翻译不可用。"
   }
 }

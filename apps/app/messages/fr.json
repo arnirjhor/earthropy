@@ -79,7 +79,12 @@
       "published": "Publié",
       "rejected": "Rejeté",
       "withdrawn": "Retiré"
-    }
+    },
+    "translate": "Traduire",
+    "showOriginal": "Voir l'original",
+    "translating": "Traduction en cours…",
+    "translatedFrom": "Traduit du",
+    "translateError": "Traduction indisponible. Réessayez plus tard."
   },
   "GroupBrowse": {
     "heading": "Groupes",
@@ -240,5 +245,12 @@
         "submitting": "Désactivation du compte en cours…"
       }
     }
+  },
+  "CommentTranslation": {
+    "translate": "Traduire",
+    "showOriginal": "Voir l'original",
+    "translating": "Traduction en cours…",
+    "translatedFrom": "Traduit du",
+    "translateError": "Traduction indisponible."
   }
 }

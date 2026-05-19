@@ -1,5 +1,4 @@
 import { AppealForm } from '@/app/[locale]/(authenticated)/_appeal-form.tsx';
-import { MarkdownBody } from '@/lib/markdown.tsx';
 import { getSession } from '@repo/auth';
 import { db } from '@repo/database/client';
 import { groupMembers } from '@repo/database/schema';
@@ -11,6 +10,7 @@ import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CommentThread } from './_thread.tsx';
+import { TranslateToggle } from './_translate-toggle.tsx';
 import { WithdrawButton } from './_withdraw-button.tsx';
 
 // ── Session helper ─────────────────────────────────────────────────────────────
@@ -172,7 +172,21 @@ export default async function PostDetailPage({
       </header>
 
       {/* ── Body ──────────────────────────────────────────────────────────── */}
-      <MarkdownBody md={post.body} className="mb-[var(--spacing-8)]" />
+      <TranslateToggle
+        originalBody={post.body}
+        sourceLocale={post.locale}
+        targetLocale={locale}
+        postId={post.id}
+        commentId={null}
+        className="mb-[var(--spacing-8)]"
+        labels={{
+          translate: t('translate'),
+          showOriginal: t('showOriginal'),
+          translating: t('translating'),
+          translatedFrom: t('translatedFrom'),
+          error: t('translateError'),
+        }}
+      />
 
       {/* ── Comment thread ────────────────────────────────────────────────── */}
       <CommentThread postId={post.id} groupId={post.groupId} locale={locale} />

@@ -3,10 +3,19 @@
 import { getSession } from '@repo/auth';
 import { createComment, withdrawComment } from '@repo/comments';
 import { rateLimitAction } from '@repo/ratelimit';
+import { createTranslationProvider, translateWithCache } from '@repo/translation';
 import { cookies } from 'next/headers';
 import { z } from 'zod';
 
 // ── Zod schemas ────────────────────────────────────────────────────────────────
+
+const TranslateContentSchema = z.object({
+  postId: z.string().uuid(),
+  commentId: z.string().uuid().optional(),
+  text: z.string().min(1).max(100_000),
+  sourceLocale: z.string().min(2).max(20),
+  targetLocale: z.string().min(2).max(20),
+});
 
 const CreateCommentSchema = z.object({
   postId: z.string().uuid(),
@@ -91,6 +100,64 @@ export async function withdrawCommentAction(id: string): Promise<ActionResult<{ 
   try {
     const result = await withdrawComment(id, user.id);
     return { ok: true, data: { id: result.id } };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return { ok: false, error: message };
+  }
+}
+
+// ── translateContentAction ─────────────────────────────────────────────────────
+
+/**
+ * Translate a post body or comment body.
+ *
+ * Cached in Postgres (post_translations table). Auth-gated: only signed-in
+ * users may request translations (reduces abuse surface).
+ *
+ * Rate-limited: 60 translation requests per 3600s per IP.
+ */
+export async function translateContentAction(
+  formData: FormData,
+): Promise<ActionResult<{ translatedText: string; provider: string }>> {
+  await rateLimitAction({
+    key: 'translation:ip',
+    windowSec: 3600,
+    max: 60,
+    trustProxy: true,
+  });
+
+  const user = await requireSession();
+  if (!user) return { ok: false, error: 'unauthenticated' };
+
+  const raw = {
+    postId: formData.get('postId'),
+    commentId: formData.get('commentId') ?? undefined,
+    text: formData.get('text'),
+    sourceLocale: formData.get('sourceLocale'),
+    targetLocale: formData.get('targetLocale'),
+  };
+
+  const parsed = TranslateContentSchema.safeParse(raw);
+  if (!parsed.success) {
+    return { ok: false, error: parsed.error.errors.map((e) => e.message).join('; ') };
+  }
+
+  const data = parsed.data;
+
+  if (data.sourceLocale === data.targetLocale) {
+    return { ok: false, error: 'sourceLocale and targetLocale are the same' };
+  }
+
+  try {
+    const provider = createTranslationProvider();
+    const result = await translateWithCache(provider, {
+      postId: data.postId,
+      commentId: data.commentId ?? null,
+      text: data.text,
+      sourceLocale: data.sourceLocale,
+      targetLocale: data.targetLocale,
+    });
+    return { ok: true, data: { translatedText: result.text, provider: result.provider } };
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';
     return { ok: false, error: message };

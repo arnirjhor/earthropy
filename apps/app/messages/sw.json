@@ -79,7 +79,12 @@
       "published": "Imechapishwa",
       "rejected": "Ilizuiliwa",
       "withdrawn": "Iliondonolewa"
-    }
+    },
+    "translate": "Tafsiri",
+    "showOriginal": "Onyesha asili",
+    "translating": "Inatafsiri…",
+    "translatedFrom": "Imetafsiriwa kutoka",
+    "translateError": "Tafsiri haipatikani. Jaribu tena baadaye."
   },
   "GroupBrowse": {
     "heading": "Vikundi",
@@ -240,5 +245,12 @@
         "submitting": "Inakamata akaunti…"
       }
     }
+  },
+  "CommentTranslation": {
+    "translate": "Tafsiri",
+    "showOriginal": "Onyesha asili",
+    "translating": "Inatafsiri…",
+    "translatedFrom": "Imetafsiriwa kutoka",
+    "translateError": "Tafsiri haipatikani."
   }
 }

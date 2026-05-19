@@ -1,0 +1,17 @@
+{
+  "Landing": {
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "Bahasa",
+    "hero": "Tindakan melawan kekacauan bumi yang terus tumbuh.",
+    "subhero": "Earthropy mengoordinasikan kerja global pada 17 Tujuan Pembangunan Berkelanjutan PBB. Selamanya gratis. Tidak terikat korporasi. Dibangun untuk semua orang, di mana saja.",
+    "cta": "Mulai →",
+    "whatItIsHeading": "Tentang platform ini",
+    "whatItIsP1": "Sebuah platform netral dan kepentingan publik untuk mengoordinasikan pekerjaan pada 17 Tujuan Pembangunan Berkelanjutan PBB. Bukan marketplace. Bukan portal penggalangan dana. Tempat untuk mengorganisir, mendiskusikan, dan mendokumentasikan pekerjaan itu sendiri — kelompok, postingan, moderasi, sinyal kepercayaan — tanpa penjaga gerbang korporat.",
+    "whatItIsP2": "Gratis selamanya, di setiap lokal yang kami kirimkan. Dapat di-self-host. Tersedia sumbernya di bawah AGPL-3.0-or-later. Dibangun untuk LSM, peneliti, komunitas lokal, dan siapa saja yang lebih memilih mengoordinasikan pekerjaan daripada mengoordinasikan merek di sekitarnya.",
+    "goalsHeading": "17 Tujuan",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "Dokumentasi",
+    "footerGovernance": "Tata Kelola",
+    "footerSource": "Sumber ↗"
+  }
+}

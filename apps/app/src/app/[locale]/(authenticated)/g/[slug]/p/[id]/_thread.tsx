@@ -1,5 +1,4 @@
 import { AppealForm } from '@/app/[locale]/(authenticated)/_appeal-form.tsx';
-import { MarkdownBody } from '@/lib/markdown.tsx';
 import { getSession } from '@repo/auth';
 import { listCommentsForPost } from '@repo/comments';
 import type { CommentRow } from '@repo/comments';
@@ -9,6 +8,7 @@ import { and, eq } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import { ReplyForm } from './_reply.tsx';
+import { TranslateToggle } from './_translate-toggle.tsx';
 import { WithdrawCommentButton } from './_withdraw-comment-button.tsx';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
@@ -110,6 +110,14 @@ async function isGroupModerator(groupId: string, userId: string): Promise<boolea
 
 // ── CommentItem sub-component ──────────────────────────────────────────────────
 
+interface TranslationLabels {
+  translate: string;
+  showOriginal: string;
+  translating: string;
+  translatedFrom: string;
+  error: string;
+}
+
 interface CommentItemProps {
   node: CommentNode;
   viewerId: string | null;
@@ -118,9 +126,19 @@ interface CommentItemProps {
   locale: string;
   depth: number;
   t: Awaited<ReturnType<typeof getTranslations<'CommentThread'>>>;
+  translationLabels: TranslationLabels;
 }
 
-function CommentItem({ node, viewerId, viewerIsMod, postId, locale, depth, t }: CommentItemProps) {
+function CommentItem({
+  node,
+  viewerId,
+  viewerIsMod,
+  postId,
+  locale,
+  depth,
+  t,
+  translationLabels,
+}: CommentItemProps) {
   const isAuthor = viewerId !== null && viewerId === node.authorId;
   const canWithdraw = isAuthor && node.status === 'published';
   const canAppeal = isAuthor && node.status === 'rejected';
@@ -175,7 +193,15 @@ function CommentItem({ node, viewerId, viewerIsMod, postId, locale, depth, t }: 
         </header>
 
         {/* Body */}
-        <MarkdownBody md={node.body} className="mb-[var(--spacing-3)]" />
+        <TranslateToggle
+          originalBody={node.body}
+          sourceLocale={node.locale}
+          targetLocale={locale}
+          postId={postId}
+          commentId={node.id}
+          className="mb-[var(--spacing-3)]"
+          labels={translationLabels}
+        />
 
         {/* Actions */}
         <div className="flex flex-wrap gap-[var(--spacing-3)]">
@@ -224,6 +250,7 @@ function CommentItem({ node, viewerId, viewerIsMod, postId, locale, depth, t }: 
                 locale={locale}
                 depth={depth + 1}
                 t={t}
+                translationLabels={translationLabels}
               />
             ))}
         </ul>
@@ -241,7 +268,18 @@ export interface CommentThreadProps {
 }
 
 export async function CommentThread({ postId, groupId, locale }: CommentThreadProps) {
-  const t = await getTranslations('CommentThread');
+  const [t, tTrans] = await Promise.all([
+    getTranslations('CommentThread'),
+    getTranslations('CommentTranslation'),
+  ]);
+
+  const translationLabels = {
+    translate: tTrans('translate'),
+    showOriginal: tTrans('showOriginal'),
+    translating: tTrans('translating'),
+    translatedFrom: tTrans('translatedFrom'),
+    error: tTrans('translateError'),
+  };
   const viewer = await getViewer();
   const viewerId = viewer?.id ?? null;
   const viewerIsMod = viewerId !== null ? await isGroupModerator(groupId, viewerId) : false;
@@ -309,6 +347,7 @@ export async function CommentThread({ postId, groupId, locale }: CommentThreadPr
               locale={locale}
               depth={0}
               t={t}
+              translationLabels={translationLabels}
             />
           ))}
         </ul>

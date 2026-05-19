@@ -5,6 +5,7 @@ const config: NextConfig = {
   reactStrictMode: true,
   transpilePackages: [
     '@repo/auth',
+    '@repo/community-agent',
     '@repo/database',
     '@repo/moderation',
     '@repo/notifications',

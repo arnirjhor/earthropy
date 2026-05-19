@@ -49,4 +49,7 @@ export const notificationKind = pgEnum('notification_kind', [
   'moderation_assigned',
   'appeal_resolved',
   'mention',
+  'group_suggestion',
+  'stale_discussion_alert',
+  'digest_ready',
 ]);

@@ -1,0 +1,17 @@
+{
+  "Landing": {
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "언어",
+    "hero": "지구의 증가하는 무질서에 맞선 행동.",
+    "subhero": "Earthropy는 유엔 지속가능발전목표 17가지를 위한 글로벌 활동을 조율합니다. 영구 무료. 기업 독립적. 모든 곳의 모든 사람을 위해 구축되었습니다.",
+    "cta": "시작하기 →",
+    "whatItIsHeading": "이 플랫폼에 대해",
+    "whatItIsP1": "유엔 지속가능발전목표 17가지 달성을 위한 활동을 조율하기 위한 중립적·공익적 플랫폼입니다. 마켓플레이스도, 모금 포털도 아닙니다. 기업 게이트키퍼 없이 그룹, 게시물, 모더레이션, 신뢰 신호 등 실제 작업을 조직하고 토론하고 기록하는 곳입니다.",
+    "whatItIsP2": "우리가 제공하는 모든 로케일에서 영구 무료입니다. 자체 호스팅 가능. AGPL-3.0-or-later 라이선스 하에 소스 공개. NGO, 연구자, 지역 커뮤니티, 그리고 브랜드가 아닌 실제 작업을 조율하고자 하는 모든 분을 위해 만들어졌습니다.",
+    "goalsHeading": "17가지 목표",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "문서",
+    "footerGovernance": "거버넌스",
+    "footerSource": "소스 ↗"
+  }
+}

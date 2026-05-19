@@ -1,0 +1,17 @@
+{
+  "Landing": {
+    "wordmark": "EARTHROPY",
+    "languageNavLabel": "Dil",
+    "hero": "Gezegenin büyüyen düzensizliğine karşı eylem.",
+    "subhero": "Earthropy, BM'nin 17 Sürdürülebilir Kalkınma Hedefi üzerindeki küresel çalışmayı koordine eder. Sonsuza kadar ücretsiz. Kurumsal bağımsız. Herkes için, her yerde inşa edildi.",
+    "cta": "Başlayın →",
+    "whatItIsHeading": "Bu platform nedir",
+    "whatItIsP1": "BM'nin 17 Sürdürülebilir Kalkınma Hedefi üzerindeki çalışmayı koordine etmek için tarafsız, kamu yararına bir platform. Ne bir pazar yeri ne de bir bağış portalı. Kurumsal bir bekçi olmaksızın grupları, gönderileri, moderasyonu ve güven sinyallerini — çalışmanın kendisini — organize etmek, tartışmak ve belgelemek için bir yer.",
+    "whatItIsP2": "Sunduğumuz her yerel ayarda sonsuza kadar ücretsiz. Kendi kendine barındırılabilir. AGPL-3.0-or-later kapsamında kaynak kodu açık. STK'lar, araştırmacılar, yerel topluluklar ve etrafındaki markayı değil, işin kendisini koordine etmeyi tercih eden herkes için inşa edildi.",
+    "goalsHeading": "17 Hedef",
+    "footerLicense": "AGPL-3.0-or-later · earthropy.org",
+    "footerDocs": "Belgeler",
+    "footerGovernance": "Yönetişim",
+    "footerSource": "Kaynak ↗"
+  }
+}

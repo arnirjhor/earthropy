@@ -79,7 +79,19 @@
       "published": "Published",
       "rejected": "Rejected",
       "withdrawn": "Withdrawn"
-    }
+    },
+    "translate": "Translate",
+    "showOriginal": "Show original",
+    "translating": "Translating…",
+    "translatedFrom": "Translated from",
+    "translateError": "Translation unavailable. Try again later."
+  },
+  "CommentTranslation": {
+    "translate": "Translate",
+    "showOriginal": "Show original",
+    "translating": "Translating…",
+    "translatedFrom": "Translated from",
+    "translateError": "Translation unavailable."
   },
   "GroupBrowse": {
     "heading": "Groups",

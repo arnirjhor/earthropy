@@ -1,0 +1,28 @@
+{
+  "name": "@repo/translation",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Provider-agnostic LLM/MT translation pipeline. Default provider: LibreTranslate (self-host). Opt-in: DeepL (managed).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./provider": "./src/provider.ts",
+    "./cache": "./src/cache.ts",
+    "./factory": "./src/factory.ts",
+    "./providers/libretranslate": "./src/libretranslate.ts",
+    "./providers/deepl": "./src/deepl.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "drizzle-orm": "^0.36.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}

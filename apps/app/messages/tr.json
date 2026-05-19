@@ -1,0 +1,256 @@
+{
+  "CommentThread": {
+    "heading": "Yorumlar",
+    "sectionLabel": "Yorum dizisi",
+    "listLabel": "Yorumlar",
+    "empty": "Henüz yorum yok. İlk yanıtı siz yapın.",
+    "reply": "Yanıtla",
+    "cancel": "İptal",
+    "submitComment": "Yorum Yap",
+    "submitReply": "Yanıtla",
+    "submitting": "Gönderiliyor…",
+    "commentPlaceholder": "Bir yorum yazın…",
+    "replyPlaceholder": "Bir yanıt yazın…",
+    "withdrawComment": "Geri Al",
+    "withdrawingComment": "Geri alınıyor…",
+    "appeal": "İtiraz Et",
+    "appealing": "Gönderiliyor…",
+    "appealPlaceholder": "Bu kararın neden hatalı olduğunu açıklayın…",
+    "commentStatus": {
+      "pending_ai": "Yapay zeka incelemesinde",
+      "pending_review": "İnceleme bekliyor",
+      "rejected": "Reddedildi",
+      "withdrawn": "Geri alındı"
+    }
+  },
+  "Home": {
+    "title": "17 Hedef",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "17 Sürdürülebilir Kalkınma Hedefi",
+    "mission": "Earthropy, BM'nin 17 Sürdürülebilir Kalkınma Hedefi üzerindeki çalışmaları koordine etmek için tasarlanmış, sonsuza kadar ücretsiz ve kurumsal bağımsız bir platformdur. STK'lar, araştırmacılar ve yerel topluluklar için — bu çalışmanın bağlı olduğu insanlar için, gerçekten konuştukları dillerde inşa edildi.",
+    "missionAttribution": "— Earthropy misyonu",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "Grup oluştur",
+    "subheading": "Gruplar, belirli SKH'lar etrafında insanları bir araya getirir.",
+    "fields": {
+      "name": "Ad",
+      "slug": "Kısa ad",
+      "slugHint": "Addan otomatik türetilir. Özelleştirilebilir.",
+      "description": "Açıklama",
+      "visibility": "Görünürlük",
+      "visibilityPublic": "Herkese Açık",
+      "visibilityPublicHint": "Herkes bulabilir ve katılabilir",
+      "visibilityListed": "Listelenmiş",
+      "visibilityListedHint": "Aramada görünür; katılmak için davet gerekir",
+      "visibilityPrivate": "Gizli",
+      "visibilityPrivateHint": "Yalnızca davetli, listede görünmez",
+      "preferredLocale": "Birincil dil",
+      "locationText": "Konum (isteğe bağlı)",
+      "locationTextPlaceholder": "örn. Nairobi, Kenya",
+      "sdgs": "Sürdürülebilir Kalkınma Hedefleri",
+      "sdgsHint": "Bu grubun çalıştığı SKH'ları seçin. Birini birincil olarak işaretleyin.",
+      "sdgPrimary": "Birincil SKH"
+    },
+    "submit": "Grup oluştur",
+    "submitting": "Oluşturuluyor…",
+    "cancel": "İptal"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "Yapay zeka incelemesinde",
+      "pendingReview": "İnsan incelemesi için bekletiliyor",
+      "rejected": "Reddedildi — sebep: {reason}; itiraz mevcut",
+      "rejectedNoReason": "Reddedildi",
+      "withdrawn": "Yazar tarafından geri alındı"
+    },
+    "withdraw": "Geri Al",
+    "withdrawing": "Geri alınıyor…",
+    "appeal": "İtiraz Et",
+    "appealing": "Gönderiliyor…",
+    "appealPlaceholder": "Bu kararın neden hatalı olduğunu açıklayın…",
+    "cancel": "İptal",
+    "by": "yazan:",
+    "publishedLabel": "Yayımlandı",
+    "statusLabel": {
+      "pending_ai": "Yapay zeka incelemesinde",
+      "pending_review": "İnsan incelemesi bekliyor",
+      "published": "Yayımlandı",
+      "rejected": "Reddedildi",
+      "withdrawn": "Geri alındı"
+    },
+    "translate": "Çevir",
+    "showOriginal": "Orijinali göster",
+    "translating": "Çevriliyor…",
+    "translatedFrom": "Şu dilden çevrildi:",
+    "translateError": "Çeviri kullanılamıyor. Daha sonra tekrar deneyin."
+  },
+  "GroupBrowse": {
+    "heading": "Gruplar",
+    "caption": "TÜM GRUPLARA GÖZ AT",
+    "filterLabel": "SKH'ya göre filtrele",
+    "visibilityLabel": "Görünürlük",
+    "visibilityPublic": "Herkese Açık",
+    "visibilityListed": "Listelenmiş",
+    "visibilityBoth": "Herkese Açık + Listelenmiş",
+    "members": "{count} ÜYE",
+    "member": "1 ÜYE",
+    "empty": {
+      "heading": "Grup bulunamadı",
+      "descriptionFiltered": "Seçili SKH'larla eşleşen grup yok. Filtrenizi genişletmeyi deneyin.",
+      "descriptionAll": "Henüz hiç grup oluşturulmamış.",
+      "clearFilter": "SKH filtresini temizle",
+      "createGroup": "Grup oluştur"
+    },
+    "pagination": {
+      "prev": "Önceki sayfa",
+      "next": "Sonraki sayfa",
+      "pageOf": "{total} sayfadan {page}. sayfa"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "Bildirimler",
+      "unreadCount": "{count} okunmamış bildirim"
+    },
+    "dropdown": {
+      "label": "Bildirim paneli",
+      "title": "Bildirimler",
+      "markAll": "Tümünü okundu işaretle",
+      "markRead": "{kind} öğesini okundu işaretle",
+      "read": "Okundu",
+      "empty": "Henüz bildirim yok.",
+      "listLabel": "Son bildirimler",
+      "viewAll": "Tümünü gör"
+    },
+    "page": {
+      "heading": "Bildirimler",
+      "empty": "Bildirim yok.",
+      "markAll": "Tümünü okundu işaretle"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "E-posta",
+      "password": "Şifre",
+      "handle": "Kullanıcı adı"
+    },
+    "signup": {
+      "heading": "Hesap oluştur",
+      "subheading": "SKH'lar üzerinde küresel eylemi koordine eden platforma katılın.",
+      "submit": "Hesap oluştur",
+      "submitting": "Hesap oluşturuluyor…",
+      "alreadyHaveAccount": "Zaten hesabınız var mı?",
+      "signInLink": "Giriş yap"
+    },
+    "signin": {
+      "heading": "Giriş yap",
+      "submit": "Giriş yap",
+      "submitting": "Giriş yapılıyor…",
+      "forgotPassword": "Şifrenizi mi unuttunuz?",
+      "noAccount": "Hesabınız yok mu?",
+      "signUpLink": "Oluşturun",
+      "tabs": {
+        "password": "Şifre",
+        "magic": "Sihirli bağlantı"
+      },
+      "magic": {
+        "submit": "Giriş bağlantısı gönder",
+        "submitting": "Gönderiliyor…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "E-postanızı onaylayın",
+      "description": "E-posta adresinizi doğrulamak ve hesabınızı etkinleştirmek için aşağıdaki düğmeye tıklayın.",
+      "submit": "E-postayı onayla",
+      "submitting": "Onaylanıyor…"
+    },
+    "magicLink": {
+      "heading": "Giriş yap",
+      "description": "Hesabınıza giriş yapmak için aşağıdaki düğmeye tıklayın.",
+      "submit": "Giriş yap",
+      "submitting": "Giriş yapılıyor…",
+      "requestNew": "Yeni giriş bağlantısı iste"
+    },
+    "forgotPassword": {
+      "heading": "Şifrenizi sıfırlayın",
+      "description": "E-posta adresinizi girin, hesap mevcutsa size sıfırlama bağlantısı göndereceğiz.",
+      "submit": "Sıfırlama bağlantısı gönder",
+      "submitting": "Gönderiliyor…",
+      "backToSignIn": "Giriş sayfasına dön"
+    },
+    "resetPassword": {
+      "heading": "Yeni şifre belirle",
+      "description": "Hesabınız için yeni bir şifre girin.",
+      "newPassword": "Yeni şifre",
+      "submit": "Şifreyi belirle",
+      "submitting": "Şifre belirleniyor…"
+    },
+    "checkYourEmail": {
+      "heading": "E-postanızı kontrol edin",
+      "description": "Size bir e-posta gönderdik. Devam etmek için içindeki bağlantıyı takip edin.",
+      "wrongEmail": "Yanlış e-posta mı?",
+      "tryAgain": "Tekrar dene"
+    },
+    "dashboard": {
+      "welcome": "Hoş geldiniz, {name}",
+      "defaultName": "misafir",
+      "signOut": "Çıkış yap",
+      "placeholder": "Kontrol paneliniz oluşturuluyor. Yakında tekrar kontrol edin."
+    },
+    "account": {
+      "heading": "Hesap",
+      "sections": {
+        "profile": "Profil",
+        "sessions": "Aktif oturumlar",
+        "notifications": "Bildirim tercihleri",
+        "danger": "Tehlikeli bölge"
+      },
+      "profile": {
+        "displayName": "Görünen ad",
+        "handle": "Kullanıcı adı",
+        "locale": "Dil",
+        "save": "Değişiklikleri kaydet",
+        "saving": "Kaydediliyor…",
+        "saved": "Kaydedildi."
+      },
+      "sessions": {
+        "currentDevice": "Mevcut cihaz",
+        "otherDevices": "Diğer cihazlar",
+        "noOtherSessions": "Başka aktif oturum yok.",
+        "createdAgo": "{days} gün önce oluşturuldu",
+        "createdToday": "bugün oluşturuldu",
+        "revoke": "İptal et",
+        "revokeAll": "Diğer tüm oturumları iptal et",
+        "revoking": "İptal ediliyor…"
+      },
+      "notifications": {
+        "description": "Bildirim tercihleri şimdilik yerel olarak kaydedilir (v0.1). Sunucu tarafında kalıcılık v0.2 için planlanmıştır.",
+        "inApp": "Uygulama içi bildirimler",
+        "email": "E-posta bildirimleri",
+        "kinds": {
+          "newPost": "Takip ettiğiniz gruplardaki yeni gönderiler",
+          "mention": "Bahsedenler",
+          "groupInvite": "Grup davetleri",
+          "moderation": "İçeriğiniz hakkındaki moderasyon kararları"
+        }
+      },
+      "danger": {
+        "heading": "Hesabı sil",
+        "description": "Hesabınızı silmek kalıcıdır. Gönderileriniz ve yorumlarınız moderasyon denetim amacıyla saklanır, ancak hesabınız derhal devre dışı bırakılır ve oturumunuz kapatılır.",
+        "confirm": "Onaylamak için e-posta adresinizi girin:",
+        "email": "E-posta adresiniz",
+        "submit": "Hesabımı devre dışı bırak",
+        "submitting": "Hesap devre dışı bırakılıyor…"
+      }
+    }
+  },
+  "CommentTranslation": {
+    "translate": "Çevir",
+    "showOriginal": "Orijinali göster",
+    "translating": "Çevriliyor…",
+    "translatedFrom": "Şu dilden çevrildi:",
+    "translateError": "Çeviri kullanılamıyor."
+  }
+}

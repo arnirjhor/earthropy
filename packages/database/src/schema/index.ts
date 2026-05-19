@@ -7,3 +7,6 @@ export * from './comments.ts';
 export * from './moderation.ts';
 export * from './reputation.ts';
 export * from './notifications.ts';
+export * from './translations.ts';
+export * from './community-agent.ts';
+export * from './outcomes.ts';

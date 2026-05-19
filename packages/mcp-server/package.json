@@ -1,0 +1,36 @@
+{
+  "name": "@repo/mcp-server",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Model Context Protocol server — exposes Earthropy actions as tools for AI agents.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tools": "./src/tools.ts",
+    "./server": "./src/server.ts"
+  },
+  "bin": {
+    "earthropy-mcp": "./src/cli.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "tsx src/cli.ts",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@repo/database": "workspace:*",
+    "@repo/groups": "workspace:*",
+    "@repo/observability": "workspace:*",
+    "@repo/plugin-sdk": "workspace:*",
+    "@repo/posts": "workspace:*",
+    "@repo/sdg": "workspace:*",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

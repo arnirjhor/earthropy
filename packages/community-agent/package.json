@@ -1,0 +1,27 @@
+{
+  "name": "@repo/community-agent",
+  "version": "0.0.1",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "Provider-agnostic AI community-manager agent. Default provider: Anthropic Claude. Self-hosters can swap in Ollama.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./provider": "./src/provider.ts",
+    "./providers/anthropic": "./src/anthropic-provider.ts",
+    "./providers/ollama": "./src/ollama-provider.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo *.tsbuildinfo dist"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.96.0",
+    "@repo/database": "workspace:*",
+    "drizzle-orm": "^0.36.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}

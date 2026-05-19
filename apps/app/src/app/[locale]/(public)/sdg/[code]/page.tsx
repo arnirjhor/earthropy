@@ -1,3 +1,4 @@
+import { listOutcomesBySdg } from '@/app/[locale]/(authenticated)/g/[slug]/outcomes/_actions.ts';
 import { getSession } from '@repo/auth';
 import { db } from '@repo/database/client';
 import { followedSdgs, postSdgs, posts } from '@repo/database/schema';
@@ -95,9 +96,9 @@ export default async function SdgHubPage({
 
   const sdg = getSdgByCode(code);
 
-  // Fetch groups (max 12), posts (max 25), and viewer in parallel
+  // Fetch groups (max 12), posts (max 25), viewer, and outcomes in parallel
   const viewerPromise = getViewer();
-  const [groupsResult, sdgPosts, viewer] = await Promise.all([
+  const [groupsResult, sdgPosts, viewer, sdgOutcomes] = await Promise.all([
     listGroups({
       sdgIds: [sdg.id as SdgId],
       visibility: 'public',
@@ -106,6 +107,7 @@ export default async function SdgHubPage({
     }),
     listPostsBySdg(sdg.id, 25),
     viewerPromise,
+    listOutcomesBySdg(sdg.id),
   ]);
 
   // Check if viewer follows this SDG
@@ -309,6 +311,69 @@ export default async function SdgHubPage({
           </ul>
         )}
       </section>
+
+      {/* ── Impact section ────────────────────────────────────────────────── */}
+      {sdgOutcomes.length > 0 && (
+        <section aria-labelledby="impact-heading" className="mt-[var(--spacing-12)]">
+          <h2
+            id="impact-heading"
+            className="m-0 text-[length:var(--text-h3)] leading-[var(--text-h3--line-height)] font-medium text-[var(--color-text)] mb-[var(--spacing-6)]"
+          >
+            Reported Impact
+          </h2>
+          <p className="mb-[var(--spacing-4)] text-[length:var(--text-body-sm)] text-[var(--color-text-muted)]">
+            Self-reported outcomes from groups working on {sdg.name}. Values are not externally
+            verified.
+          </p>
+          <ul
+            className="flex flex-col gap-[var(--spacing-3)] list-none p-0 m-0"
+            aria-label="Reported outcomes for this SDG"
+          >
+            {sdgOutcomes.map((outcome) => (
+              <li
+                key={`${outcome.groupId}-${outcome.indicatorCode}-${outcome.reportedAt.toISOString()}`}
+                className="m-0 p-0"
+              >
+                <article
+                  className="bg-[var(--color-surface)] border border-[var(--color-border)] overflow-hidden transition-colors hover:border-[var(--color-text)]"
+                  style={{
+                    borderRadius: 'var(--radius-sm)',
+                    transitionDuration: 'var(--duration-base)',
+                  }}
+                >
+                  <div className="px-[var(--spacing-5)] py-[var(--spacing-4)]">
+                    <div className="flex items-baseline justify-between gap-[var(--spacing-4)] flex-wrap">
+                      <span className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)]">
+                        {outcome.indicatorCode}
+                      </span>
+                      <time
+                        dateTime={outcome.reportedAt.toISOString()}
+                        className="font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)]"
+                      >
+                        {outcome.reportedAt.toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })}
+                      </time>
+                    </div>
+                    <p className="mt-[var(--spacing-1)] text-[length:var(--text-body)] text-[var(--color-text)] font-medium">
+                      {outcome.indicatorName}
+                    </p>
+                    <p className="mt-[var(--spacing-1)] font-mono text-[length:var(--text-body-sm)] text-[var(--color-text)]">
+                      {outcome.value}{' '}
+                      <span className="text-[var(--color-text-muted)]">{outcome.unit}</span>
+                    </p>
+                    <p className="mt-[var(--spacing-3)] font-mono text-[length:var(--text-micro)] uppercase tracking-wider text-[var(--color-text-muted)]">
+                      {outcome.groupName}
+                    </p>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </main>
   );
 }

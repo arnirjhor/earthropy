@@ -1,0 +1,256 @@
+{
+  "CommentThread": {
+    "heading": "Komentar",
+    "sectionLabel": "Utas komentar",
+    "listLabel": "Komentar",
+    "empty": "Belum ada komentar. Jadilah yang pertama membalas.",
+    "reply": "Balas",
+    "cancel": "Batal",
+    "submitComment": "Komentar",
+    "submitReply": "Balas",
+    "submitting": "Mengirim…",
+    "commentPlaceholder": "Tulis komentar…",
+    "replyPlaceholder": "Tulis balasan…",
+    "withdrawComment": "Tarik",
+    "withdrawingComment": "Menarik…",
+    "appeal": "Ajukan Banding",
+    "appealing": "Mengirim…",
+    "appealPlaceholder": "Jelaskan mengapa keputusan ini tidak tepat…",
+    "commentStatus": {
+      "pending_ai": "Sedang ditinjau AI",
+      "pending_review": "Menunggu tinjauan",
+      "rejected": "Ditolak",
+      "withdrawn": "Ditarik"
+    }
+  },
+  "Home": {
+    "title": "17 Tujuan",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "17 Tujuan Pembangunan Berkelanjutan",
+    "mission": "Earthropy adalah platform bebas biaya selamanya dan tidak terikat korporasi untuk mengoordinasikan kerja pada 17 Tujuan Pembangunan Berkelanjutan PBB. Dibangun untuk LSM, peneliti, dan komunitas lokal — orang-orang yang bergantung pada pekerjaan ini, dalam bahasa yang mereka gunakan sehari-hari.",
+    "missionAttribution": "— Misi Earthropy",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "Buat grup",
+    "subheading": "Grup menyatukan orang-orang di sekitar SDG tertentu.",
+    "fields": {
+      "name": "Nama",
+      "slug": "Slug",
+      "slugHint": "Diturunkan otomatis dari nama. Dapat dikustomisasi.",
+      "description": "Deskripsi",
+      "visibility": "Visibilitas",
+      "visibilityPublic": "Publik",
+      "visibilityPublicHint": "Siapa pun dapat menemukan dan bergabung",
+      "visibilityListed": "Terdaftar",
+      "visibilityListedHint": "Terlihat dalam pencarian; undang untuk bergabung",
+      "visibilityPrivate": "Privat",
+      "visibilityPrivateHint": "Hanya undangan, tidak terdaftar",
+      "preferredLocale": "Bahasa utama",
+      "locationText": "Lokasi (opsional)",
+      "locationTextPlaceholder": "mis. Nairobi, Kenya",
+      "sdgs": "Tujuan Pembangunan Berkelanjutan",
+      "sdgsHint": "Pilih SDG yang dikerjakan grup ini. Tandai satu sebagai utama.",
+      "sdgPrimary": "SDG Utama"
+    },
+    "submit": "Buat grup",
+    "submitting": "Membuat…",
+    "cancel": "Batal"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "Sedang ditinjau AI",
+      "pendingReview": "Ditahan untuk tinjauan manusia",
+      "rejected": "Ditolak — alasan: {reason}; banding tersedia",
+      "rejectedNoReason": "Ditolak",
+      "withdrawn": "Ditarik oleh penulis"
+    },
+    "withdraw": "Tarik",
+    "withdrawing": "Menarik…",
+    "appeal": "Ajukan Banding",
+    "appealing": "Mengirim…",
+    "appealPlaceholder": "Jelaskan mengapa keputusan ini tidak tepat…",
+    "cancel": "Batal",
+    "by": "oleh",
+    "publishedLabel": "Diterbitkan",
+    "statusLabel": {
+      "pending_ai": "Sedang ditinjau AI",
+      "pending_review": "Menunggu tinjauan manusia",
+      "published": "Diterbitkan",
+      "rejected": "Ditolak",
+      "withdrawn": "Ditarik"
+    },
+    "translate": "Terjemahkan",
+    "showOriginal": "Tampilkan asli",
+    "translating": "Menerjemahkan…",
+    "translatedFrom": "Diterjemahkan dari",
+    "translateError": "Terjemahan tidak tersedia. Coba lagi nanti."
+  },
+  "GroupBrowse": {
+    "heading": "Grup",
+    "caption": "JELAJAHI SEMUA GRUP",
+    "filterLabel": "Filter berdasarkan SDG",
+    "visibilityLabel": "Visibilitas",
+    "visibilityPublic": "Publik",
+    "visibilityListed": "Terdaftar",
+    "visibilityBoth": "Publik + Terdaftar",
+    "members": "{count} ANGGOTA",
+    "member": "1 ANGGOTA",
+    "empty": {
+      "heading": "Tidak ada grup ditemukan",
+      "descriptionFiltered": "Tidak ada grup yang sesuai dengan SDG yang dipilih. Coba perluas filter Anda.",
+      "descriptionAll": "Belum ada grup yang dibuat.",
+      "clearFilter": "Hapus filter SDG",
+      "createGroup": "Buat grup"
+    },
+    "pagination": {
+      "prev": "Halaman sebelumnya",
+      "next": "Halaman berikutnya",
+      "pageOf": "Halaman {page} dari {total}"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "Notifikasi",
+      "unreadCount": "{count} notifikasi belum dibaca"
+    },
+    "dropdown": {
+      "label": "Panel notifikasi",
+      "title": "Notifikasi",
+      "markAll": "Tandai semua sudah dibaca",
+      "markRead": "Tandai {kind} sudah dibaca",
+      "read": "Sudah dibaca",
+      "empty": "Belum ada notifikasi.",
+      "listLabel": "Notifikasi terbaru",
+      "viewAll": "Lihat semua"
+    },
+    "page": {
+      "heading": "Notifikasi",
+      "empty": "Tidak ada notifikasi.",
+      "markAll": "Tandai semua sudah dibaca"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "Email",
+      "password": "Kata sandi",
+      "handle": "Nama pengguna"
+    },
+    "signup": {
+      "heading": "Buat akun",
+      "subheading": "Bergabunglah dengan platform yang mengoordinasikan aksi global pada SDG.",
+      "submit": "Buat akun",
+      "submitting": "Membuat akun…",
+      "alreadyHaveAccount": "Sudah punya akun?",
+      "signInLink": "Masuk"
+    },
+    "signin": {
+      "heading": "Masuk",
+      "submit": "Masuk",
+      "submitting": "Sedang masuk…",
+      "forgotPassword": "Lupa kata sandi?",
+      "noAccount": "Belum punya akun?",
+      "signUpLink": "Buat akun",
+      "tabs": {
+        "password": "Kata sandi",
+        "magic": "Tautan ajaib"
+      },
+      "magic": {
+        "submit": "Kirim tautan masuk",
+        "submitting": "Mengirim…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "Konfirmasi email Anda",
+      "description": "Klik tombol di bawah untuk memverifikasi alamat email Anda dan mengaktifkan akun.",
+      "submit": "Konfirmasi email",
+      "submitting": "Mengonfirmasi…"
+    },
+    "magicLink": {
+      "heading": "Masuk",
+      "description": "Klik tombol di bawah untuk masuk ke akun Anda.",
+      "submit": "Masuk",
+      "submitting": "Sedang masuk…",
+      "requestNew": "Minta tautan masuk baru"
+    },
+    "forgotPassword": {
+      "heading": "Atur ulang kata sandi",
+      "description": "Masukkan email Anda dan kami akan mengirimkan tautan pengaturan ulang jika akun ada.",
+      "submit": "Kirim tautan pengaturan ulang",
+      "submitting": "Mengirim…",
+      "backToSignIn": "Kembali ke halaman masuk"
+    },
+    "resetPassword": {
+      "heading": "Tetapkan kata sandi baru",
+      "description": "Masukkan kata sandi baru untuk akun Anda.",
+      "newPassword": "Kata sandi baru",
+      "submit": "Tetapkan kata sandi",
+      "submitting": "Menetapkan kata sandi…"
+    },
+    "checkYourEmail": {
+      "heading": "Periksa email Anda",
+      "description": "Kami telah mengirimkan email. Ikuti tautan di dalamnya untuk melanjutkan.",
+      "wrongEmail": "Email salah?",
+      "tryAgain": "Coba lagi"
+    },
+    "dashboard": {
+      "welcome": "Selamat datang, {name}",
+      "defaultName": "di sana",
+      "signOut": "Keluar",
+      "placeholder": "Dasbor Anda sedang dibangun. Kembali lagi nanti."
+    },
+    "account": {
+      "heading": "Akun",
+      "sections": {
+        "profile": "Profil",
+        "sessions": "Sesi aktif",
+        "notifications": "Preferensi notifikasi",
+        "danger": "Zona berbahaya"
+      },
+      "profile": {
+        "displayName": "Nama tampilan",
+        "handle": "Nama pengguna",
+        "locale": "Bahasa",
+        "save": "Simpan perubahan",
+        "saving": "Menyimpan…",
+        "saved": "Tersimpan."
+      },
+      "sessions": {
+        "currentDevice": "Perangkat saat ini",
+        "otherDevices": "Perangkat lain",
+        "noOtherSessions": "Tidak ada sesi aktif lainnya.",
+        "createdAgo": "dibuat {days} hari lalu",
+        "createdToday": "dibuat hari ini",
+        "revoke": "Cabut",
+        "revokeAll": "Cabut semua sesi lain",
+        "revoking": "Mencabut…"
+      },
+      "notifications": {
+        "description": "Preferensi notifikasi disimpan secara lokal untuk saat ini (v0.1). Penyimpanan sisi server adalah tindak lanjut v0.2.",
+        "inApp": "Notifikasi dalam aplikasi",
+        "email": "Notifikasi email",
+        "kinds": {
+          "newPost": "Posting baru di grup yang Anda ikuti",
+          "mention": "Sebutan",
+          "groupInvite": "Undangan grup",
+          "moderation": "Keputusan moderasi pada konten Anda"
+        }
+      },
+      "danger": {
+        "heading": "Hapus akun",
+        "description": "Menghapus akun bersifat permanen. Posting dan komentar Anda tetap disimpan untuk keperluan audit moderasi, tetapi akun Anda akan segera dinonaktifkan dan Anda akan keluar.",
+        "confirm": "Untuk konfirmasi, masukkan alamat email Anda:",
+        "email": "Email Anda",
+        "submit": "Nonaktifkan akun saya",
+        "submitting": "Menonaktifkan akun…"
+      }
+    }
+  },
+  "CommentTranslation": {
+    "translate": "Terjemahkan",
+    "showOriginal": "Tampilkan asli",
+    "translating": "Menerjemahkan…",
+    "translatedFrom": "Diterjemahkan dari",
+    "translateError": "Terjemahan tidak tersedia."
+  }
+}

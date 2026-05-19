@@ -26,6 +26,7 @@
     "@repo/observability": "workspace:*",
     "@repo/ratelimit": "workspace:*",
     "@repo/sdg": "workspace:*",
+    "@repo/translation": "workspace:*",
     "@repo/trust": "workspace:*",
     "dompurify": "^3.2.6",
     "drizzle-orm": "^0.36.4",

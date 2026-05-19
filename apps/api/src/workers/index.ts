@@ -2,33 +2,63 @@
  * Worker supervisor entry-point.
  *
  * Started via `pnpm --filter @earthropy/api worker` (or `npm run worker`).
- * Registers the moderation worker and keeps the process alive.
+ * Registers the moderation worker and community-agent worker, then keeps the
+ * process alive.
  * On uncaught errors: process.exit(1) so docker-compose / k8s restarts it.
  */
 
 import { log } from '@repo/observability';
+import { createCommunityAgentWorker, scheduleCommunityAgentCrons } from './community-agent.ts';
 import { createModerationWorker } from './moderation.ts';
 
 async function main(): Promise<void> {
   const redisUrl = process.env.REDIS_URL ?? 'redis://localhost:6379';
   const connection = { url: redisUrl };
 
-  log.info('worker.start', { msg: 'starting moderation worker' });
+  log.info('worker.start', { msg: 'starting workers' });
 
-  const { worker } = createModerationWorker(connection);
+  // Moderation worker
+  const { worker: moderationWorker } = createModerationWorker(connection);
 
-  worker.on('completed', (job) => {
-    log.info('worker.job.completed', { jobId: job.id, targetId: job.data.targetId });
+  moderationWorker.on('completed', (job) => {
+    log.info('worker.job.completed', {
+      queue: 'moderation',
+      jobId: job.id,
+      targetId: job.data.targetId,
+    });
   });
 
-  worker.on('failed', (job, err) => {
+  moderationWorker.on('failed', (job, err) => {
     log.error('worker.job.failed', {
+      queue: 'moderation',
       jobId: job?.id,
       err: err instanceof Error ? err.message : String(err),
     });
   });
 
-  log.info('worker.ready', { queues: ['moderation'] });
+  // Community-agent worker
+  const { worker: agentWorker, queue: agentQueue } = createCommunityAgentWorker(connection);
+
+  agentWorker.on('completed', (job) => {
+    log.info('worker.job.completed', {
+      queue: 'community-agent',
+      jobId: job.id,
+      kind: job.data.kind,
+    });
+  });
+
+  agentWorker.on('failed', (job, err) => {
+    log.error('worker.job.failed', {
+      queue: 'community-agent',
+      jobId: job?.id,
+      err: err instanceof Error ? err.message : String(err),
+    });
+  });
+
+  // Register cron jobs for stale-discussions and weekly-digest
+  await scheduleCommunityAgentCrons(agentQueue);
+
+  log.info('worker.ready', { queues: ['moderation', 'community-agent'] });
 
   // Keep the process alive.
   await new Promise(() => {});

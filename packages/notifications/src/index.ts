@@ -14,7 +14,10 @@ export type NotificationKind =
   | 'group_invite'
   | 'moderation_assigned'
   | 'appeal_resolved'
-  | 'mention';
+  | 'mention'
+  | 'group_suggestion'
+  | 'stale_discussion_alert'
+  | 'digest_ready';
 
 export interface NotifyInput {
   readonly userId: string;

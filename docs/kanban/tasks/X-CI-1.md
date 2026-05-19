@@ -1,7 +1,7 @@
 ---
 id: X-CI-1
 title: ".github/workflows/ci.yml — typecheck, lint, test, e2e on PR"
-status: blocked
+status: done
 priority: high
 phase: X
 agent_model: haiku
@@ -12,7 +12,7 @@ branch: ""
 pr: ""
 estimated_hours: 1
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-20
 ---
 
 ## Description
@@ -29,4 +29,12 @@ GitHub Actions workflow that runs the standard gates on every PR. Cache the pnpm
 - Trigger via a no-op PR; confirm both jobs run and pass on the v0.0.2 baseline.
 
 ## Notes
-Blocked until X-GH-1 lands (need the remote first).
+X-GH-1 is resolved (remote exists at https://github.com/arnirjhor/earthropy). CI workflow created at `.github/workflows/ci.yml`.
+
+## Completion note (2026-05-20)
+Implemented `.github/workflows/ci.yml` with three jobs:
+- `lint-and-typecheck` — runs `pnpm lint` + `pnpm typecheck` with Turborepo local cache.
+- `test` — runs `pnpm db:migrate` + `pnpm test` against a Postgres 16 service container (port 5432, `DATABASE_URL` injected); Redis URL stubbed (queue/ratelimit tests mock Redis in-memory). Docker build depends on both passing.
+- `docker-build` — smoke-builds `apps/app/Dockerfile` and `apps/api/Dockerfile` via `docker/build-push-action@v6` with GHA layer cache; no push.
+
+`lint-and-typecheck` and `test` run in parallel; `docker-build` gates on both. Concurrency group cancels superseded PR runs. Node 22, pnpm 9.15.0, `ubuntu-latest` throughout.

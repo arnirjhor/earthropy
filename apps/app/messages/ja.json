@@ -1,0 +1,256 @@
+{
+  "CommentThread": {
+    "heading": "コメント",
+    "sectionLabel": "コメントスレッド",
+    "listLabel": "コメント",
+    "empty": "まだコメントがありません。最初に返信しましょう。",
+    "reply": "返信",
+    "cancel": "キャンセル",
+    "submitComment": "コメント",
+    "submitReply": "返信",
+    "submitting": "送信中…",
+    "commentPlaceholder": "コメントを書く…",
+    "replyPlaceholder": "返信を書く…",
+    "withdrawComment": "取り下げ",
+    "withdrawingComment": "取り下げ中…",
+    "appeal": "異議申し立て",
+    "appealing": "送信中…",
+    "appealPlaceholder": "この決定が不当である理由を説明してください…",
+    "commentStatus": {
+      "pending_ai": "AI審査中",
+      "pending_review": "審査待ち",
+      "rejected": "却下",
+      "withdrawn": "取り下げ済み"
+    }
+  },
+  "Home": {
+    "title": "17の目標",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "持続可能な開発目標17項目",
+    "mission": "Earthropyは、国連の持続可能な開発目標17項目への取り組みを調整するための、永久無料・企業非依存のプラットフォームです。NGO、研究者、地域コミュニティのために構築されており、実際に話されている言語で利用できます。",
+    "missionAttribution": "— Earthropyのミッション",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "グループを作成",
+    "subheading": "グループは特定のSDGsを中心に人々をつなぎます。",
+    "fields": {
+      "name": "名前",
+      "slug": "スラッグ",
+      "slugHint": "名前から自動生成されます。カスタマイズ可能です。",
+      "description": "説明",
+      "visibility": "公開設定",
+      "visibilityPublic": "公開",
+      "visibilityPublicHint": "誰でも見つけて参加できます",
+      "visibilityListed": "一覧表示",
+      "visibilityListedHint": "検索で表示されます。参加には招待が必要です",
+      "visibilityPrivate": "非公開",
+      "visibilityPrivateHint": "招待制、一覧に表示されません",
+      "preferredLocale": "使用言語",
+      "locationText": "場所（任意）",
+      "locationTextPlaceholder": "例: ナイロビ、ケニア",
+      "sdgs": "持続可能な開発目標",
+      "sdgsHint": "このグループが取り組むSDGsを選択してください。1つをメインとして設定してください。",
+      "sdgPrimary": "メインSDG"
+    },
+    "submit": "グループを作成",
+    "submitting": "作成中…",
+    "cancel": "キャンセル"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "AI審査中",
+      "pendingReview": "人による審査のため保留中",
+      "rejected": "却下 — 理由: {reason}；異議申し立て可能",
+      "rejectedNoReason": "却下",
+      "withdrawn": "投稿者により取り下げ済み"
+    },
+    "withdraw": "取り下げ",
+    "withdrawing": "取り下げ中…",
+    "appeal": "異議申し立て",
+    "appealing": "送信中…",
+    "appealPlaceholder": "この決定が不当である理由を説明してください…",
+    "cancel": "キャンセル",
+    "by": "投稿者:",
+    "publishedLabel": "公開済み",
+    "statusLabel": {
+      "pending_ai": "AI審査中",
+      "pending_review": "人による審査待ち",
+      "published": "公開済み",
+      "rejected": "却下",
+      "withdrawn": "取り下げ済み"
+    },
+    "translate": "翻訳する",
+    "showOriginal": "原文を表示",
+    "translating": "翻訳中…",
+    "translatedFrom": "翻訳元",
+    "translateError": "翻訳できません。後でもう一度お試しください。"
+  },
+  "GroupBrowse": {
+    "heading": "グループ",
+    "caption": "すべてのグループを閲覧",
+    "filterLabel": "SDGsで絞り込み",
+    "visibilityLabel": "公開設定",
+    "visibilityPublic": "公開",
+    "visibilityListed": "一覧表示",
+    "visibilityBoth": "公開 + 一覧表示",
+    "members": "{count}人のメンバー",
+    "member": "1人のメンバー",
+    "empty": {
+      "heading": "グループが見つかりません",
+      "descriptionFiltered": "選択したSDGsに該当するグループがありません。フィルターを広げてみてください。",
+      "descriptionAll": "まだグループが作成されていません。",
+      "clearFilter": "SDGsフィルターをクリア",
+      "createGroup": "グループを作成"
+    },
+    "pagination": {
+      "prev": "前のページ",
+      "next": "次のページ",
+      "pageOf": "{total}ページ中{page}ページ目"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "通知",
+      "unreadCount": "{count}件の未読通知"
+    },
+    "dropdown": {
+      "label": "通知パネル",
+      "title": "通知",
+      "markAll": "すべて既読にする",
+      "markRead": "{kind}を既読にする",
+      "read": "既読",
+      "empty": "通知はまだありません。",
+      "listLabel": "最近の通知",
+      "viewAll": "すべて表示"
+    },
+    "page": {
+      "heading": "通知",
+      "empty": "通知がありません。",
+      "markAll": "すべて既読にする"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "handle": "ハンドル名"
+    },
+    "signup": {
+      "heading": "アカウントを作成",
+      "subheading": "SDGsへのグローバルな行動を調整するプラットフォームに参加しましょう。",
+      "submit": "アカウントを作成",
+      "submitting": "アカウントを作成中…",
+      "alreadyHaveAccount": "すでにアカウントをお持ちですか？",
+      "signInLink": "サインイン"
+    },
+    "signin": {
+      "heading": "サインイン",
+      "submit": "サインイン",
+      "submitting": "サインイン中…",
+      "forgotPassword": "パスワードをお忘れですか？",
+      "noAccount": "アカウントをお持ちでないですか？",
+      "signUpLink": "作成する",
+      "tabs": {
+        "password": "パスワード",
+        "magic": "マジックリンク"
+      },
+      "magic": {
+        "submit": "サインインリンクを送信",
+        "submitting": "送信中…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "メールアドレスを確認",
+      "description": "下のボタンをクリックしてメールアドレスを確認し、アカウントを有効化してください。",
+      "submit": "メールアドレスを確認",
+      "submitting": "確認中…"
+    },
+    "magicLink": {
+      "heading": "サインイン",
+      "description": "下のボタンをクリックしてアカウントにサインインしてください。",
+      "submit": "サインイン",
+      "submitting": "サインイン中…",
+      "requestNew": "新しいサインインリンクをリクエスト"
+    },
+    "forgotPassword": {
+      "heading": "パスワードをリセット",
+      "description": "メールアドレスを入力してください。アカウントが存在する場合、リセットリンクをお送りします。",
+      "submit": "リセットリンクを送信",
+      "submitting": "送信中…",
+      "backToSignIn": "サインインに戻る"
+    },
+    "resetPassword": {
+      "heading": "新しいパスワードを設定",
+      "description": "アカウントの新しいパスワードを入力してください。",
+      "newPassword": "新しいパスワード",
+      "submit": "パスワードを設定",
+      "submitting": "パスワードを設定中…"
+    },
+    "checkYourEmail": {
+      "heading": "メールをご確認ください",
+      "description": "メールを送信しました。続きはメール内のリンクをクリックしてください。",
+      "wrongEmail": "メールアドレスが違いますか？",
+      "tryAgain": "再試行"
+    },
+    "dashboard": {
+      "welcome": "ようこそ、{name}さん",
+      "defaultName": "ゲスト",
+      "signOut": "サインアウト",
+      "placeholder": "ダッシュボードは構築中です。後ほど確認してください。"
+    },
+    "account": {
+      "heading": "アカウント",
+      "sections": {
+        "profile": "プロフィール",
+        "sessions": "アクティブなセッション",
+        "notifications": "通知設定",
+        "danger": "危険な操作"
+      },
+      "profile": {
+        "displayName": "表示名",
+        "handle": "ハンドル名",
+        "locale": "言語",
+        "save": "変更を保存",
+        "saving": "保存中…",
+        "saved": "保存しました。"
+      },
+      "sessions": {
+        "currentDevice": "現在のデバイス",
+        "otherDevices": "他のデバイス",
+        "noOtherSessions": "他にアクティブなセッションはありません。",
+        "createdAgo": "{days}日前に作成",
+        "createdToday": "本日作成",
+        "revoke": "取り消し",
+        "revokeAll": "他のすべてのセッションを取り消す",
+        "revoking": "取り消し中…"
+      },
+      "notifications": {
+        "description": "通知設定は現在ローカルに保存されます（v0.1）。サーバー側の保存はv0.2で対応予定です。",
+        "inApp": "アプリ内通知",
+        "email": "メール通知",
+        "kinds": {
+          "newPost": "フォロー中のグループへの新しい投稿",
+          "mention": "メンション",
+          "groupInvite": "グループへの招待",
+          "moderation": "コンテンツへのモデレーション決定"
+        }
+      },
+      "danger": {
+        "heading": "アカウントを削除",
+        "description": "アカウントの削除は永続的です。投稿とコメントはモデレーション監査のために保持されますが、アカウントはただちに無効化され、サインアウトされます。",
+        "confirm": "確認のため、メールアドレスを入力してください：",
+        "email": "メールアドレス",
+        "submit": "アカウントを無効化",
+        "submitting": "アカウントを無効化中…"
+      }
+    }
+  },
+  "CommentTranslation": {
+    "translate": "翻訳する",
+    "showOriginal": "原文を表示",
+    "translating": "翻訳中…",
+    "translatedFrom": "翻訳元",
+    "translateError": "翻訳できません。"
+  }
+}

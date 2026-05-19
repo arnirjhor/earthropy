@@ -472,6 +472,228 @@ const groupInviteSw: GroupInviteMessages = {
 };
 
 // ---------------------------------------------------------------------------
+// verify-email — ja, id, ko, tr, bn
+// ---------------------------------------------------------------------------
+
+const verifyEmailJa: VerifyEmailMessages = {
+  subject: 'Earthropyのメールアドレスをご確認ください',
+  previewText: 'リンクをクリックしてメールアドレスを確認し、アカウント設定を完了させてください。',
+  heading: 'メールアドレスをご確認ください',
+  body: '下のボタンをクリックしてメールアドレスを確認してください。このリンクは24時間で有効期限が切れます。',
+  cta: 'メールアドレスを確認する',
+  expiry: 'このリンクは24時間で有効期限が切れます。',
+  ignore: 'Earthropyのアカウントを作成していない場合は、このメールを無視してください。',
+};
+
+const verifyEmailId: VerifyEmailMessages = {
+  subject: 'Konfirmasi alamat email Earthropy Anda',
+  previewText: 'Klik tautan untuk memverifikasi email Anda dan menyelesaikan pengaturan akun.',
+  heading: 'Konfirmasi alamat email Anda',
+  body: 'Klik tombol di bawah untuk memverifikasi alamat email Anda. Tautan ini kedaluwarsa dalam 24 jam.',
+  cta: 'Verifikasi alamat email',
+  expiry: 'Tautan ini kedaluwarsa dalam 24 jam.',
+  ignore: 'Jika Anda tidak membuat akun Earthropy, abaikan email ini.',
+};
+
+const verifyEmailKo: VerifyEmailMessages = {
+  subject: 'Earthropy 이메일 주소를 확인해 주세요',
+  previewText: '링크를 클릭하여 이메일을 인증하고 계정 설정을 완료하세요.',
+  heading: '이메일 주소를 확인해 주세요',
+  body: '아래 버튼을 클릭하여 이메일 주소를 인증하세요. 이 링크는 24시간 후에 만료됩니다.',
+  cta: '이메일 주소 인증',
+  expiry: '이 링크는 24시간 후에 만료됩니다.',
+  ignore: 'Earthropy 계정을 만들지 않으셨다면 이 이메일을 무시하세요.',
+};
+
+const verifyEmailTr: VerifyEmailMessages = {
+  subject: 'Earthropy e-posta adresinizi onaylayın',
+  previewText: 'E-postanızı doğrulamak ve hesap kurulumunuzu tamamlamak için bağlantıya tıklayın.',
+  heading: 'E-posta adresinizi onaylayın',
+  body: 'E-posta adresinizi doğrulamak için aşağıdaki düğmeye tıklayın. Bu bağlantı 24 saat içinde sona erer.',
+  cta: 'E-posta adresini doğrula',
+  expiry: 'Bu bağlantı 24 saat içinde sona erer.',
+  ignore: 'Bir Earthropy hesabı oluşturmadıysanız bu e-postayı dikkate almayın.',
+};
+
+const verifyEmailBn: VerifyEmailMessages = {
+  subject: 'আপনার Earthropy ইমেইল ঠিকানা নিশ্চিত করুন',
+  previewText: 'আপনার ইমেইল যাচাই করতে এবং অ্যাকাউন্ট সেটআপ সম্পন্ন করতে লিংকে ক্লিক করুন।',
+  heading: 'আপনার ইমেইল ঠিকানা নিশ্চিত করুন',
+  body: 'আপনার ইমেইল ঠিকানা যাচাই করতে নিচের বোতামে ক্লিক করুন। এই লিংকটি ২৪ ঘন্টায় মেয়াদ শেষ হয়ে যাবে।',
+  cta: 'ইমেইল ঠিকানা যাচাই করুন',
+  expiry: 'এই লিংকটি ২৪ ঘন্টায় মেয়াদ শেষ হয়ে যাবে।',
+  ignore: 'আপনি যদি Earthropy অ্যাকাউন্ট তৈরি না করে থাকেন, তাহলে এই ইমেইলটি উপেক্ষা করুন।',
+};
+
+// ---------------------------------------------------------------------------
+// magic-link — ja, id, ko, tr, bn
+// ---------------------------------------------------------------------------
+
+const magicLinkJa: MagicLinkMessages = {
+  subject: 'Earthropyへのサインインリンク',
+  previewText: 'リンクをクリックしてEarthropyアカウントにサインインしてください。',
+  heading: 'Earthropyにサインイン',
+  body: '下のボタンをクリックしてサインインしてください。このリンクは15分で有効期限が切れ、1回しか使用できません。',
+  cta: 'サインイン',
+  expiry: 'このリンクは15分で有効期限が切れます。',
+  ignore: 'サインインリンクをリクエストしていない場合は、このメールを無視してください。',
+};
+
+const magicLinkId: MagicLinkMessages = {
+  subject: 'Tautan masuk Earthropy Anda',
+  previewText: 'Klik tautan untuk masuk ke akun Earthropy Anda.',
+  heading: 'Masuk ke Earthropy',
+  body: 'Klik tombol di bawah untuk masuk. Tautan ini kedaluwarsa dalam 15 menit dan hanya dapat digunakan sekali.',
+  cta: 'Masuk',
+  expiry: 'Tautan ini kedaluwarsa dalam 15 menit.',
+  ignore: 'Jika Anda tidak meminta tautan masuk, abaikan email ini.',
+};
+
+const magicLinkKo: MagicLinkMessages = {
+  subject: 'Earthropy 로그인 링크',
+  previewText: '링크를 클릭하여 Earthropy 계정에 로그인하세요.',
+  heading: 'Earthropy에 로그인',
+  body: '아래 버튼을 클릭하여 로그인하세요. 이 링크는 15분 후에 만료되며 한 번만 사용할 수 있습니다.',
+  cta: '로그인',
+  expiry: '이 링크는 15분 후에 만료됩니다.',
+  ignore: '로그인 링크를 요청하지 않으셨다면 이 이메일을 무시하세요.',
+};
+
+const magicLinkTr: MagicLinkMessages = {
+  subject: 'Earthropy giriş bağlantınız',
+  previewText: 'Earthropy hesabınıza giriş yapmak için bağlantıya tıklayın.',
+  heading: "Earthropy'a giriş yap",
+  body: 'Giriş yapmak için aşağıdaki düğmeye tıklayın. Bu bağlantı 15 dakika içinde sona erer ve yalnızca bir kez kullanılabilir.',
+  cta: 'Giriş yap',
+  expiry: 'Bu bağlantı 15 dakika içinde sona erer.',
+  ignore: 'Bir giriş bağlantısı istemediyseniz bu e-postayı dikkate almayın.',
+};
+
+const magicLinkBn: MagicLinkMessages = {
+  subject: 'আপনার Earthropy সাইন-ইন লিংক',
+  previewText: 'আপনার Earthropy অ্যাকাউন্টে সাইন ইন করতে লিংকে ক্লিক করুন।',
+  heading: 'Earthropy-তে সাইন ইন করুন',
+  body: 'সাইন ইন করতে নিচের বোতামে ক্লিক করুন। এই লিংকটি ১৫ মিনিটে মেয়াদ শেষ হয় এবং শুধুমাত্র একবার ব্যবহার করা যাবে।',
+  cta: 'সাইন ইন করুন',
+  expiry: 'এই লিংকটি ১৫ মিনিটে মেয়াদ শেষ হয়ে যাবে।',
+  ignore: 'আপনি যদি সাইন-ইন লিংক অনুরোধ না করে থাকেন, তাহলে এই ইমেইলটি উপেক্ষা করুন।',
+};
+
+// ---------------------------------------------------------------------------
+// password-reset — ja, id, ko, tr, bn
+// ---------------------------------------------------------------------------
+
+const passwordResetJa: PasswordResetMessages = {
+  subject: 'Earthropyのパスワードをリセット',
+  previewText: 'リンクをクリックしてEarthropyアカウントの新しいパスワードを設定してください。',
+  heading: 'パスワードをリセット',
+  body: '下のボタンをクリックして新しいパスワードを設定してください。このリンクは60分で有効期限が切れ、1回しか使用できません。',
+  cta: 'パスワードをリセット',
+  expiry: 'このリンクは60分で有効期限が切れます。',
+  ignore:
+    'パスワードリセットをリクエストしていない場合は、このメールを無視してください。パスワードは変更されていません。',
+};
+
+const passwordResetId: PasswordResetMessages = {
+  subject: 'Atur ulang kata sandi Earthropy Anda',
+  previewText: 'Klik tautan untuk menetapkan kata sandi baru untuk akun Earthropy Anda.',
+  heading: 'Atur ulang kata sandi Anda',
+  body: 'Klik tombol di bawah untuk menetapkan kata sandi baru. Tautan ini kedaluwarsa dalam 60 menit dan hanya dapat digunakan sekali.',
+  cta: 'Atur ulang kata sandi',
+  expiry: 'Tautan ini kedaluwarsa dalam 60 menit.',
+  ignore:
+    'Jika Anda tidak meminta pengaturan ulang kata sandi, abaikan email ini. Kata sandi Anda tidak berubah.',
+};
+
+const passwordResetKo: PasswordResetMessages = {
+  subject: 'Earthropy 비밀번호 재설정',
+  previewText: '링크를 클릭하여 Earthropy 계정의 새 비밀번호를 설정하세요.',
+  heading: '비밀번호를 재설정하세요',
+  body: '아래 버튼을 클릭하여 새 비밀번호를 설정하세요. 이 링크는 60분 후에 만료되며 한 번만 사용할 수 있습니다.',
+  cta: '비밀번호 재설정',
+  expiry: '이 링크는 60분 후에 만료됩니다.',
+  ignore:
+    '비밀번호 재설정을 요청하지 않으셨다면 이 이메일을 무시하세요. 비밀번호는 변경되지 않았습니다.',
+};
+
+const passwordResetTr: PasswordResetMessages = {
+  subject: 'Earthropy şifrenizi sıfırlayın',
+  previewText: 'Earthropy hesabınız için yeni bir şifre belirlemek üzere bağlantıya tıklayın.',
+  heading: 'Şifrenizi sıfırlayın',
+  body: 'Yeni bir şifre belirlemek için aşağıdaki düğmeye tıklayın. Bu bağlantı 60 dakika içinde sona erer ve yalnızca bir kez kullanılabilir.',
+  cta: 'Şifreyi sıfırla',
+  expiry: 'Bu bağlantı 60 dakika içinde sona erer.',
+  ignore:
+    'Bir şifre sıfırlama talebinde bulunmadıysanız bu e-postayı dikkate almayın. Şifreniz değiştirilmedi.',
+};
+
+const passwordResetBn: PasswordResetMessages = {
+  subject: 'আপনার Earthropy পাসওয়ার্ড রিসেট করুন',
+  previewText: 'আপনার Earthropy অ্যাকাউন্টের জন্য নতুন পাসওয়ার্ড সেট করতে লিংকে ক্লিক করুন।',
+  heading: 'আপনার পাসওয়ার্ড রিসেট করুন',
+  body: 'নতুন পাসওয়ার্ড সেট করতে নিচের বোতামে ক্লিক করুন। এই লিংকটি ৬০ মিনিটে মেয়াদ শেষ হয় এবং শুধুমাত্র একবার ব্যবহার করা যাবে।',
+  cta: 'পাসওয়ার্ড রিসেট করুন',
+  expiry: 'এই লিংকটি ৬০ মিনিটে মেয়াদ শেষ হয়ে যাবে।',
+  ignore:
+    'আপনি যদি পাসওয়ার্ড রিসেটের অনুরোধ না করে থাকেন, তাহলে এই ইমেইলটি উপেক্ষা করুন। আপনার পাসওয়ার্ড পরিবর্তিত হয়নি।',
+};
+
+// ---------------------------------------------------------------------------
+// group-invite — ja, id, ko, tr, bn
+// ---------------------------------------------------------------------------
+
+const groupInviteJa: GroupInviteMessages = {
+  subject: 'Earthropyのグループへ招待されました',
+  previewText: 'リンクをクリックしてEarthropyのグループに参加してください。',
+  heading: 'グループへの参加を招待されています',
+  body: '下のボタンをクリックして招待を承諾してください。このリンクは7日間で有効期限が切れ、1回しか使用できません。',
+  cta: '招待を承諾する',
+  expiry: 'このリンクは7日間で有効期限が切れます。',
+  ignore: 'この招待に心当たりがない場合は、このメールを無視してください。',
+};
+
+const groupInviteId: GroupInviteMessages = {
+  subject: 'Anda diundang untuk bergabung dengan grup di Earthropy',
+  previewText: 'Klik tautan untuk bergabung dengan grup di Earthropy.',
+  heading: 'Anda diundang untuk bergabung dengan grup',
+  body: 'Klik tombol di bawah untuk menerima undangan Anda. Tautan ini kedaluwarsa dalam 7 hari dan hanya dapat digunakan sekali.',
+  cta: 'Terima undangan',
+  expiry: 'Tautan ini kedaluwarsa dalam 7 hari.',
+  ignore:
+    'Jika Anda tidak mengharapkan undangan ini, Anda dapat mengabaikan email ini dengan aman.',
+};
+
+const groupInviteKo: GroupInviteMessages = {
+  subject: 'Earthropy 그룹에 초대받으셨습니다',
+  previewText: '링크를 클릭하여 Earthropy 그룹에 참가하세요.',
+  heading: '그룹에 초대받으셨습니다',
+  body: '아래 버튼을 클릭하여 초대를 수락하세요. 이 링크는 7일 후에 만료되며 한 번만 사용할 수 있습니다.',
+  cta: '초대 수락',
+  expiry: '이 링크는 7일 후에 만료됩니다.',
+  ignore: '이 초대를 예상하지 않으셨다면 이 이메일을 안전하게 무시할 수 있습니다.',
+};
+
+const groupInviteTr: GroupInviteMessages = {
+  subject: "Earthropy'daki bir gruba katılmaya davet edildiniz",
+  previewText: "Earthropy'daki gruba katılmak için bağlantıya tıklayın.",
+  heading: 'Bir gruba katılmaya davet edildiniz',
+  body: 'Davetinizi kabul etmek için aşağıdaki düğmeye tıklayın. Bu bağlantı 7 gün içinde sona erer ve yalnızca bir kez kullanılabilir.',
+  cta: 'Daveti kabul et',
+  expiry: 'Bu bağlantı 7 gün içinde sona erer.',
+  ignore: 'Bu daveti beklemiyorsanız bu e-postayı güvenle dikkate almayabilirsiniz.',
+};
+
+const groupInviteBn: GroupInviteMessages = {
+  subject: 'আপনাকে Earthropy-তে একটি গ্রুপে যোগ দিতে আমন্ত্রণ জানানো হয়েছে',
+  previewText: 'Earthropy-তে গ্রুপে যোগ দিতে লিংকে ক্লিক করুন।',
+  heading: 'আপনাকে একটি গ্রুপে যোগ দিতে আমন্ত্রণ জানানো হয়েছে',
+  body: 'আপনার আমন্ত্রণ গ্রহণ করতে নিচের বোতামে ক্লিক করুন। এই লিংকটি ৭ দিনে মেয়াদ শেষ হয় এবং শুধুমাত্র একবার ব্যবহার করা যাবে।',
+  cta: 'আমন্ত্রণ গ্রহণ করুন',
+  expiry: 'এই লিংকটি ৭ দিনে মেয়াদ শেষ হয়ে যাবে।',
+  ignore: 'আপনি যদি এই আমন্ত্রণের প্রত্যাশা না করে থাকেন, তাহলে এই ইমেইলটি নিরাপদে উপেক্ষা করতে পারেন।',
+};
+
+// ---------------------------------------------------------------------------
 // Lookup helpers
 // ---------------------------------------------------------------------------
 
@@ -491,6 +713,11 @@ export function getVerifyEmailMessages(locale: Locale): VerifyEmailMessages {
       pt: verifyEmailPt,
       ru: verifyEmailRu,
       sw: verifyEmailSw,
+      ja: verifyEmailJa,
+      id: verifyEmailId,
+      ko: verifyEmailKo,
+      tr: verifyEmailTr,
+      bn: verifyEmailBn,
     },
     verifyEmailEn,
     locale,
@@ -509,6 +736,11 @@ export function getMagicLinkMessages(locale: Locale): MagicLinkMessages {
       pt: magicLinkPt,
       ru: magicLinkRu,
       sw: magicLinkSw,
+      ja: magicLinkJa,
+      id: magicLinkId,
+      ko: magicLinkKo,
+      tr: magicLinkTr,
+      bn: magicLinkBn,
     },
     magicLinkEn,
     locale,
@@ -527,6 +759,11 @@ export function getPasswordResetMessages(locale: Locale): PasswordResetMessages 
       pt: passwordResetPt,
       ru: passwordResetRu,
       sw: passwordResetSw,
+      ja: passwordResetJa,
+      id: passwordResetId,
+      ko: passwordResetKo,
+      tr: passwordResetTr,
+      bn: passwordResetBn,
     },
     passwordResetEn,
     locale,
@@ -545,6 +782,11 @@ export function getGroupInviteMessages(locale: Locale): GroupInviteMessages {
       pt: groupInvitePt,
       ru: groupInviteRu,
       sw: groupInviteSw,
+      ja: groupInviteJa,
+      id: groupInviteId,
+      ko: groupInviteKo,
+      tr: groupInviteTr,
+      bn: groupInviteBn,
     },
     groupInviteEn,
     locale,

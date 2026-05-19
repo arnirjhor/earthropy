@@ -25,6 +25,8 @@ export const groups = pgTable(
     preferredLocale: text('preferred_locale').notNull().default('en'),
     /** Free-text location, optional. v0.1 does not geocode. */
     locationText: text('location_text'),
+    /** Whether the group receives weekly AI-drafted digest emails. */
+    digestEnabled: boolean('digest_enabled').notNull().default(false),
     createdBy: uuid('created_by')
       .notNull()
       .references(() => users.id, { onDelete: 'restrict' }),

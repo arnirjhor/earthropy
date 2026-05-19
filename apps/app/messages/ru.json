@@ -79,7 +79,12 @@
       "published": "Опубликовано",
       "rejected": "Отклонено",
       "withdrawn": "Отозвано"
-    }
+    },
+    "translate": "Перевести",
+    "showOriginal": "Показать оригинал",
+    "translating": "Перевод…",
+    "translatedFrom": "Переведено с",
+    "translateError": "Перевод недоступен. Повторите попытку позже."
   },
   "GroupBrowse": {
     "heading": "Группы",
@@ -240,5 +245,12 @@
         "submitting": "Отключение учетной записи…"
       }
     }
+  },
+  "CommentTranslation": {
+    "translate": "Перевести",
+    "showOriginal": "Показать оригинал",
+    "translating": "Перевод…",
+    "translatedFrom": "Переведено с",
+    "translateError": "Перевод недоступен."
   }
 }

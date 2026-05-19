@@ -1,0 +1,256 @@
+{
+  "CommentThread": {
+    "heading": "মন্তব্য",
+    "sectionLabel": "মন্তব্য থ্রেড",
+    "listLabel": "মন্তব্য",
+    "empty": "এখনও কোনো মন্তব্য নেই। প্রথমে উত্তর দিন।",
+    "reply": "উত্তর দিন",
+    "cancel": "বাতিল",
+    "submitComment": "মন্তব্য করুন",
+    "submitReply": "উত্তর দিন",
+    "submitting": "পাঠানো হচ্ছে…",
+    "commentPlaceholder": "একটি মন্তব্য লিখুন…",
+    "replyPlaceholder": "একটি উত্তর লিখুন…",
+    "withdrawComment": "প্রত্যাহার",
+    "withdrawingComment": "প্রত্যাহার হচ্ছে…",
+    "appeal": "আপিল",
+    "appealing": "পাঠানো হচ্ছে…",
+    "appealPlaceholder": "কেন এই সিদ্ধান্ত ভুল ছিল তা ব্যাখ্যা করুন…",
+    "commentStatus": {
+      "pending_ai": "এআই পর্যালোচনাধীন",
+      "pending_review": "পর্যালোচনার অপেক্ষায়",
+      "rejected": "প্রত্যাখ্যাত",
+      "withdrawn": "প্রত্যাহৃত"
+    }
+  },
+  "Home": {
+    "title": "১৭টি লক্ষ্য",
+    "caption": "EARTHROPY · v0.0.2",
+    "sdgListLabel": "১৭টি টেকসই উন্নয়ন লক্ষ্যমাত্রা",
+    "mission": "Earthropy হল জাতিসংঘের ১৭টি টেকসই উন্নয়ন লক্ষ্যমাত্রা অর্জনে সমন্বয়ের জন্য একটি চিরন্তন বিনামূল্যে ও কর্পোরেট-নিরপেক্ষ প্ল্যাটফর্ম। এনজিও, গবেষক এবং স্থানীয় সম্প্রদায়ের জন্য তৈরি — যে মানুষদের উপর এই কাজ নির্ভর করে, তাদের আসল ভাষায়।",
+    "missionAttribution": "— Earthropy-এর লক্ষ্য",
+    "footer": "AGPL-3.0-or-later · earthropy.org"
+  },
+  "GroupCreate": {
+    "heading": "গ্রুপ তৈরি করুন",
+    "subheading": "গ্রুপগুলি নির্দিষ্ট এসডিজিকে কেন্দ্র করে মানুষকে একত্রিত করে।",
+    "fields": {
+      "name": "নাম",
+      "slug": "স্লাগ",
+      "slugHint": "নাম থেকে স্বয়ংক্রিয়ভাবে তৈরি হয়। কাস্টমাইজ করা যাবে।",
+      "description": "বিবরণ",
+      "visibility": "দৃশ্যমানতা",
+      "visibilityPublic": "সর্বজনীন",
+      "visibilityPublicHint": "যে কেউ খুঁজে পেতে ও যোগ দিতে পারবে",
+      "visibilityListed": "তালিকাভুক্ত",
+      "visibilityListedHint": "অনুসন্ধানে দৃশ্যমান; যোগ দিতে আমন্ত্রণ প্রয়োজন",
+      "visibilityPrivate": "ব্যক্তিগত",
+      "visibilityPrivateHint": "আমন্ত্রণ-কেবল, তালিকায় নেই",
+      "preferredLocale": "প্রাথমিক ভাষা",
+      "locationText": "অবস্থান (ঐচ্ছিক)",
+      "locationTextPlaceholder": "যেমন: নাইরোবি, কেনিয়া",
+      "sdgs": "টেকসই উন্নয়ন লক্ষ্যমাত্রা",
+      "sdgsHint": "এই গ্রুপটি যে এসডিজিতে কাজ করে তা নির্বাচন করুন। একটিকে প্রাথমিক হিসেবে চিহ্নিত করুন।",
+      "sdgPrimary": "প্রাথমিক এসডিজি"
+    },
+    "submit": "গ্রুপ তৈরি করুন",
+    "submitting": "তৈরি হচ্ছে…",
+    "cancel": "বাতিল"
+  },
+  "PostDetail": {
+    "banner": {
+      "pendingAi": "এআই পর্যালোচনাধীন",
+      "pendingReview": "মানব পর্যালোচনার জন্য আটকে রাখা হয়েছে",
+      "rejected": "প্রত্যাখ্যাত — কারণ: {reason}; আপিল উপলব্ধ",
+      "rejectedNoReason": "প্রত্যাখ্যাত",
+      "withdrawn": "লেখক কর্তৃক প্রত্যাহৃত"
+    },
+    "withdraw": "প্রত্যাহার",
+    "withdrawing": "প্রত্যাহার হচ্ছে…",
+    "appeal": "আপিল",
+    "appealing": "পাঠানো হচ্ছে…",
+    "appealPlaceholder": "কেন এই সিদ্ধান্ত ভুল ছিল তা ব্যাখ্যা করুন…",
+    "cancel": "বাতিল",
+    "by": "লেখক:",
+    "publishedLabel": "প্রকাশিত",
+    "statusLabel": {
+      "pending_ai": "এআই পর্যালোচনাধীন",
+      "pending_review": "মানব পর্যালোচনার অপেক্ষায়",
+      "published": "প্রকাশিত",
+      "rejected": "প্রত্যাখ্যাত",
+      "withdrawn": "প্রত্যাহৃত"
+    },
+    "translate": "অনুবাদ করুন",
+    "showOriginal": "মূল দেখুন",
+    "translating": "অনুবাদ হচ্ছে…",
+    "translatedFrom": "অনুবাদ করা হয়েছে",
+    "translateError": "অনুবাদ পাওয়া যাচ্ছে না। পরে আবার চেষ্টা করুন।"
+  },
+  "GroupBrowse": {
+    "heading": "গ্রুপ",
+    "caption": "সব গ্রুপ দেখুন",
+    "filterLabel": "এসডিজি দ্বারা ফিল্টার করুন",
+    "visibilityLabel": "দৃশ্যমানতা",
+    "visibilityPublic": "সর্বজনীন",
+    "visibilityListed": "তালিকাভুক্ত",
+    "visibilityBoth": "সর্বজনীন + তালিকাভুক্ত",
+    "members": "{count} জন সদস্য",
+    "member": "১ জন সদস্য",
+    "empty": {
+      "heading": "কোনো গ্রুপ পাওয়া যায়নি",
+      "descriptionFiltered": "নির্বাচিত এসডিজিগুলির সাথে কোনো গ্রুপ মেলে না। আপনার ফিল্টার প্রসারিত করে দেখুন।",
+      "descriptionAll": "এখনও কোনো গ্রুপ তৈরি হয়নি।",
+      "clearFilter": "এসডিজি ফিল্টার মুছুন",
+      "createGroup": "গ্রুপ তৈরি করুন"
+    },
+    "pagination": {
+      "prev": "পূর্ববর্তী পাতা",
+      "next": "পরবর্তী পাতা",
+      "pageOf": "{total}টির মধ্যে {page}টি পাতা"
+    }
+  },
+  "Notifications": {
+    "bell": {
+      "label": "বিজ্ঞপ্তি",
+      "unreadCount": "{count}টি অপঠিত বিজ্ঞপ্তি"
+    },
+    "dropdown": {
+      "label": "বিজ্ঞপ্তি প্যানেল",
+      "title": "বিজ্ঞপ্তি",
+      "markAll": "সব পঠিত হিসেবে চিহ্নিত করুন",
+      "markRead": "{kind} পঠিত হিসেবে চিহ্নিত করুন",
+      "read": "পঠিত",
+      "empty": "এখনও কোনো বিজ্ঞপ্তি নেই।",
+      "listLabel": "সাম্প্রতিক বিজ্ঞপ্তি",
+      "viewAll": "সব দেখুন"
+    },
+    "page": {
+      "heading": "বিজ্ঞপ্তি",
+      "empty": "কোনো বিজ্ঞপ্তি নেই।",
+      "markAll": "সব পঠিত হিসেবে চিহ্নিত করুন"
+    }
+  },
+  "Auth": {
+    "fields": {
+      "email": "ইমেইল",
+      "password": "পাসওয়ার্ড",
+      "handle": "হ্যান্ডেল"
+    },
+    "signup": {
+      "heading": "অ্যাকাউন্ট তৈরি করুন",
+      "subheading": "এসডিজিতে বৈশ্বিক পদক্ষেপ সমন্বয় করার প্ল্যাটফর্মে যোগ দিন।",
+      "submit": "অ্যাকাউন্ট তৈরি করুন",
+      "submitting": "অ্যাকাউন্ট তৈরি হচ্ছে…",
+      "alreadyHaveAccount": "ইতিমধ্যে অ্যাকাউন্ট আছে?",
+      "signInLink": "সাইন ইন করুন"
+    },
+    "signin": {
+      "heading": "সাইন ইন",
+      "submit": "সাইন ইন",
+      "submitting": "সাইন ইন হচ্ছে…",
+      "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন?",
+      "noAccount": "অ্যাকাউন্ট নেই?",
+      "signUpLink": "তৈরি করুন",
+      "tabs": {
+        "password": "পাসওয়ার্ড",
+        "magic": "ম্যাজিক লিংক"
+      },
+      "magic": {
+        "submit": "সাইন-ইন লিংক পাঠান",
+        "submitting": "পাঠানো হচ্ছে…"
+      }
+    },
+    "verifyEmail": {
+      "heading": "আপনার ইমেইল নিশ্চিত করুন",
+      "description": "আপনার ইমেইল ঠিকানা যাচাই করতে এবং অ্যাকাউন্ট সক্রিয় করতে নিচের বোতামে ক্লিক করুন।",
+      "submit": "ইমেইল নিশ্চিত করুন",
+      "submitting": "নিশ্চিত হচ্ছে…"
+    },
+    "magicLink": {
+      "heading": "সাইন ইন",
+      "description": "আপনার অ্যাকাউন্টে সাইন ইন করতে নিচের বোতামে ক্লিক করুন।",
+      "submit": "সাইন ইন",
+      "submitting": "সাইন ইন হচ্ছে…",
+      "requestNew": "নতুন সাইন-ইন লিংক চান"
+    },
+    "forgotPassword": {
+      "heading": "পাসওয়ার্ড রিসেট করুন",
+      "description": "আপনার ইমেইল দিন, অ্যাকাউন্ট থাকলে আমরা একটি রিসেট লিংক পাঠাব।",
+      "submit": "রিসেট লিংক পাঠান",
+      "submitting": "পাঠানো হচ্ছে…",
+      "backToSignIn": "সাইন ইনে ফিরুন"
+    },
+    "resetPassword": {
+      "heading": "নতুন পাসওয়ার্ড সেট করুন",
+      "description": "আপনার অ্যাকাউন্টের জন্য একটি নতুন পাসওয়ার্ড দিন।",
+      "newPassword": "নতুন পাসওয়ার্ড",
+      "submit": "পাসওয়ার্ড সেট করুন",
+      "submitting": "পাসওয়ার্ড সেট হচ্ছে…"
+    },
+    "checkYourEmail": {
+      "heading": "আপনার ইমেইল দেখুন",
+      "description": "আমরা আপনাকে একটি ইমেইল পাঠিয়েছি। চালিয়ে যেতে ভিতরের লিংক অনুসরণ করুন।",
+      "wrongEmail": "ভুল ইমেইল?",
+      "tryAgain": "আবার চেষ্টা করুন"
+    },
+    "dashboard": {
+      "welcome": "স্বাগতম, {name}",
+      "defaultName": "বন্ধু",
+      "signOut": "সাইন আউট",
+      "placeholder": "আপনার ড্যাশবোর্ড তৈরি হচ্ছে। শীঘ্রই আবার আসুন।"
+    },
+    "account": {
+      "heading": "অ্যাকাউন্ট",
+      "sections": {
+        "profile": "প্রোফাইল",
+        "sessions": "সক্রিয় সেশন",
+        "notifications": "বিজ্ঞপ্তি পছন্দ",
+        "danger": "বিপদজনক অঞ্চল"
+      },
+      "profile": {
+        "displayName": "প্রদর্শনীর নাম",
+        "handle": "হ্যান্ডেল",
+        "locale": "ভাষা",
+        "save": "পরিবর্তন সংরক্ষণ করুন",
+        "saving": "সংরক্ষণ হচ্ছে…",
+        "saved": "সংরক্ষিত হয়েছে।"
+      },
+      "sessions": {
+        "currentDevice": "বর্তমান ডিভাইস",
+        "otherDevices": "অন্যান্য ডিভাইস",
+        "noOtherSessions": "অন্য কোনো সক্রিয় সেশন নেই।",
+        "createdAgo": "{days} দিন আগে তৈরি",
+        "createdToday": "আজ তৈরি",
+        "revoke": "বাতিল করুন",
+        "revokeAll": "অন্য সব সেশন বাতিল করুন",
+        "revoking": "বাতিল হচ্ছে…"
+      },
+      "notifications": {
+        "description": "বিজ্ঞপ্তি পছন্দ এখন স্থানীয়ভাবে সংরক্ষিত হয় (v0.1)। সার্ভার-সাইড স্থায়িত্ব v0.2-এর ফলো-আপ।",
+        "inApp": "অ্যাপ-মধ্যস্থ বিজ্ঞপ্তি",
+        "email": "ইমেইল বিজ্ঞপ্তি",
+        "kinds": {
+          "newPost": "আপনি অনুসরণ করা গ্রুপে নতুন পোস্ট",
+          "mention": "উল্লেখ",
+          "groupInvite": "গ্রুপ আমন্ত্রণ",
+          "moderation": "আপনার বিষয়বস্তুতে মডারেশন সিদ্ধান্ত"
+        }
+      },
+      "danger": {
+        "heading": "অ্যাকাউন্ট মুছুন",
+        "description": "আপনার অ্যাকাউন্ট মুছে ফেলা স্থায়ী। মডারেশন নিরীক্ষার উদ্দেশ্যে আপনার পোস্ট ও মন্তব্য রাখা হবে, কিন্তু আপনার অ্যাকাউন্ট অবিলম্বে নিষ্ক্রিয় করা হবে এবং আপনাকে সাইন আউট করা হবে।",
+        "confirm": "নিশ্চিত করতে আপনার ইমেইল ঠিকানা দিন:",
+        "email": "আপনার ইমেইল",
+        "submit": "আমার অ্যাকাউন্ট নিষ্ক্রিয় করুন",
+        "submitting": "অ্যাকাউন্ট নিষ্ক্রিয় হচ্ছে…"
+      }
+    }
+  },
+  "CommentTranslation": {
+    "translate": "অনুবাদ করুন",
+    "showOriginal": "মূল দেখুন",
+    "translating": "অনুবাদ হচ্ছে…",
+    "translatedFrom": "অনুবাদ করা হয়েছে",
+    "translateError": "অনুবাদ পাওয়া যাচ্ছে না।"
+  }
+}

@@ -79,7 +79,12 @@
       "published": "प्रकाशित",
       "rejected": "अस्वीकृत",
       "withdrawn": "वापस लिया गया"
-    }
+    },
+    "translate": "अनुवाद करें",
+    "showOriginal": "मूल दिखाएं",
+    "translating": "अनुवाद हो रहा है…",
+    "translatedFrom": "से अनुवादित",
+    "translateError": "अनुवाद उपलब्ध नहीं। बाद में पुनः प्रयास करें।"
   },
   "GroupBrowse": {
     "heading": "समूह",
@@ -240,5 +245,12 @@
         "submitting": "खाता अक्षम किया जा रहा है…"
       }
     }
+  },
+  "CommentTranslation": {
+    "translate": "अनुवाद करें",
+    "showOriginal": "मूल दिखाएं",
+    "translating": "अनुवाद हो रहा है…",
+    "translatedFrom": "से अनुवादित",
+    "translateError": "अनुवाद उपलब्ध नहीं।"
   }
 }

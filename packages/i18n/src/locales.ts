@@ -1,4 +1,4 @@
-// v0.1 ships catalogs for 9 locales spanning the top languages by speaker count
+// v0.1 ships catalogs for 14 locales spanning the top languages by speaker count
 // + working languages of the UN. Community-completed; English is the source of truth.
 export const LOCALES = [
   'en', // English
@@ -10,6 +10,11 @@ export const LOCALES = [
   'pt', // Portuguese
   'ru', // Russian
   'sw', // Swahili
+  'ja', // Japanese
+  'id', // Indonesian
+  'ko', // Korean
+  'tr', // Turkish
+  'bn', // Bengali
 ] as const;
 
 export type Locale = (typeof LOCALES)[number];
@@ -36,4 +41,9 @@ export const LOCALE_NAMES: Record<Locale, string> = {
   pt: 'Português',
   ru: 'Русский',
   sw: 'Kiswahili',
+  ja: '日本語',
+  id: 'Bahasa Indonesia',
+  ko: '한국어',
+  tr: 'Türkçe',
+  bn: 'বাংলা',
 };

@@ -79,7 +79,12 @@
       "published": "منشور",
       "rejected": "مرفوض",
       "withdrawn": "تم السحب"
-    }
+    },
+    "translate": "ترجمة",
+    "showOriginal": "عرض الأصل",
+    "translating": "جاري الترجمة…",
+    "translatedFrom": "مترجم من",
+    "translateError": "الترجمة غير متاحة. حاول مرة أخرى لاحقاً."
   },
   "GroupBrowse": {
     "heading": "المجموعات",
@@ -240,5 +245,12 @@
         "submitting": "جاري تعطيل الحساب…"
       }
     }
+  },
+  "CommentTranslation": {
+    "translate": "ترجمة",
+    "showOriginal": "عرض الأصل",
+    "translating": "جاري الترجمة…",
+    "translatedFrom": "مترجم من",
+    "translateError": "الترجمة غير متاحة."
   }
 }

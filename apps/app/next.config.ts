@@ -17,8 +17,10 @@ const config: NextConfig = {
     '@repo/moderation',
     '@repo/notifications',
     '@repo/observability',
+    '@repo/plugin-sdk',
     '@repo/sdg',
     '@repo/ratelimit',
+    '@repo/translation',
     '@repo/trust',
   ],
   images: {

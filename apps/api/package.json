@@ -17,6 +17,7 @@
   "dependencies": {
     "@repo/auth": "workspace:*",
     "@repo/comments": "workspace:*",
+    "@repo/community-agent": "workspace:*",
     "@repo/database": "workspace:*",
     "@repo/moderation": "workspace:*",
     "@repo/notifications": "workspace:*",
@@ -25,6 +26,7 @@
     "@repo/queue": "workspace:*",
     "@repo/sdg": "workspace:*",
     "bullmq": "^5.56.0",
+    "drizzle-orm": "^0.36.4",
     "@repo/trust": "workspace:*",
     "next": "^16.0.0",
     "react": "^19.0.0",
