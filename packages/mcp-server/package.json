@@ -15,7 +15,6 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "dev": "tsx src/cli.ts",
     "clean": "rm -rf .turbo *.tsbuildinfo dist"
   },
   "dependencies": {
